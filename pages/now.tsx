@@ -8,17 +8,16 @@ const Now: NextPage = () => {
       <div className="py-4 max-w-2xl flex flex-col justify-start items-start m-auto">
         <h1>Now</h1>
         <p className="font-italic">
-          This is a Now Page. If you don't know what a{" "}
-          <a href="https://nownownow.com/about">Now Page</a> is and you have
+          This is a Now Page. If you don&apos;t know what a <a href="https://nownownow.com/about">Now Page</a> is and you have
           your own website, I think you should one too.
         </p>
         <h2>Life</h2>
-        I've been living in Stockholm since 2017 and, more specifically,
-        Södermalm since 2019. I've been living in startup land since 2012.
+        I&apos;ve been living in Stockholm since 2017 and, more specifically,
+        Södermalm since 2019. I&apos;ve been living in startup land since 2012.
         Either working for startups, building startups or investing in startups.
         Some times all three at once. - Working with a new coach, focussing more
         on improving my personal life. This coaching is based on the [Handel
-        Method](https://www.handelgroup.com/hg-life-programs/), but it's too
+        Method](https://www.handelgroup.com/hg-life-programs/), but it&apos;s too
         early for me to say if I can recommend it. - Lunches are mostly [Huel
         based](https://huel.mention-me.com/m/ol/jr8aw-viktor-nyblom) (affiliate
         link).
@@ -41,7 +40,7 @@ const Now: NextPage = () => {
         project As always, [Firebase](https://firebase.google.com/) things are
         on my mind. In particular Firebase Analytics in conjuction with push
         notifications and user audiences. I think Firebase only really shines if
-        you use all the bits and pieces in it. If you're only using it as a
+        you use all the bits and pieces in it. If you&apos;re only using it as a
         database, then you are probably better of using something like
         [Nhost](https://nhost.io/)
       </div>

@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import Link from "next/link";
 import SocialRow from "../components/socialRow";
 
 const Home: NextPage = () => {
@@ -14,14 +15,12 @@ const Home: NextPage = () => {
       <div className="px-8 flex flex-col justify-center space-y-8">
         <h1>Hi!</h1>
         <p className="text-2xl">
-          Welcome to the personal blog of <a href="/about">Viktor Nyblom</a>.
+          Welcome to the personal blog of <Link href="/about">Viktor Nyblom</Link>.
           <br />
           Stockholm based entrepreneur, investor and startup advisor.
         </p>
         <p className="text-2xl">
-          I do many different things during the course of a year. But if you
-          want to know what I'm doing right now, checkout my{" "}
-          <a href="/now/">Now Page</a>.
+          I do many different things during the course of a year. But if you want to know what I&apos;m doing right now, checkout my <Link href="/now/">Now Page</Link>.
         </p>
         <SocialRow />
       </div>

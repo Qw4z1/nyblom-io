@@ -13,7 +13,7 @@ const BlogList: NextPage<BlogListProps> = ({ posts }) => {
       <div>
         <h1>A collection of my thoughts</h1>
         <blockquote>
-          <p>"I don't think to write. I write to think." </p>
+          <p>&quot;I don&apos;t think to write. I write to think.&quot; </p>
         </blockquote>
 
         {posts.map((it) => (
