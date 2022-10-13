@@ -8,6 +8,7 @@ import { PostFrontMatter, Post } from "../../types";
 import { useMemo } from "react";
 import { Head } from "../../components/head";
 import { HeaderImage } from "../../components/headerImage";
+import remarkGfm from "remark-gfm";
 
 interface BlogPostProps {
   post: Post;
@@ -41,15 +42,15 @@ const BlogPost: NextPage<BlogPostProps> = ({ post }) => {
     <>
       <Head title={title} description={excerpt} />
       <article>
-        {featuredImage ? <HeaderImage src={featuredImage} alt={"featured alt"} /> : null}
+        {featuredImage ? (
+          <HeaderImage src={featuredImage} alt={"featured alt"} />
+        ) : null}
         <h1>{title}</h1>
         <h2>{subtitle}</h2>
         <p className="text-base lg:text-lg">
           {publishedAt} · {readingTime} · ?? views
         </p>
-        <BlogPost
-        // components={{ Image: PostImage as any }}
-        />
+        <BlogPost />
       </article>
     </>
   );
@@ -75,7 +76,13 @@ export const getStaticProps: GetStaticProps<BlogPostProps> = async ({
   const slug = params!.slug as string;
   const filePath = join(process.cwd(), "posts", `${slug}.mdx`);
   const mdxSource = readFileSync(filePath, "utf8");
-  const bundleResult = await bundleMDX({ source: mdxSource });
+  const bundleResult = await bundleMDX({
+    source: mdxSource,
+    xdmOptions(options) {
+      options.remarkPlugins = [...(options?.remarkPlugins ?? []), remarkGfm];
+      return options;
+    },
+  });
 
   const sourceCode = bundleResult.code;
   const frontMatter = bundleResult.frontmatter as PostFrontMatter;

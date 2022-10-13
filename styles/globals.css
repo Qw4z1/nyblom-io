@@ -37,4 +37,9 @@
   .container {
     @apply py-4 max-w-2xl flex flex-col justify-center items-center m-auto;
   }
+
+}
+
+.footnotes li {
+  @apply text-base list-decimal mx-8;
 }
