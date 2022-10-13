@@ -5,7 +5,7 @@ const Portfolio: NextPage = () => {
   return (
     <>
       <Head title={"Portfolio"} description={"List of startup investments"} />
-      <div className="py-4 max-w-2xl flex flex-col justify-start items-start m-auto">
+      <div>
         <h1>Portfolio</h1>
         <p className="text-xl">
           Each of the companies below has chosen to take my money. <br /> For
