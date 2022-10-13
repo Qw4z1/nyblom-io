@@ -32,7 +32,8 @@ const BlogList: NextPage<BlogListProps> = ({ posts }) => {
 
 export const getStaticProps: GetStaticProps<BlogListProps> = async () => {
   const posts = await getPostFrontMatter();
-  return { props: { posts } };
+  const publishedPosts = posts.filter((it) => it.published == true);
+  return { props: { posts: publishedPosts } };
 };
 
 export default BlogList;

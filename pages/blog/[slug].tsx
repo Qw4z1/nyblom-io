@@ -9,6 +9,7 @@ import { useMemo } from "react";
 import { Head } from "../../components/head";
 import { HeaderImage } from "../../components/headerImage";
 import remarkGfm from "remark-gfm";
+import Link from "next/link";
 
 interface BlogPostProps {
   post: Post;
@@ -50,7 +51,7 @@ const BlogPost: NextPage<BlogPostProps> = ({ post }) => {
         <p className="text-base lg:text-lg">
           {publishedAt} · {readingTime} · ?? views
         </p>
-        <BlogPost />
+        <BlogPost components={{ Link: Link }} />
       </article>
     </>
   );
