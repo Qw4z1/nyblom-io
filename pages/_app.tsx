@@ -2,25 +2,29 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
 
+  const router = useRouter();
+  const route = router.pathname;
+  console.log("Route " + route);
+
   return (
     <div>
-      <nav className="w-full bg-white fixed px-2 sm:px-4 py-2.5 rounded bg-opacity-80 backdrop-blur z-20">
+      <nav className="w-full fixed px-2 sm:px-4 py-2.5 rounded bg-opacity-80 backdrop-blur z-20">
         <div className="flex flex-wrap justify-between items-center mx-auto">
           <Link href="/">
-            <a className="bg-default-yellow prevent-default max-w-[45%] p-2 text-base sm:text-xl lg:text-2xl font-semibold transition-colors whitespace-nowrap overflow-hidden text-ellipsis">
+            <a className="bg-yellow prevent-default max-w-[45%] p-2 hover:p-2 hover:m-0 text-base sm:text-xl lg:text-2xl font-semibold transition-colors whitespace-nowrap overflow-hidden text-ellipsis">
               NyblomIO
             </a>
           </Link>
           <button
             data-collapse-toggle="navbar-default"
-            className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none"
             aria-controls="navbar-default"
             onClick={() => {
-              console.log(`lciic + ${isNavExpanded}`);
               setIsNavExpanded(!isNavExpanded);
             }}
           >
@@ -45,25 +49,33 @@ function MyApp({ Component, pageProps }: AppProps) {
             } w-full md:block md:w-auto`}
             id="navbar-default"
           >
-            <ul className="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            <ul className="flex flex-col p-4 mt-4 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:border-0 ">
               <li>
-                <Link href="/about" className="block">
-                  /About
+                <Link href="/about">
+                  <a className={`no-underline block font-bold`}>
+                    /About
+                  </a>
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="block">
-                  /Blog
+                <Link href="/blog" className="block no-underline">
+                  <a className={`no-underline block font-bold`}>
+                    /Blog
+                  </a>
                 </Link>
               </li>
               <li>
-                <Link href="/portfolio" className="block">
-                  /Portfolio
+                <Link href="/portfolio" className="block no-underline">
+                  <a className={`no-underline block font-bold`}>
+                    /Portfolio
+                  </a>
                 </Link>
               </li>
               <li>
-                <Link href="/now" className="block">
-                  /Now
+                <Link href="/now" className="block no-underline">
+                  <a className={`no-underline block font-bold`}>
+                    /Now
+                  </a>
                 </Link>
               </li>
             </ul>

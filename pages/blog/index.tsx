@@ -13,13 +13,13 @@ const BlogList: NextPage<BlogListProps> = ({ posts }) => {
     <>
       <Head title={"Blog"} description={"Writings and ramblings"} />
       <div className="w-full">
-        <h1>A collection of my thoughts</h1>
+        <h1 className="text-black text-opacity-80">A collection of my thoughts</h1>
         <blockquote>
           <p>&quot;I don&apos;t think to write. I write to think.&quot; </p>
         </blockquote>
 
         {posts.map((it) => (
-          <Card
+          <Card 
             title={it.title}
             key={it.slug}
             subtitle={it.excerpt}

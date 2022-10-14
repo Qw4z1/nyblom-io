@@ -8,7 +8,7 @@ import Github from "./icons/GithubSvg";
 const SocialRow = () => {
   return (
     <ul className="m-0 flex flex-row justify-between flex-wrap w-screen max-w-xs">
-      <li className="w-14 h-14 hover:bg-default-yellow rounded-full">
+      <li className="w-14 h-14 hover:bg-yellow rounded-full">
         <a
           target="_blank"
           href="https://twitter.com/Qw4z1"
@@ -18,7 +18,7 @@ const SocialRow = () => {
           <Twitter />
         </a>
       </li>
-      <li className="w-14 h-14 hover:bg-default-yellow rounded-full">
+      <li className="w-14 h-14 hover:bg-yellow rounded-full">
         <a
           target="_blank"
           href="https://www.instagram.com/qw4z1/"
@@ -28,7 +28,7 @@ const SocialRow = () => {
           <Instagram />
         </a>
       </li>
-      <li className="w-14 h-14 hover:bg-default-yellow rounded-full">
+      <li className="w-14 h-14 hover:bg-yellow rounded-full">
         <a
           target="_blank"
           href="https://www.linkedin.com/in/viktornyblom/"
@@ -38,7 +38,7 @@ const SocialRow = () => {
           <LinkedIn />
         </a>
       </li>
-      <li className="w-14 h-14 hover:bg-default-yellow rounded-full">
+      <li className="w-14 h-14 hover:bg-yellow rounded-full">
         <a
           target="_blank"
           href="https://github.com/Qw4z1"

@@ -14,20 +14,23 @@
   }
 
   p {
-    @apply mt-2 mb-2
+    @apply mt-2 mb-2;
   }
   
   h4 {
     @apply text-base;
   }
   a {
-    @apply underline decoration-default-yellow underline-offset-2;
+    @apply underline decoration-yellow decoration-2 underline-offset-2;
   }
 
   a:hover {
-    @apply no-underline bg-default-yellow;
+    @apply no-underline bg-yellow p-1 -m-1;
   }
 
+  a:visited {
+    @apply underline decoration-yellow underline-offset-2;
+  }
   blockquote {
     @apply pl-6 lg:text-lg italic mt-2 mb-2;
   }
