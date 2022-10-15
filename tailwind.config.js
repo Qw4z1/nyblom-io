@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -8,6 +9,9 @@ module.exports = {
     extend: {
       colors: {
         yellow: "#ffde03",
+      },
+      fontFamily: {
+        sans: ["Montserrat"],
       },
     },
   },

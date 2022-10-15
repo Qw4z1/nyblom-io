@@ -42,13 +42,13 @@ const BlogPost: NextPage<BlogPostProps> = ({ post }) => {
   return (
     <>
       <Head title={title} description={excerpt} />
-      <article>
+      <article className="mb-14">
         {featuredImage ? (
           <HeaderImage src={featuredImage} alt={"featured alt"} />
         ) : null}
         <h1>{title}</h1>
         <h2>{subtitle}</h2>
-        <p className="text-base lg:text-lg">
+        <p className="text-base font-light lg:text-lg italic">
           {publishedAt} · {readingTime} · ?? views
         </p>
         <BlogPost components={{ Link: Link }} />

@@ -11,7 +11,7 @@ export interface CardProps {
 const Card: FC<CardProps> = ({ title, subtitle, publishedDate, slug }) => {
   return (
     <Link href={`/blog/${slug}`}>
-      <div className="w-full">
+      <div className="w-full mb-4 cursor-pointer">
         <div className="font-bold text-xl m-1">{title}</div>
         <p className=" text-base m-1">{subtitle}</p>
         <p className="text-black text-opacity-60 text-md italic m-1">First Published: {publishedDate}</p>

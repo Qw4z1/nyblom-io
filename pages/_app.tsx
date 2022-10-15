@@ -1,3 +1,4 @@
+import "../styles/fonts.css";
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Link from "next/link";
@@ -16,7 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <nav className="w-full fixed px-2 sm:px-4 py-2.5 rounded bg-opacity-80 backdrop-blur z-20">
         <div className="flex flex-wrap justify-between items-center mx-auto">
           <Link href="/">
-            <a className="bg-yellow prevent-default max-w-[45%] p-2 hover:p-2 hover:m-0 text-base sm:text-xl lg:text-2xl font-semibold transition-colors whitespace-nowrap overflow-hidden text-ellipsis">
+            <a className="bg-yellow prevent-default max-w-[45%] p-2 hover:p-2 hover:m-0 text-base sm:text-xl lg:text-2xl font-bold transition-colors whitespace-nowrap overflow-hidden text-ellipsis">
               NyblomIO
             </a>
           </Link>
@@ -52,28 +53,28 @@ function MyApp({ Component, pageProps }: AppProps) {
             <ul className="flex flex-col p-4 mt-4 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:border-0 ">
               <li>
                 <Link href="/about">
-                  <a className={`no-underline block font-bold`}>
+                  <a className={`no-underline block font-extrabold`}>
                     /About
                   </a>
                 </Link>
               </li>
               <li>
                 <Link href="/blog" className="block no-underline">
-                  <a className={`no-underline block font-bold`}>
+                  <a className={`no-underline block font-extrabold`}>
                     /Blog
                   </a>
                 </Link>
               </li>
               <li>
                 <Link href="/portfolio" className="block no-underline">
-                  <a className={`no-underline block font-bold`}>
+                  <a className={`no-underline block font-extrabold`}>
                     /Portfolio
                   </a>
                 </Link>
               </li>
               <li>
                 <Link href="/now" className="block no-underline">
-                  <a className={`no-underline block font-bold`}>
+                  <a className={`no-underline block font-extrabold`}>
                     /Now
                   </a>
                 </Link>

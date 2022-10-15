@@ -4,21 +4,21 @@
 
 @layer base {
   h1 {
-    @apply text-4xl font-bold;
+    @apply text-4xl font-extrabold;
   }
   h2 {
-    @apply text-2xl py-4;
+    @apply text-2xl pt-4 font-bold;
   }
   h3 {
-    @apply text-lg font-bold;
+    @apply text-lg font-medium mt-2;
   }
 
   p {
     @apply mt-2 mb-2;
   }
-  
+
   h4 {
-    @apply text-base;
+    @apply text-base italic;
   }
   a {
     @apply underline decoration-yellow decoration-2 underline-offset-2;
@@ -32,7 +32,7 @@
     @apply underline decoration-yellow underline-offset-2;
   }
   blockquote {
-    @apply pl-6 lg:text-lg italic mt-2 mb-2;
+    @apply pl-6 lg:text-lg italic my-8;
   }
 }
 
@@ -40,7 +40,10 @@
   .container {
     @apply py-4 px-8 md:px-4 lg:px-0 max-w-2xl flex flex-col justify-center items-center m-auto;
   }
+}
 
+.footnotes {
+  @apply divide-red-50
 }
 
 .footnotes li {

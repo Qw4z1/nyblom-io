@@ -19,7 +19,7 @@ const BlogList: NextPage<BlogListProps> = ({ posts }) => {
         </blockquote>
 
         {posts.map((it) => (
-          <Card 
+          <Card
             title={it.title}
             key={it.slug}
             subtitle={it.excerpt}
