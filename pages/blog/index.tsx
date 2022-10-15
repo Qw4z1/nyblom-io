@@ -1,8 +1,9 @@
-import { GetStaticProps, NextPage } from "next";
+import { GetServerSideProps, GetStaticProps, NextPage } from "next";
 import { Head } from "../../components/head";
 import Card from "../../components/card";
 import { getPostFrontMatter } from "../../helpers/getFrontMatter";
 import { PostFrontMatter } from "../../types/posts";
+import { getReads } from "../../helpers/getReads";
 
 interface BlogListProps {
   posts: PostFrontMatter[];
@@ -13,7 +14,9 @@ const BlogList: NextPage<BlogListProps> = ({ posts }) => {
     <>
       <Head title={"Blog"} description={"Writings and ramblings"} />
       <div className="w-full">
-        <h1 className="text-black text-opacity-80">A collection of my thoughts</h1>
+        <h1 className="text-black text-opacity-80">
+          A collection of my thoughts
+        </h1>
         <blockquote>
           <p>&quot;I don&apos;t think to write. I write to think.&quot; </p>
         </blockquote>
@@ -25,6 +28,7 @@ const BlogList: NextPage<BlogListProps> = ({ posts }) => {
             subtitle={it.excerpt}
             publishedDate={it.firstPublished}
             slug={it.slug}
+            reads={it.reads}
           />
         ))}
       </div>
@@ -32,7 +36,9 @@ const BlogList: NextPage<BlogListProps> = ({ posts }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps<BlogListProps> = async () => {
+export const getServerSideProps: GetServerSideProps<
+  BlogListProps
+> = async () => {
   const posts = await getPostFrontMatter();
   const publishedPosts = posts.filter((it) => it.published == true);
   return { props: { posts: publishedPosts } };

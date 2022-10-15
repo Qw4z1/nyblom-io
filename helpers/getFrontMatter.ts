@@ -1,8 +1,8 @@
 import { readFileSync, readdirSync } from 'fs';
 import matter from 'gray-matter';
 import { join } from 'path';
-import { PostFrontMatter } from '../types';
-// import { fetchDatabase } from './fetchDatabase';
+import { PostFrontMatter, QueryResult } from '../types';
+import { getReads } from './getReads';
 
 export async function getPostFrontMatter(): Promise<PostFrontMatter[]> {
   const fileNames = readdirSync(join(process.cwd(), 'posts'));
@@ -13,8 +13,10 @@ export async function getPostFrontMatter(): Promise<PostFrontMatter[]> {
       const fileData = readFileSync(filePath, 'utf8');
       const frontMatter = matter(fileData).data as PostFrontMatter
       const slug = fileName.replace('.mdx', '');
-      // const views = (await fetchDatabase<number>(`/views/${slug}`)) || 0;
-      return { ...frontMatter, slug };
+      const url = process.env.NHOST_URL as string;
+      const result: QueryResult = await getReads(url, {slug: slug})
+      const reads = result.reads_by_pk.read_count
+      return { ...frontMatter, slug, reads };
     })
   );
 

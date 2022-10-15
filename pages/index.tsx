@@ -4,10 +4,10 @@ import { Head } from "../components/head";
 import SocialRow from "../components/socialRow";
 
 const Home: NextPage = () => {
+
   return (
     <div>
       <Head title="NyblomIO" description="Personal blog of Viktor Nyblom." />
-
       <div className="px-8 flex flex-col justify-center space-y-8">
         <h1>Hi!</h1>
         <p className="text-2xl">

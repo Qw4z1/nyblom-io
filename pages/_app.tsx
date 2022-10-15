@@ -10,7 +10,6 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   const router = useRouter();
   const route = router.pathname;
-  console.log("Route " + route);
 
   return (
     <div>

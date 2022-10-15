@@ -7,9 +7,8 @@ export interface PostFrontMatter {
   tags: string[];
   published?: boolean;
   featuredImage: string;
-  // views: number;
   slug: string;
-  tag?: string;
+  reads: number
 }
 
 export interface Post extends PostFrontMatter {

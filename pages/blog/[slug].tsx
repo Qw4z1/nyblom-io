@@ -1,4 +1,4 @@
-import { readFileSync, readdirSync } from "fs";
+import { readFileSync, readdirSync, createReadStream } from "fs";
 import { GetStaticProps, NextPage } from "next";
 import { bundleMDX } from "mdx-bundler";
 import { getMDXComponent } from "mdx-bundler/client";
@@ -10,33 +10,28 @@ import { Head } from "../../components/head";
 import { HeaderImage } from "../../components/headerImage";
 import remarkGfm from "remark-gfm";
 import Link from "next/link";
+import { useReads } from "../../hooks/useReads";
+import { createReads } from "../../helpers/createReads";
+import PostMetaDataRow from "../../components/PostMetaDataRow";
 
 interface BlogPostProps {
   post: Post;
 }
 
 const BlogPost: NextPage<BlogPostProps> = ({ post }) => {
-  // Create string for publication date
-  const publishedAt = useMemo(
-    () =>
-      new Date(post.firstPublished).toLocaleDateString("en-US", {
-        year: "numeric",
-        month: "short",
-        day: "numeric",
-      }),
-    [post.firstPublished]
-  );
 
   const {
     title,
     subtitle,
     excerpt,
+    firstPublished,
     slug,
     readingTime,
     sourceCode,
     featuredImage,
   } = post;
 
+  const reads = useReads(slug);
   const BlogPost = useMemo(() => getMDXComponent(sourceCode), [sourceCode]);
 
   return (
@@ -48,9 +43,11 @@ const BlogPost: NextPage<BlogPostProps> = ({ post }) => {
         ) : null}
         <h1>{title}</h1>
         <h2>{subtitle}</h2>
-        <p className="text-base font-light lg:text-lg italic">
-          {publishedAt} · {readingTime} · ?? views
-        </p>
+        <PostMetaDataRow
+          publishedDate={firstPublished}
+          readingTime={readingTime}
+          readCount={reads.reads}
+        />
         <BlogPost components={{ Link: Link }} />
       </article>
     </>
@@ -59,7 +56,6 @@ const BlogPost: NextPage<BlogPostProps> = ({ post }) => {
 
 export async function getStaticPaths() {
   const fileNames = readdirSync(join(process.cwd(), "posts"));
-  console.log("==== dir ", fileNames);
 
   return {
     paths: fileNames.map((fileName) => ({
@@ -75,6 +71,9 @@ export const getStaticProps: GetStaticProps<BlogPostProps> = async ({
   params,
 }) => {
   const slug = params!.slug as string;
+  const url = process.env.NHOST_URL as string;
+  await createReads(url, slug);
+
   const filePath = join(process.cwd(), "posts", `${slug}.mdx`);
   const mdxSource = readFileSync(filePath, "utf8");
   const bundleResult = await bundleMDX({
@@ -87,7 +86,6 @@ export const getStaticProps: GetStaticProps<BlogPostProps> = async ({
 
   const sourceCode = bundleResult.code;
   const frontMatter = bundleResult.frontmatter as PostFrontMatter;
-  // const views = (await fetchDatabase<number>(`/views/${slug}`)) || 0;
   const readingTimeResult = getReadingTime(mdxSource);
   const wordCount = readingTimeResult.words;
   const readingTime = readingTimeResult.text;
