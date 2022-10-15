@@ -36,7 +36,7 @@ const BlogList: NextPage<BlogListProps> = ({ posts }) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps<
+export const getStaticProps: GetStaticProps<
   BlogListProps
 > = async () => {
   const posts = await getPostFrontMatter();
