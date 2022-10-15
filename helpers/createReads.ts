@@ -10,11 +10,11 @@ const gql = `
   }
 `;
 
-export const createReads = async (url:string, slug: string) => {
+export const createReads = async (url: string, slug: string) => {
   try {
     const result: InsertResult = await request(url, gql, { slug: slug });
-    console.log(result)
+    console.log(result);
   } catch (error) {
-    console.error(error)
+    console.error(error);
   }
 };

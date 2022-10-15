@@ -20,7 +20,7 @@ export default async function handler(
   if (req.method === "GET") {
     const slug = req.query;
     try {
-      const result = await getReads(url, slug)
+      const result = await getReads(url, slug);
       res.status(200).json({ reads: result.reads_by_pk.read_count });
     } catch (e) {
       console.log(e);
@@ -30,9 +30,7 @@ export default async function handler(
     const slug = req.query;
     try {
       const result: MutationResult = await request(url, mutation, slug);
-        res
-          .status(200)
-          .json({ reads: result.update_reads_by_pk.read_count });
+      res.status(200).json({ reads: result.update_reads_by_pk.read_count });
     } catch (e) {
       console.log(e);
       res.status(400);

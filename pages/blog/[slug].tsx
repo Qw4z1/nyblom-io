@@ -1,4 +1,4 @@
-import { readFileSync, readdirSync, createReadStream } from "fs";
+import { readFileSync, readdirSync } from "fs";
 import { GetStaticProps, NextPage } from "next";
 import { bundleMDX } from "mdx-bundler";
 import { getMDXComponent } from "mdx-bundler/client";

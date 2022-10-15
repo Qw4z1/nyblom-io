@@ -1,9 +1,8 @@
-import { GetServerSideProps, GetStaticProps, NextPage } from "next";
+import { GetStaticProps, NextPage } from "next";
 import { Head } from "../../components/head";
 import Card from "../../components/card";
 import { getPostFrontMatter } from "../../helpers/getFrontMatter";
 import { PostFrontMatter } from "../../types/posts";
-import { getReads } from "../../helpers/getReads";
 
 interface BlogListProps {
   posts: PostFrontMatter[];
@@ -36,9 +35,7 @@ const BlogList: NextPage<BlogListProps> = ({ posts }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps<
-  BlogListProps
-> = async () => {
+export const getStaticProps: GetStaticProps<BlogListProps> = async () => {
   const posts = await getPostFrontMatter();
   const publishedPosts = posts.filter((it) => it.published == true);
   return { props: { posts: publishedPosts } };
