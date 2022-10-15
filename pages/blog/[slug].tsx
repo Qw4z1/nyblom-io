@@ -19,7 +19,6 @@ interface BlogPostProps {
 }
 
 const BlogPost: NextPage<BlogPostProps> = ({ post }) => {
-
   const {
     title,
     subtitle,
@@ -28,10 +27,11 @@ const BlogPost: NextPage<BlogPostProps> = ({ post }) => {
     slug,
     readingTime,
     sourceCode,
+    reads,
     featuredImage,
   } = post;
 
-  const reads = useReads(slug);
+  const readCount = useReads(slug, reads);
   const BlogPost = useMemo(() => getMDXComponent(sourceCode), [sourceCode]);
 
   return (
@@ -46,7 +46,7 @@ const BlogPost: NextPage<BlogPostProps> = ({ post }) => {
         <PostMetaDataRow
           publishedDate={firstPublished}
           readingTime={readingTime}
-          readCount={reads.reads}
+          readCount={readCount}
         />
         <BlogPost components={{ Link: Link }} />
       </article>
