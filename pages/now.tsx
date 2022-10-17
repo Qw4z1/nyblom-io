@@ -5,7 +5,7 @@ import type { GetStaticProps, NextPage } from "next";
 import { join } from "path";
 import { useMemo } from "react";
 import remarkGfm from "remark-gfm";
-import { Head } from "../components/head";
+import { Head } from "../components/Head";
 import { Content, ContentFrontMatter } from "../types";
 interface NowPageProps {
   content: Content;

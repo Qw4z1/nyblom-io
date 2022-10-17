@@ -1,6 +1,6 @@
 import { GetStaticProps, NextPage } from "next";
-import { Head } from "../../components/head";
-import Card from "../../components/card";
+import { Head } from "../../components/Head";
+import Card from "../../components/Card";
 import { getPostFrontMatter } from "../../helpers/getFrontMatter";
 import { PostFrontMatter } from "../../types/posts";
 

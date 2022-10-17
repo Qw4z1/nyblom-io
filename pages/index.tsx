@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Link from "next/link";
-import { Head } from "../components/head";
-import SocialRow from "../components/socialRow";
+import { Head } from "../components/Head";
+import SocialRow from "../components/SocialRow";
 
 const Home: NextPage = () => {
 

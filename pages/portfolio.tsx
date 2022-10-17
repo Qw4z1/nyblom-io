@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { Head } from "../components/head";
+import { Head } from "../components/Head";
 
 const Portfolio: NextPage = () => {
   return (

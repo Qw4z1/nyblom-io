@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { Head } from "../components/head";
+import { Head } from "../components/Head";
 
 const FourOhFour = () => (
   <div className="text-center">
