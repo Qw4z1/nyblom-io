@@ -24,9 +24,10 @@ yarn
 
 Step 3: Add Nhost url
 
- a) Go to Nhost and [signup](https://app.nhost.io/signup)
- b) Get your Nhost subdomain
- c) Create an .env file with your Nhost Url:
+  1. Go to Nhost and [signup](https://app.nhost.io/signup)
+  2. Get your Nhost subdomain
+  3. Create an `.env.local` file with your Nhost Url:
+
 ```bash
 echo .env.local > "https://[your subdomain here].nhost.run/v1/graphql"
 ```
