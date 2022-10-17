@@ -22,6 +22,15 @@ Step 2: Install dependencies
 yarn
 ```
 
+Step 3: Add Nhost url
+
+ a) Go to Nhost and [signup](https://app.nhost.io/signup)
+ b) Get your Nhost subdomain
+ c) Create an .env file with your Nhost Url:
+```bash
+echo .env.local > "https://[your subdomain here].nhost.run/v1/graphql"
+```
+
 Step 3: Start development server
 
 ```bash
