@@ -21,6 +21,9 @@ const Home: NextPage = () => {
           want to know what I&apos;m doing right now, checkout my{" "}
           <Link href="/now/">Now Page</Link>.
         </p>
+        <p className="text-2xl">
+          This website is hosted on Vercel and the source code is available on [Github](https://github.com/Qw4z1/nyblom-io). PRs are welcome!
+        </p>
         <SocialRow />
       </div>
     </div>
