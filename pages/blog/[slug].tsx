@@ -37,7 +37,7 @@ const BlogPost: NextPage<BlogPostProps> = ({ post }) => {
   return (
     <>
       <Head title={title} description={excerpt} />
-      <article className="mb-14">
+      <div>
         {featuredImage ? (
           <HeaderImage src={featuredImage} alt={"featured alt"} />
         ) : null}
@@ -49,7 +49,7 @@ const BlogPost: NextPage<BlogPostProps> = ({ post }) => {
           readCount={readCount}
         />
         <BlogPost components={{ Link: Link }} />
-      </article>
+      </div>
     </>
   );
 };

@@ -42,10 +42,6 @@
   }
 }
 
-.footnotes {
-  @apply divide-red-50
-}
-
 .footnotes li {
-  @apply text-base list-decimal mx-8;
+  @apply list-decimal list-inside;
 }
