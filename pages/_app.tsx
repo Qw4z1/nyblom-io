@@ -3,9 +3,29 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Link from "next/link";
 import { useState } from "react";
+import NavBarLink from "../components/navbar/NavBarLink";
+import { useIsScrolled } from "../hooks/useIsScrolled";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
+  const isScrolled = useIsScrolled()
+
+  const navLinkClickHandler = () => {
+    setIsNavExpanded(false);
+  };
+
+//   const Wrapper = styled.div`
+//   position: sticky;
+//   z-index: 5;
+//   top: 0;
+//   padding: 10px;
+//   height: 70px;
+//   width: 100vw;
+//   background-color: #ffffff;
+//   box-shadow: ${props => (props.scrolled ? "0px 0px 10px #4d4d4d" : "none")};
+// `
+
+  const scrolled = `${isScrolled? "0px 0px 10px #4d4d4d" : "none"} ? `
 
   return (
     <div>
@@ -47,32 +67,32 @@ function MyApp({ Component, pageProps }: AppProps) {
           >
             <ul className="flex flex-col p-4 mt-4 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:border-0 ">
               <li>
-                <Link href="/about">
-                  <a className={`no-underline block font-extrabold`}>
-                    /About
-                  </a>
-                </Link>
+                <NavBarLink
+                  text="/About"
+                  link="/about"
+                  onClick={navLinkClickHandler}
+                />
               </li>
               <li>
-                <Link href="/blog" className="block no-underline">
-                  <a className={`no-underline block font-extrabold`}>
-                    /Blog
-                  </a>
-                </Link>
+                <NavBarLink
+                  text="/Blog"
+                  link="/blog"
+                  onClick={navLinkClickHandler}
+                />
               </li>
               <li>
-                <Link href="/portfolio" className="block no-underline">
-                  <a className={`no-underline block font-extrabold`}>
-                    /Portfolio
-                  </a>
-                </Link>
+                <NavBarLink
+                  text="/Portfolio"
+                  link="/portfolio"
+                  onClick={navLinkClickHandler}
+                />
               </li>
               <li>
-                <Link href="/now" className="block no-underline">
-                  <a className={`no-underline block font-extrabold`}>
-                    /Now
-                  </a>
-                </Link>
+                <NavBarLink
+                  text="/Now"
+                  link="/now"
+                  onClick={navLinkClickHandler}
+                />
               </li>
             </ul>
           </div>

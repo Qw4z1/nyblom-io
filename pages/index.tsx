@@ -8,8 +8,9 @@ const Home: NextPage = () => {
   return (
     <>
       <Head title="NyblomIO" description="Personal blog of Viktor Nyblom." />
-      <div className="py-4 max-w-2xl flex flex-col justify-start items-start m-auto">
+      <div className="max-w-2xl flex flex-col justify-start items-start m-auto">
         <h1>Hi!</h1>
+        <div className="my-8">
         <p className="text-lg md:text-2xl">
           Welcome to the personal blog of{" "}
           <Link href="/about">Viktor Nyblom</Link>.
@@ -24,6 +25,7 @@ const Home: NextPage = () => {
         <p className="text-lg md:text-2xl">
           This website is hosted on Vercel and the source code is available on <a href="https://github.com/Qw4z1/nyblom-io">GitHub</a>. PRs are welcome!
         </p>
+        </div>
         <SocialRow />
       </div>
     </>

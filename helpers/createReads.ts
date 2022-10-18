@@ -13,7 +13,6 @@ const gql = `
 export const createReads = async (url: string, slug: string) => {
   try {
     const result: InsertResult = await request(url, gql, { slug: slug });
-    console.log(result);
   } catch (error) {
     console.error(error);
   }

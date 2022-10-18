@@ -23,7 +23,7 @@ export default async function handler(
       const result = await getReads(url, slug);
       res.status(200).json({ reads: result.reads_by_pk.read_count });
     } catch (e) {
-      console.log(e);
+      console.error(e);
       res.status(400);
     }
   } else if (req.method === "POST") {
@@ -32,7 +32,7 @@ export default async function handler(
       const result: MutationResult = await request(url, mutation, slug);
       res.status(200).json({ reads: result.update_reads_by_pk.read_count });
     } catch (e) {
-      console.log(e);
+      console.error(e);
       res.status(400);
     }
   } else {
