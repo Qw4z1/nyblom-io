@@ -31,8 +31,7 @@ const BlogPost: NextPage<BlogPostProps> = ({ post }) => {
     featuredImage,
   } = post;
 
-  // const readCount = useReads(slug, reads, true);
-  const readCount = 11;
+  const readCount = useReads(slug, reads, true);
   const BlogPost = useMemo(() => getMDXComponent(sourceCode), [sourceCode]);
 
   return (
