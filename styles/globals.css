@@ -42,6 +42,13 @@
   }
 }
 
+article hr {
+  @apply my-8;
+}
 .footnotes li {
-  @apply list-decimal list-inside;
+  @apply list-decimal list-outside;
+}
+
+.footnotes ol {
+  @apply px-8;
 }

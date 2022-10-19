@@ -31,13 +31,14 @@ const BlogPost: NextPage<BlogPostProps> = ({ post }) => {
     featuredImage,
   } = post;
 
-  const readCount = useReads(slug, reads, true);
+  // const readCount = useReads(slug, reads, true);
+  const readCount = 11;
   const BlogPost = useMemo(() => getMDXComponent(sourceCode), [sourceCode]);
 
   return (
     <>
       <Head title={title} description={excerpt} />
-      <div>
+      <article>
         {featuredImage ? (
           <HeaderImage src={featuredImage} alt={"featured alt"} />
         ) : null}
@@ -49,7 +50,7 @@ const BlogPost: NextPage<BlogPostProps> = ({ post }) => {
           readCount={readCount}
         />
         <BlogPost components={{ Link: Link }} />
-      </div>
+      </article>
     </>
   );
 };
