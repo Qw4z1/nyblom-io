@@ -8,24 +8,10 @@ import { useIsScrolled } from "../hooks/useIsScrolled";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
-  const isScrolled = useIsScrolled()
 
   const navLinkClickHandler = () => {
     setIsNavExpanded(false);
   };
-
-//   const Wrapper = styled.div`
-//   position: sticky;
-//   z-index: 5;
-//   top: 0;
-//   padding: 10px;
-//   height: 70px;
-//   width: 100vw;
-//   background-color: #ffffff;
-//   box-shadow: ${props => (props.scrolled ? "0px 0px 10px #4d4d4d" : "none")};
-// `
-
-  const scrolled = `${isScrolled? "0px 0px 10px #4d4d4d" : "none"} ? `
 
   return (
     <div>
