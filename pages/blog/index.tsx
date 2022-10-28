@@ -12,7 +12,7 @@ const BlogList: NextPage<BlogListProps> = ({ posts }) => {
   return (
     <>
       <Head title={"Blog"} description={"Writings and ramblings"} />
-      <div className="w-full">
+      <div className="w-full pb-11">
         <h1 className="text-black text-opacity-80">
           A collection of my thoughts
         </h1>

@@ -4,7 +4,7 @@ import { bundleMDX } from "mdx-bundler";
 import { getMDXComponent } from "mdx-bundler/client";
 import { join } from "path";
 import getReadingTime from "reading-time";
-import { PostFrontMatter, Post } from "../../types";
+import { PostFrontMatter, Post, QueryResult } from "../../types";
 import { useMemo } from "react";
 import { Head } from "../../components/Head";
 import { HeaderImage } from "../../components/HeaderImage";
@@ -13,6 +13,7 @@ import Link from "next/link";
 import { useReads } from "../../hooks/useReads";
 import { createReads } from "../../helpers/createReads";
 import PostMetaDataRow from "../../components/PostMetaDataRow";
+import { getReads } from "../../helpers/getReads";
 
 interface BlogPostProps {
   post: Post;
@@ -30,6 +31,7 @@ const BlogPost: NextPage<BlogPostProps> = ({ post }) => {
     reads,
     featuredImage,
   } = post;
+  console.log("reads")
 
   const readCount = useReads(slug, reads, true);
   const BlogPost = useMemo(() => getMDXComponent(sourceCode), [sourceCode]);
@@ -71,8 +73,6 @@ export const getStaticProps: GetStaticProps<BlogPostProps> = async ({
   params,
 }) => {
   const slug = params!.slug as string;
-  const url = process.env.NHOST_URL as string;
-  await createReads(url, slug);
 
   const filePath = join(process.cwd(), "posts", `${slug}.mdx`);
   const mdxSource = readFileSync(filePath, "utf8");
@@ -86,6 +86,10 @@ export const getStaticProps: GetStaticProps<BlogPostProps> = async ({
 
   const sourceCode = bundleResult.code;
   const frontMatter = bundleResult.frontmatter as PostFrontMatter;
+  
+  const url = process.env.NHOST_URL as string;
+  const result: QueryResult = await getReads(url, { slug: slug });
+  const reads = result.reads_by_pk.read_count;
   const readingTimeResult = getReadingTime(mdxSource);
   const wordCount = readingTimeResult.words;
   const readingTime = readingTimeResult.text;
@@ -98,6 +102,7 @@ export const getStaticProps: GetStaticProps<BlogPostProps> = async ({
         wordCount,
         readingTime,
         sourceCode,
+        reads
       },
     },
   };

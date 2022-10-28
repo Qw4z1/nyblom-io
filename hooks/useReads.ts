@@ -6,6 +6,9 @@ export const useReads = (
   originalReads: number,
   update: boolean = false
 ): number => {
+  if (process.env.NODE_ENV === "development") {
+    return originalReads;
+  }
   let fetcher;
   if (update) {
     fetcher = (url: string) => axios.post(url).then((r) => r.data);
