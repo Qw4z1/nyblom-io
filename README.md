@@ -13,7 +13,7 @@ The site is hosted on [Vercel](https://vercel.com/).
 Step 1: Clone repository
 
 ```bash
-git clone git@github.com:Qw4z1/nyblomio-new.git
+git clone git@github.com:Qw4z1/nyblom-io.git
 ```
 
 Step 2: Install dependencies
@@ -32,7 +32,7 @@ Step 3: Add Nhost url
 echo .env.local > "https://[your subdomain here].nhost.run/v1/graphql"
 ```
 
-Step 3: Start development server
+Step 4: Start development server
 
 ```bash
 yarn dev
