@@ -29,7 +29,7 @@ Step 3: Add Nhost url
   3. Create an `.env.local` file with your Nhost Url:
 
 ```bash
-echo .env.local > "https://[your subdomain here].nhost.run/v1/graphql"
+echo "https://[your subdomain here].nhost.run/v1/graphql" > .env.local
 ```
 
 Step 4: Start development server
