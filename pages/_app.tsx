@@ -5,6 +5,8 @@ import Link from "next/link";
 import { useState } from "react";
 import NavBarLink from "../components/navbar/NavBarLink";
 import { useIsScrolled } from "../hooks/useIsScrolled";
+import { Analytics } from '@vercel/analytics/react';
+
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
@@ -86,6 +88,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       </nav>
       <main className="min-h-screen container pt-32 md:pt-32 lg:pt-32">
         <Component {...pageProps} />
+        <Analytics />
       </main>
     </div>
   );
