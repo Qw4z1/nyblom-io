@@ -5,10 +5,21 @@ export interface MutationResult {
   };
 }
 
-export interface QueryResult {
+export interface ReadsQueryResult {
   reads_by_pk: {
     read_count: number;
   };
+}
+
+export interface ShortLinkQueryResult {
+  shortLinks: [
+    {
+      createdAt: Date;
+      id: string;
+      slug: string;
+      url: string;
+    }
+  ]
 }
 
 export interface InsertResult {

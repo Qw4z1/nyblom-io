@@ -1,5 +1,5 @@
 import { request } from "graphql-request";
-import { QueryResult } from "../types";
+import { ReadsQueryResult } from "../types";
 
 const query = `
 query ($slug: String!) {
@@ -11,6 +11,6 @@ query ($slug: String!) {
 export const getReads = async (
   url: string,
   slug: any
-): Promise<QueryResult> => {
-  return request<QueryResult, string>(url, query, slug);
+): Promise<ReadsQueryResult> => {
+  return request<ReadsQueryResult, string>(url, query, slug);
 };
