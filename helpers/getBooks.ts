@@ -16,7 +16,7 @@ const getBooks = async (): Promise<Book[]> => {
         },
       },
     });
-    console.log(response.results[0]);
+
     return response.results
       .map((it) => {
         let it2 = it as any;

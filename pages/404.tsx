@@ -9,7 +9,7 @@ const FourOhFour = () => (
     <p>
       Sorry, nothing to see here. Move along... Maybe to{" "}
       <Link href="/about/">
-        <a>The About</a>
+        The About
       </Link>{" "}
       page?
     </p>

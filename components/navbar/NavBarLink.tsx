@@ -9,10 +9,12 @@ export interface NavBarLinkProps {
 
 const NavBarLink: FC<NavBarLinkProps> = ({ link, text, onClick }) => {
   return (
-    <Link href={link}>
-      <a className={`no-underline block font-bold`} onClick={onClick}>
-        {text}
-      </a>
+    <Link
+      className={`no-underline block font-bold`}
+      href={link}
+      onClick={onClick}
+    >
+      {text}
     </Link>
   );
 };

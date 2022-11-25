@@ -19,10 +19,12 @@ function MyApp({ Component, pageProps }: AppProps) {
     <div>
       <nav className="w-full fixed px-2 sm:px-4 py-2.5 rounded bg-opacity-80 backdrop-blur z-20">
         <div className="flex flex-wrap justify-between items-center mx-auto">
-          <Link href="/">
-            <a className="bg-yellow prevent-default max-w-[45%] p-2 hover:p-2 hover:m-0 text-base sm:text-xl lg:text-2xl font-bold transition-colors whitespace-nowrap overflow-hidden text-ellipsis">
+          <Link
+            href="/"
+            className="bg-yellow prevent-default max-w-[45%] p-2 hover:p-2 hover:m-0 text-base sm:text-xl lg:text-2xl font-bold transition-colors whitespace-nowrap overflow-hidden text-ellipsis">
+            
               NyblomIO
-            </a>
+            
           </Link>
           <button
             data-collapse-toggle="navbar-default"
