@@ -12,7 +12,6 @@ export const HeaderImage: FC<ImageProps> = ({ src, alt = ""}) => {
       src={`/images/${src}`}
       width={800}
       height={500}
-      layout="responsive"
       loading="lazy"
       alt={alt}
     />
