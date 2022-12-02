@@ -30,7 +30,7 @@ const Now: NextPage<BooksPageProps> = ({ books }) => {
           <tbody>
             {books.map((it) => {
               return (
-                <tr>
+                <tr key={it.id}>
                   <td>{it.name}</td>
                   <td>{it.author}</td>
                   <td>{it.rating}</td>
