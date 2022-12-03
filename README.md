@@ -8,6 +8,17 @@ This site is built using [React](https://reactjs.org/), [Next](https://nextjs.or
 
 The site is hosted on [Vercel](https://vercel.com/).
 
+
+## Note on file structure
+
+All Typescript lives in the `src` folder, as this gives a cleaner overview of everything in the repo.
+
+Blog post mdx files are placed under `posts`.
+
+Any page content that is not a blog post is placed under `content`.
+
+As per Nextjs documentation, the `public` folder is kept in the root of the project.
+
 ## Getting started
 
 Step 1: Clone repository

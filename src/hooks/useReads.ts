@@ -6,16 +6,17 @@ export const useReads = (
   originalReads: number,
   update: boolean = false
 ): number => {
-  if (process.env.NODE_ENV === "development") {
-    return originalReads;
-  }
+  const isInDev = process.env.NODE_ENV === "development";
+
   let fetcher;
+
   if (update) {
     fetcher = (url: string) => axios.post(url).then((r) => r.data);
   } else {
     fetcher = (url: string) => axios.get(url).then((r) => r.data);
   }
-  const { data } = useSWR(`/api/reads/${slug}`, fetcher);
+  
+  const { data } = useSWR(isInDev ? `/api/reads/${slug}` : null, fetcher);
 
   return data?.reads ?? originalReads;
 };
