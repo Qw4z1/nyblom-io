@@ -1,12 +1,14 @@
-import "../styles/fonts.css";
+// import "../styles/fonts.css";
 import "../styles/globals.css";
+import { Montserrat } from "@next/font/google";
 import type { AppProps } from "next/app";
 import Link from "next/link";
 import { useState } from "react";
 import NavBarLink from "../components/navbar/NavBarLink";
 import { useIsScrolled } from "../hooks/useIsScrolled";
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from "@vercel/analytics/react";
 
+const montserrat = Montserrat({ subsets: ["latin"] });
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
@@ -16,15 +18,14 @@ function MyApp({ Component, pageProps }: AppProps) {
   };
 
   return (
-    <div>
+    <div className={montserrat.className}>
       <nav className="w-full fixed px-2 sm:px-4 py-2.5 rounded bg-opacity-80 backdrop-blur z-20">
         <div className="flex flex-wrap justify-between items-center mx-auto">
           <Link
             href="/"
-            className="bg-yellow prevent-default max-w-[45%] p-2 hover:p-2 hover:m-0 text-base sm:text-xl lg:text-2xl font-bold transition-colors whitespace-nowrap overflow-hidden text-ellipsis">
-            
-              NyblomIO
-            
+            className="bg-yellow prevent-default max-w-[45%] p-2 hover:p-2 hover:m-0 text-base sm:text-xl lg:text-2xl font-bold transition-colors whitespace-nowrap overflow-hidden text-ellipsis"
+          >
+            NyblomIO
           </Link>
           <button
             data-collapse-toggle="navbar-default"
@@ -88,7 +89,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           </div>
         </div>
       </nav>
-      <main className="min-h-screen container pt-32 md:pt-32 lg:pt-32">
+      <main className="min-h-screen container pt-32 md:pt-32 lg:pt-32 ">
         <Component {...pageProps} />
         <Analytics />
       </main>
