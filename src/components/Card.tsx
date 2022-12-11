@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React, { FC } from "react";
 import { useReads } from "../hooks/useReads";
+import Eye from "./icons/Eye";
 
 export interface CardProps {
   title: string;
@@ -27,8 +28,8 @@ const Card: FC<CardProps> = ({
           <p className="text-black text-opacity-60 text-md italic mt-1 mb-1">
             First Published: {publishedDate}
           </p>
-          <div className="text-md text-black text-opacity-60">
-            Read {readCount} times
+          <div className="flex flex-row text-md text-black text-opacity-60">
+            <Eye /> <div className="w-1" /> {readCount}
           </div>
         </div>
       </div>

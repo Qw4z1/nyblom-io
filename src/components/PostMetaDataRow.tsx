@@ -1,4 +1,5 @@
 import { FC, useMemo } from "react";
+import Eye from "./icons/Eye";
 
 export interface PostMetaDataRowProps {
   publishedDate: string;
@@ -20,10 +21,13 @@ const PostMetaDataRow: FC<PostMetaDataRowProps> = ({
       }),
     [publishedDate]
   );
-  
+
   return (
-    <p className="text-base font-light lg:text-lg italic">
-      {publishedAt} · {readingTime} · Read {readCount} times
+    <p className="flex flex-row text-base font-light lg:text-lg italic">
+      {publishedAt} · {readingTime} ·{" "}
+      <div className="pl-1 flex flex-row">
+        <Eye /> <div className="w-1" /> {readCount}
+      </div>
     </p>
   );
 };
