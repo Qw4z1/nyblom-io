@@ -21,10 +21,10 @@ const Card: FC<CardProps> = ({
   return (
     <Link className="no-underline" href={`/blog/${slug}`}>
       <div className="w-full mb-4 cursor-pointer">
-        <div className="font-bold text-xl m-1">{title}</div>
-        <p className=" text-base m-1">{subtitle}</p>
+        <div className="font-bold text-xl mt-1 mb-1">{title}</div>
+        <p className=" text-base mt-1 mb-1">{subtitle}</p>
         <div className="flex flex-row items-center justify-between">
-          <p className="text-black text-opacity-60 text-md italic m-1">
+          <p className="text-black text-opacity-60 text-md italic mt-1 mb-1">
             First Published: {publishedDate}
           </p>
           <div className="text-md text-black text-opacity-60">
