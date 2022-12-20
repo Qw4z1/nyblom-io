@@ -12,7 +12,7 @@ const SocialRow = () => {
       <li className="w-14 h-14 hover:bg-yellow rounded-full">
         <a
           href="https://mastodon.nu/@qw4z1"
-          aria-label="My Twitter profile"
+          aria-label="My Mastodon profile"
           rel="me"
         >
           <Mastodon />
