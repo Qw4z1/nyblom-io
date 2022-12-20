@@ -11,10 +11,9 @@ const SocialRow = () => {
     <ul className="m-0 flex flex-row justify-around md:justify-between flex-wrap w-full md:w-6/12">
       <li className="w-14 h-14 hover:bg-yellow rounded-full">
         <a
-          target="_blank"
-          rel="me"
           href="https://mastodon.nu/@qw4z1"
           aria-label="My Twitter profile"
+          rel="me"
         >
           <Mastodon />
         </a>
