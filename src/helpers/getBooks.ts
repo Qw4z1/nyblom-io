@@ -16,7 +16,6 @@ const getBooks = async (): Promise<Book[]> => {
         },
       },
     });
-
     return response.results
       .map((it) => {
         let it2 = it as any;
@@ -26,6 +25,7 @@ const getBooks = async (): Promise<Book[]> => {
           rating: parseInt(it2.properties.Rating.select.name),
           author: it2.properties.Author.rich_text[0].plain_text,
           link: it2.properties.Link.url,
+          category: it2.properties.Category.select.name
         };
       })
       .sort((a, b) => b.rating - a.rating);

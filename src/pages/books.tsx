@@ -4,7 +4,9 @@ import getBooks from "../helpers/getBooks";
 import { Book } from "../types/books";
 
 interface BooksPageProps {
-  books: Book[];
+  books: {
+    [key: string]: Book[];
+  };
 }
 
 const Now: NextPage<BooksPageProps> = ({ books }) => {
@@ -18,27 +20,30 @@ const Now: NextPage<BooksPageProps> = ({ books }) => {
       />
       <div className="py-4 w-full flex flex-col justify-start items-start m-auto">
         <h1>Books</h1>
-        <p className="text-base lg:text-lg">Read : {books.length} books</p>
-        <table className="table-auto w-full ">
-          <thead>
-            <tr className="text-left">
-              <th>Name</th>
-              <th>Author</th>
-              <th>Rating</th>
-            </tr>
-          </thead>
-          <tbody>
-            {books.map((it) => {
-              return (
-                <tr key={it.id}>
-                  <td>{it.name}</td>
-                  <td>{it.author}</td>
-                  <td>{it.rating}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+        <p className="text-base lg:text-lg">
+          These are the books I most commonly recommend, neatly organized by
+          category. Each on of them is rated 4/5 or higher in my spreadsheet of
+          books I've read, so you don't have to wonder if it's worth reading.
+        </p>
+        <div>
+          {Object.keys(books).map((key: string) => {
+            const category = books[key];
+            return (
+              <div key={key}>
+                <h3>{key}</h3>
+                <ul className="list-disc list-inside">
+                  {category.map((it) => {
+                    return (
+                      <li className="pt-2" key={it.link}>
+                        <a href={it.link}><span className="capitalize">{it.name}</span></a> by {it.author}
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </>
   );
@@ -46,9 +51,17 @@ const Now: NextPage<BooksPageProps> = ({ books }) => {
 
 export const getStaticProps: GetStaticProps<BooksPageProps> = async () => {
   const books = await getBooks();
+
+  const categorizedBooks = books.reduce((result: any, current) => {
+    return {
+      ...result,
+      [current.category]: [...(result[current.category] ?? []), current],
+    };
+  }, []);
+
   return {
     props: {
-      books: books,
+      books: categorizedBooks,
     },
   };
 };

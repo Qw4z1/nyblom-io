@@ -3,5 +3,6 @@ export interface Book {
   name: string;
   rating: any;
   author: string;
-  link?: string;
+  link: string;
+  category: string;
 }
