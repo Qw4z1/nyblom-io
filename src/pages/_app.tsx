@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <div className={montserrat.className}>
-      <nav className="w-full fixed px-2 sm:px-4 py-2.5 rounded bg-opacity-80 backdrop-blur z-20">
+      <nav className="w-full fixed px-2 sm:px-4 py-2.5 rounded bg-white z-20">
         <div className="flex flex-wrap justify-between items-center mx-auto">
           <Link
             href="/"
@@ -68,6 +68,13 @@ function MyApp({ Component, pageProps }: AppProps) {
                 <NavBarLink
                   text="/Blog"
                   link="/blog"
+                  onClick={navLinkClickHandler}
+                />
+              </li>
+              <li>
+                <NavBarLink
+                  text="/Books"
+                  link="/books"
                   onClick={navLinkClickHandler}
                 />
               </li>
