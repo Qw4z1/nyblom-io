@@ -23,7 +23,7 @@ const Now: NextPage<BooksPageProps> = ({ books }) => {
         <p className="text-base lg:text-lg">
           These are the books I most commonly recommend, neatly organized by
           category. Each on of them is rated 4/5 or higher in my spreadsheet of
-          books I've read, so you don't have to wonder if it's worth reading.
+          books I&apos;ve read, so you don&apos;t have to wonder if it&apos;s worth reading.
         </p>
         <div>
           {Object.keys(books).map((key: string) => {
