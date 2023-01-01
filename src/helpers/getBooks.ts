@@ -1,5 +1,7 @@
-import { Client } from "@notionhq/client";
+import { Client, isFullPage } from "@notionhq/client";
+import { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 import { Book } from "../types/books";
+import { mapTitle, mapSelect, mapRichText, mapUrl } from "./notionHelpers";
 
 const notion = new Client({ auth: process.env.NOTION_TOKEN });
 
@@ -10,25 +12,47 @@ const getBooks = async (): Promise<Book[]> => {
     const response = await notion.databases.query({
       database_id: databaseId,
       filter: {
-        property: "Status",
-        select: {
-          equals: "Read",
-        },
+        and: [
+          {
+            property: "Status",
+            select: {
+              equals: "Read",
+            },
+          },
+          {
+            property: "Rating",
+            select: {
+              does_not_equal: "1",
+            },
+          },
+          {
+            property: "Rating",
+            select: {
+              does_not_equal: "2",
+            },
+          },
+          {
+            property: "Rating",
+            select: {
+              does_not_equal: "3",
+            },
+          },
+        ],
       },
     });
     return response.results
+      .filter((it): it is PageObjectResponse => isFullPage(it))
       .map((it) => {
-        let it2 = it as any;
         return {
-          id: it2.id,
-          name: it2.properties.Name.title[0].plain_text,
-          rating: parseInt(it2.properties.Rating.select.name),
-          author: it2.properties.Author.rich_text[0].plain_text,
-          link: it2.properties.Link.url,
-          category: it2.properties.Category.select.name
+          id: it.id,
+          name: mapTitle(it, "Name").title[0].plain_text,
+          rating: parseInt(mapSelect(it, "Rating").select?.name ?? "0"),
+          author: mapRichText(it, "Author").rich_text[0].plain_text,
+          link: mapUrl(it, "Link").url ?? "",
+          category: mapSelect(it, "Category").select?.name ?? "",
         };
       })
-      .sort((a, b) => b.rating - a.rating);
+      .sort((a, b) => a.name.localeCompare(b.name));
   } catch (e) {
     console.log(e);
   }

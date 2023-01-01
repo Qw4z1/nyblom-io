@@ -22,27 +22,33 @@ const Now: NextPage<BooksPageProps> = ({ books }) => {
         <h1>Books</h1>
         <p className="text-base lg:text-lg">
           These are the books I most commonly recommend, neatly organized by
-          category. Each on of them is rated 4/5 or higher in my spreadsheet of
-          books I&apos;ve read, so you don&apos;t have to wonder if it&apos;s worth reading.
+          category. Each on of them is rated 4 (out of 5) or higher in my spreadsheet of
+          books I&apos;ve read, so you don&apos;t have to wonder if it&apos;s
+          worth reading.
         </p>
         <div>
-          {Object.keys(books).map((key: string) => {
-            const category = books[key];
-            return (
-              <div key={key}>
-                <h3>{key}</h3>
-                <ul className="list-disc list-inside">
-                  {category.map((it) => {
-                    return (
-                      <li className="pt-2" key={it.link}>
-                        <a href={it.link}><span className="capitalize">{it.name}</span></a> by {it.author}
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-            );
-          })}
+          {Object.keys(books)
+            .sort()
+            .map((key: string) => {
+              const category = books[key];
+              return (
+                <div key={key}>
+                  <h3>{key}</h3>
+                  <ul className="list-disc list-inside">
+                    {category.map((it) => {
+                      return (
+                        <li className="pt-2" key={it.link}>
+                          <a href={it.link}>
+                            <span className="capitalize">{it.name}</span>
+                          </a>{" "}
+                          by {it.author}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              );
+            })}
         </div>
       </div>
     </>
