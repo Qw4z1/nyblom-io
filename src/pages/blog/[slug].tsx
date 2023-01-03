@@ -42,7 +42,7 @@ const BlogPost: NextPage<BlogPostProps> = ({ post }) => {
           <HeaderImage src={featuredImage} alt={"featured alt"} />
         ) : null}
         <h1>{title}</h1>
-        <h2>{subtitle}</h2>
+        {subtitle && <h2>{subtitle}</h2>}
         <PostMetaDataRow
           publishedDate={firstPublished}
           readingTime={readingTime}

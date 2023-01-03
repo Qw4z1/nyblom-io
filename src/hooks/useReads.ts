@@ -16,7 +16,7 @@ export const useReads = (
     fetcher = (url: string) => axios.get(url).then((r) => r.data);
   }
   
-  const { data } = useSWR(isInDev ? `/api/reads/${slug}` : null, fetcher);
+  const { data } = useSWR(isInDev ? null : `/api/reads/${slug}`, fetcher);
 
   return data?.reads ?? originalReads;
 };

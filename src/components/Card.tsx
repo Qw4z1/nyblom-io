@@ -21,7 +21,7 @@ const Card: FC<CardProps> = ({
   const readCount = useReads(slug, reads);
   return (
     <Link className="no-underline" href={`/blog/${slug}`}>
-      <div className="w-full mb-4 cursor-pointer">
+      <div className="w-full p-2 mb-4 cursor-pointer border-transparent border-4 border-spacing-4 hover:border-yellow">
         <div className="font-bold text-xl mt-1 mb-1">{title}</div>
         <p className=" text-base mt-1 mb-1">{subtitle}</p>
         <div className="flex flex-row items-center justify-between">
