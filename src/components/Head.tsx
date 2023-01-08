@@ -10,13 +10,12 @@ interface HeadProps {
 
 export const Head: FC<HeadProps> = ({ title, description, image }) => {
   const router = useRouter();
-  
   return (
     <NextHead>
       <title>{title}</title>
       <meta name="description" content={description} />
-      <meta property="og:url" content={`https://nyblom.io${router.asPath}`} />
-      <link rel="canonical" href={`https://nyblom.io${router.asPath}`} />
+      <meta property="og:url" content={`${process.env.NEXT_PUBLIC_ROOT_URL}${router.asPath}`} />
+      <link rel="canonical" href={`${process.env.NEXT_PUBLIC_ROOT_URL}${router.asPath}`} />
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="NyblomIO" />
       <meta property="og:description" content={description} key="description"  />
