@@ -37,7 +37,7 @@ const BlogPost: NextPage<BlogPostProps> = ({ post }) => {
   return (
     <>
       <Head title={title} description={excerpt} />
-      <article>
+      <article className="pb-16 md:pb-32">
         {featuredImage ? (
           <HeaderImage src={featuredImage} alt={"featured alt"} />
         ) : null}
