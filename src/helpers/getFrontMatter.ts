@@ -1,9 +1,9 @@
 import { readFileSync, readdirSync } from "fs";
 import matter from "gray-matter";
 import { join } from "path";
-import { PostFrontMatter, ReadsQueryResult } from "../types";
-import { createReads } from "./createReads";
-import { getReads } from "./getReads";
+import { PostFrontMatter } from "../types";
+import { createReads } from "./reads/createReads";
+import { getReads } from "./reads/getReads";
 
 export async function getPostFrontMatter(): Promise<PostFrontMatter[]> {
   const fileNames = readdirSync(join(process.cwd(), "posts"));
@@ -14,10 +14,8 @@ export async function getPostFrontMatter(): Promise<PostFrontMatter[]> {
       const fileData = readFileSync(filePath, "utf8");
       const frontMatter = matter(fileData).data as PostFrontMatter;
       const slug = fileName.replace(".mdx", "");
-      const url = process.env.NHOST_URL as string;
-      await createReads(url, slug) // Ensure reads variable exists
-      const result: ReadsQueryResult = await getReads(url, { slug: slug });
-      const reads = result.reads_by_pk.read_count;
+      await createReads(slug); // Ensure reads variable exists
+      const reads: number = await getReads(slug);
       return { ...frontMatter, slug, reads };
     })
   );

@@ -1,6 +1,5 @@
 import Link from "next/link";
 import React, { FC } from "react";
-import { useReads } from "../hooks/useReads";
 import Eye from "./icons/Eye";
 
 export interface CardProps {
@@ -18,7 +17,6 @@ const Card: FC<CardProps> = ({
   slug,
   reads,
 }) => {
-  const readCount = useReads(slug, reads);
   return (
     <Link className="no-underline" href={`/blog/${slug}`}>
       <div className="w-full p-2 mb-4 cursor-pointer border-transparent border-4 border-spacing-4 hover:border-yellow">
@@ -29,7 +27,7 @@ const Card: FC<CardProps> = ({
             First Published: {publishedDate}
           </p>
           <div className="flex flex-row text-md text-black text-opacity-60">
-            <Eye /> <div className="w-1" /> {readCount}
+            <Eye /> <div className="w-1" /> {reads}
           </div>
         </div>
       </div>

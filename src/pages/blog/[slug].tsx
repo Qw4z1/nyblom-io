@@ -12,7 +12,7 @@ import remarkGfm from "remark-gfm";
 import Link from "next/link";
 import { useReads } from "../../hooks/useReads";
 import PostMetaDataRow from "../../components/PostMetaDataRow";
-import { getReads } from "../../helpers/getReads";
+import { getReads } from "../../helpers/reads/getReads";
 
 interface BlogPostProps {
   post: Post;
@@ -30,8 +30,8 @@ const BlogPost: NextPage<BlogPostProps> = ({ post }) => {
     reads,
     featuredImage,
   } = post;
-  
-  const readCount = useReads(slug, reads, true);
+
+  const readCount = useReads(slug, reads);
   const BlogPost = useMemo(() => getMDXComponent(sourceCode), [sourceCode]);
 
   return (
@@ -84,10 +84,8 @@ export const getStaticProps: GetStaticProps<BlogPostProps> = async ({
 
   const sourceCode = bundleResult.code;
   const frontMatter = bundleResult.frontmatter as PostFrontMatter;
-  
-  const url = process.env.NHOST_URL as string;
-  const result: ReadsQueryResult = await getReads(url, { slug: slug });
-  const reads = result.reads_by_pk.read_count;
+
+  const reads: number = await getReads(slug);
   const readingTimeResult = getReadingTime(mdxSource);
   const wordCount = readingTimeResult.words;
   const readingTime = readingTimeResult.text;
@@ -100,9 +98,10 @@ export const getStaticProps: GetStaticProps<BlogPostProps> = async ({
         wordCount,
         readingTime,
         sourceCode,
-        reads
+        reads,
       },
     },
+    revalidate: 60,
   };
 };
 

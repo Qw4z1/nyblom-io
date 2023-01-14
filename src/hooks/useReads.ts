@@ -1,22 +1,20 @@
-import axios from "axios";
-import useSWR from "swr";
+import { useEffect, useState } from "react";
+import { updateReads } from "../helpers/reads/updateReads";
 
-export const useReads = (
-  slug: string,
-  originalReads: number,
-  update: boolean = false
-): number => {
-  const isInDev = process.env.NODE_ENV === "development";
+export const useReads = (slug: string, originalReads: number): number => {
+  const isInDev = process.env.NODE_ENV !== "development";
 
-  let fetcher;
+  const [readsState, setReadsState] = useState(originalReads);
 
-  if (update) {
-    fetcher = (url: string) => axios.post(url).then((r) => r.data);
-  } else {
-    fetcher = (url: string) => axios.get(url).then((r) => r.data);
-  }
-  
-  const { data } = useSWR(isInDev ? null : `/api/reads/${slug}`, fetcher);
+  useEffect(() => {
+    const reads = async () => {
+      if (!isInDev) {
+        const reads = await updateReads(slug);
+        setReadsState(reads);
+      }
+    };
+    reads();
+  }, [isInDev, slug]);
 
-  return data?.reads ?? originalReads;
+  return readsState;
 };

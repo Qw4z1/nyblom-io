@@ -17,7 +17,12 @@ const BlogList: NextPage<BlogListProps> = ({ posts }) => {
           A collection of my thoughts
         </h1>
         <blockquote>
-          <p>&quot;I don&apos;t think to write. I write to think.&quot; - <a href="https://en.wikipedia.org/wiki/Kevin_Kelly_(editor)">Kevin Kelly</a></p>
+          <p>
+            &quot;I don&apos;t think to write. I write to think.&quot; -{" "}
+            <a href="https://en.wikipedia.org/wiki/Kevin_Kelly_(editor)">
+              Kevin Kelly
+            </a>
+          </p>
         </blockquote>
 
         {posts.map((it) => (
@@ -38,7 +43,7 @@ const BlogList: NextPage<BlogListProps> = ({ posts }) => {
 export const getStaticProps: GetStaticProps<BlogListProps> = async () => {
   const posts = await getPostFrontMatter();
   const publishedPosts = posts.filter((it) => it.published == true);
-  return { props: { posts: publishedPosts } };
+  return { props: { posts: publishedPosts }, revalidate: 60 };
 };
 
 export default BlogList;
