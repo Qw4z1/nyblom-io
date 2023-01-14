@@ -23,12 +23,12 @@ const PostMetaDataRow: FC<PostMetaDataRowProps> = ({
   );
 
   return (
-    <p className="flex flex-row text-base font-light lg:text-lg italic">
+    <div className="flex flex-row text-base font-light lg:text-lg italic">
       {publishedAt} · {readingTime} ·{" "}
       <div className="pl-1 flex flex-row">
         <Eye /> <div className="w-1" /> {readCount}
       </div>
-    </p>
+    </div>
   );
 };
 

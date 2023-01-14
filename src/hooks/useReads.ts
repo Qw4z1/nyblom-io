@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { updateReads } from "../helpers/reads/updateReads";
 
 export const useReads = (slug: string, originalReads: number): number => {
-  const isInDev = process.env.NODE_ENV !== "development";
+  const isInDev = process.env.NODE_ENV === "development";
 
   const [readsState, setReadsState] = useState(originalReads);
 

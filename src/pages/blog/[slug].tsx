@@ -5,7 +5,7 @@ import { getMDXComponent } from "mdx-bundler/client";
 import { join } from "path";
 import getReadingTime from "reading-time";
 import { PostFrontMatter, Post, ReadsQueryResult } from "../../types";
-import { useMemo } from "react";
+import { use, useMemo } from "react";
 import { Head } from "../../components/Head";
 import { HeaderImage } from "../../components/HeaderImage";
 import remarkGfm from "remark-gfm";
