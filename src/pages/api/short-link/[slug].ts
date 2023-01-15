@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { getShortLink } from "../../../helpers/getShortLink";
 
-const url = process.env.NHOST_URL as string;
+const url = process.env.NEXT_PUBLIC_NHOST_URL as string;
 
 export default async function handler(
   req: NextApiRequest,

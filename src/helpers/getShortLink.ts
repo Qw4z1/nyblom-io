@@ -1,7 +1,7 @@
-import { request } from "graphql-request";
+import { gql, request } from "graphql-request";
 import { ShortLinkQueryResult } from "../types";
 
-const query = `
+const query = gql`
 query ($slug: String!)  {
   shortLinks(where: {slug: {_eq: $slug}}) {
     createdAt
