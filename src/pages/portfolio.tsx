@@ -7,10 +7,13 @@ const Portfolio: NextPage = () => {
       <Head title={"Portfolio"} description={"List of startup investments"} />
       <div>
         <h1>Portfolio</h1>
-        <p className="text-xl">
-          Each of the companies below has chosen to take my money. <br /> For
-          that I am forever grateful.
+        <p className="text-l">
+          Each of the companies below has chosen to take my money. For that I am
+          forever grateful. My initial checksize range sits around 300k sek
+          (~$30k), where the largest has been 500k and the smallest 17k.
         </p>
+        <p className="text-l">I&apos;ve been active since April 2019.</p>
+        <h2>Active</h2>
         <ul className="space-y-2 list-disc list-inside">
           <li>
             <a href="https://doktor.se/" className="font-bold">
@@ -42,12 +45,7 @@ const Portfolio: NextPage = () => {
             </a>{" "}
             - Get better results on your training journey.
           </li>
-          <li>
-            <a href="http://molistreaming.com/" className="font-bold">
-              Moli Streaming
-            </a>{" "}
-            - Next generation social network.
-          </li>
+
           <li>
             <a href="https://detecht.se/" className="font-bold">
               Detecht
@@ -83,6 +81,22 @@ const Portfolio: NextPage = () => {
               Lechtrium
             </a>{" "}
             - Smooth home charging installation for EV-owners.
+          </li>
+          <li>
+            <a href="https://offsiter.com/" className="font-bold">
+              Offsiter
+            </a>{" "}
+            - Find and book team building activities, company retreats, &
+            corporate wellness experiences.
+          </li>
+        </ul>
+        <h2>Past</h2>
+        <ul className="space-y-2 list-disc list-inside">
+          <li>
+            <a href="http://molistreaming.com/" className="font-bold">
+              Moli Streaming
+            </a>{" "}
+            - Next generation social network.
           </li>
         </ul>
       </div>

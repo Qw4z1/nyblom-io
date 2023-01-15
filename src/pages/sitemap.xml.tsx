@@ -23,6 +23,7 @@ function buildXml(posts: PostFrontMatter[]) {
      </url>
      <url>
        <loc>${`${process.env.NEXT_PUBLIC_ROOT_URL}/portfolio/`}</loc>
+       <lastmod>2023-01-15</lastmod>
      </url>
      ${posts
        .filter((it) => !!it.published)
