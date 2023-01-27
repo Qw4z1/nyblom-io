@@ -25,7 +25,7 @@ const PostMetaDataRow: FC<PostMetaDataRowProps> = ({
   return (
     <div className="flex flex-row text-base font-light lg:text-lg italic">
       {publishedAt} · {readingTime} ·{" "}
-      <div className="pl-1 flex flex-row">
+      <div className="flex flex-row pl-1">
         <Eye /> <div className="w-1" /> {readCount}
       </div>
     </div>

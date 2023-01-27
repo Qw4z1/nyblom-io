@@ -4,7 +4,7 @@ import { Head } from "../components/Head";
 const Portfolio: NextPage = () => {
   return (
     <>
-      <Head title={"Portfolio"} description={"List of startup investments"} />
+      <Head title={"Portfolio"} description={"Viktor's list of startup investments"} />
       <div>
         <h1>Portfolio</h1>
         <p className="text-l">

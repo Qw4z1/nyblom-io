@@ -4,7 +4,7 @@ import { bundleMDX } from "mdx-bundler";
 import { getMDXComponent } from "mdx-bundler/client";
 import { join } from "path";
 import getReadingTime from "reading-time";
-import { PostFrontMatter, Post, ReadsQueryResult } from "../../types";
+import { PostFrontMatter, Post } from "../../types";
 import { use, useMemo } from "react";
 import { Head } from "../../components/Head";
 import { HeaderImage } from "../../components/HeaderImage";
@@ -36,7 +36,15 @@ const BlogPost: NextPage<BlogPostProps> = ({ post }) => {
 
   return (
     <>
-      <Head title={title} description={excerpt} />
+      <Head
+        type={"post"}
+        title={title}
+        description={excerpt}
+        readTime={readingTime}
+        publishDate={firstPublished}
+        reads={reads}
+        subTitle={subtitle}
+      />
       <article className="pb-16 md:pb-32">
         {featuredImage ? (
           <HeaderImage src={featuredImage} alt={"featured alt"} />

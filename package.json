@@ -12,6 +12,7 @@
     "@next/font": "^13.1.1",
     "@notionhq/client": "^2.2.3",
     "@vercel/analytics": "^0.1.6",
+    "@vercel/og": "^0.0.27",
     "esbuild": "^0.15.10",
     "graphql": "^16.6.0",
     "graphql-request": "^5.0.0",
