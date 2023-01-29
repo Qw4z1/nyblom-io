@@ -45,12 +45,12 @@ const BlogPost: NextPage<BlogPostProps> = ({ post }) => {
         reads={reads}
         subTitle={subtitle}
       />
-      <article className="pb-16 md:pb-32">
+      <article className="pb-16 pt-4 md:pb-32">
         {featuredImage ? (
           <HeaderImage src={featuredImage} alt={"featured alt"} />
         ) : null}
         <h1>{title}</h1>
-        {subtitle && <h2 className="py-2">{subtitle}</h2>}
+        {subtitle && <h2 className="py-4">{subtitle}</h2>}
         <PostMetaDataRow
           publishedDate={firstPublished}
           readingTime={readingTime}

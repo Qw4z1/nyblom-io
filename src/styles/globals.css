@@ -4,7 +4,7 @@
 
 @layer base {
   h1 {
-    @apply text-4xl font-extrabold;
+    @apply text-5xl font-extrabold;
   }
   h2 {
     @apply text-2xl font-bold;
@@ -44,6 +44,9 @@
 
 article hr {
   @apply my-8;
+}
+article p {
+  @apply leading-relaxed mb-4;
 }
 .footnotes li {
   @apply list-decimal list-outside;
