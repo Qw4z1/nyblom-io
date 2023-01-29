@@ -11,7 +11,7 @@ interface BlogListProps {
 const BlogList: NextPage<BlogListProps> = ({ posts }) => {
   return (
     <>
-      <Head title={"Blog"} description={"Writings and ramblings"} />
+      <Head title={"Blog"} description={"Thoughts on people, tech and process."} />
       <div className="w-full pb-11">
         <h1 className="text-black text-opacity-80 px-4">
           A collection of my thoughts

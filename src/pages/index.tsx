@@ -7,7 +7,7 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <Head title="NyblomIO" description="Personal blog of Viktor Nyblom." />
+      <Head title="NyblomIO" description="Entrepreneur. Angel Investor. Tech Advisor." />
       <div className="max-w-2xl flex flex-col justify-start items-start m-auto">
         <h1>Hi!</h1>
         <div className="my-8">

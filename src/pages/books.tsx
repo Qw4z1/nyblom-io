@@ -15,7 +15,7 @@ const Now: NextPage<BooksPageProps> = ({ books }) => {
       <Head
         title={"Books"}
         description={
-          "What books has Viktor read and what did he think about them?"
+          "Viktor's top picks"
         }
       />
       <div className="py-4 w-full flex flex-col justify-start items-start m-auto">
