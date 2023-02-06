@@ -56,35 +56,35 @@ function MyApp({ Component, pageProps }: AppProps) {
             id="navbar-default"
           >
             <ul className="flex flex-col p-4 mt-4 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:border-0 ">
-              <li>
+              <li className="mt-3 md:mt-0">
                 <NavBarLink
                   text="/About"
                   link="/about"
                   onClick={navLinkClickHandler}
                 />
               </li>
-              <li>
+              <li className="mt-3 md:mt-0">
                 <NavBarLink
                   text="/Blog"
                   link="/blog"
                   onClick={navLinkClickHandler}
                 />
               </li>
-              <li>
+              <li className="mt-3 md:mt-0">
                 <NavBarLink
                   text="/Books"
                   link="/books"
                   onClick={navLinkClickHandler}
                 />
               </li>
-              <li>
+              <li className="mt-3 md:mt-0">
                 <NavBarLink
                   text="/Portfolio"
                   link="/portfolio"
                   onClick={navLinkClickHandler}
                 />
               </li>
-              <li>
+              <li className="mt-3 md:mt-0">
                 <NavBarLink
                   text="/Now"
                   link="/now"

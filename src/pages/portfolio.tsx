@@ -88,15 +88,12 @@ const Portfolio: NextPage = () => {
             </a>{" "}
             - Find and book team building activities, company retreats, &
             corporate wellness experiences.
-          </li>
-        </ul>
-        <h2>Past</h2>
-        <ul className="space-y-2 list-disc list-inside">
+          </li>          
           <li>
-            <a href="http://molistreaming.com/" className="font-bold">
-              Moli Streaming
+            <a href="https://quartr.com/" className="font-bold">
+              Quartr
             </a>{" "}
-            - Next generation social network.
+            - Investor relations, but convenient.
           </li>
         </ul>
       </div>
