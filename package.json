@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@calcom/embed-react": "^1.0.9",
     "@next/font": "^13.1.1",
     "@notionhq/client": "^2.2.3",
     "@vercel/analytics": "^0.1.6",

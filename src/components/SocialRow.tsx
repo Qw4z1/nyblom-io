@@ -8,7 +8,7 @@ import Mastodon from "./icons/MastodonSvg";
 
 const SocialRow = () => {
   return (
-    <ul className="m-0 flex flex-row justify-around md:justify-between flex-wrap w-full md:w-6/12">
+    <ul className="m-0 flex flex-row justify-around md:justify-start flex-wrap w-full space-x-4">
       <li className="w-14 h-14 hover:bg-yellow rounded-full">
         <a
           href="https://mastodon.nu/@qw4z1"

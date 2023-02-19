@@ -1,5 +1,6 @@
 import type { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
+import BookingButton from "../components/BookingButton";
 import Card from "../components/Card";
 import { Head } from "../components/Head";
 import SocialRow from "../components/SocialRow";
@@ -45,6 +46,12 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
             <a href="https://github.com/Qw4z1/nyblom-io">GitHub</a>. PRs are
             welcome!
           </p>
+          <div className="text-lg md:text-2xl mb-4">
+            Sometimes people come to me looking for specific advice on specific
+            topic that doens&apos;t fit into an email or a tweet. If this is you, you
+            can use the button below to schedule a meeting with me directly.
+          </div>
+          <BookingButton />
         </div>
         <SocialRow />
         <h2 className="mt-12">Popular posts</h2>
@@ -60,7 +67,10 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
             />
           ))}
         </div>
-        <Link className="text-xl w-full text-center p-2 hover:p-2 hover:m-0" href={"/blog"}>
+        <Link
+          className="text-xl w-full text-center p-2 hover:p-2 hover:m-0"
+          href={"/blog"}
+        >
           All posts
         </Link>
       </div>
