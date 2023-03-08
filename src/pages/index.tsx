@@ -46,7 +46,7 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
             <a href="https://github.com/Qw4z1/nyblom-io">GitHub</a>. PRs are
             welcome!
           </p>
-          <div className="text-lg md:text-2xl mb-4">
+          <div className="text-lg md:text-2xl mb-8">
             Sometimes people come to me looking for specific advice on specific
             topic that doens&apos;t fit into an email or a tweet. If this is you, you
             can use the button below to schedule a meeting with me directly.
@@ -54,7 +54,7 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
           <BookingButton />
         </div>
         <SocialRow />
-        <h2 className="mt-12">Popular posts</h2>
+        <h2 className="mt-14">Popular posts</h2>
         <div className="pb-8 pt-2">
           {posts.map((it) => (
             <Card
