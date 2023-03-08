@@ -48,6 +48,12 @@ article hr {
 article p {
   @apply leading-relaxed mb-4;
 }
+article li {
+  @apply leading-normal mb-4 p-0 list-outside list-disc;
+}
+article ul {
+  @apply m-0 px-6;
+}
 .footnotes li {
   @apply list-decimal list-outside;
 }
