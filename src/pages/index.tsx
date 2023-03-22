@@ -4,6 +4,7 @@ import BookingButton from "../components/BookingButton";
 import Card from "../components/Card";
 import { Head } from "../components/Head";
 import SocialRow from "../components/SocialRow";
+import { daysBetween } from "../helpers/date";
 import { getPostFrontMatter } from "../helpers/getFrontMatter";
 import { PostFrontMatter } from "../types/posts";
 
@@ -13,10 +14,24 @@ type HomeProps = {
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   const posts = await getPostFrontMatter();
-  const publishedPosts = posts
+  let publishedPosts = posts
     .filter((it) => it.published == true)
     .sort((a, b) => b.reads - a.reads)
     .slice(0, 5);
+  const latest = posts.reduce((previous, current) =>
+    previous.firstPublished < current.firstPublished ? current : previous
+  );
+
+  if (
+    !publishedPosts.find(
+      (it) =>
+        it.slug === latest.slug &&
+        daysBetween(latest.firstPublished, new Date()) < 7
+    )
+  ) {
+    publishedPosts = [latest, ...publishedPosts];
+  }
+
   return { props: { posts: publishedPosts }, revalidate: 60 };
 };
 
@@ -48,15 +63,16 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
           </p>
           <div className="text-lg md:text-2xl mb-8">
             Sometimes people come to me looking for specific advice on specific
-            topic that doens&apos;t fit into an email or a tweet. If this is you, you
-            can use the button below to schedule a meeting with me directly.
+            topic that doens&apos;t fit into an email or a tweet. If this is
+            you, you can use the button below to schedule a meeting with me
+            directly.
           </div>
           <BookingButton />
         </div>
         <SocialRow />
         <h2 className="mt-14">Popular posts</h2>
         <div className="pb-8 pt-2">
-          {posts.map((it) => (
+          {posts.map((it, index) => (
             <Card
               title={it.title}
               key={it.slug}
@@ -64,6 +80,7 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
               publishedDate={it.firstPublished}
               slug={it.slug}
               reads={it.reads}
+              isNew={index === 0}
             />
           ))}
         </div>

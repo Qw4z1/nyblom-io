@@ -48,6 +48,14 @@ article hr {
 article p {
   @apply leading-relaxed mb-4;
 }
+
+/* article table {
+  @apply overflow-x-scroll block table-auto border-spacing-2 border-separate border-transparent border;
+}
+
+article td {
+  @apply border-x-8 border-transparent;
+} */
 article li {
   @apply leading-normal mb-4 p-0 list-outside list-disc;
 }

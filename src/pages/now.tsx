@@ -4,7 +4,7 @@ import { getMDXComponent } from "mdx-bundler/client";
 import type { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
 import { join } from "path";
-import { DetailedHTMLProps, HTMLAttributes, ReactNode, useMemo } from "react";
+import { DetailedHTMLProps, HTMLAttributes, useMemo } from "react";
 import remarkGfm from "remark-gfm";
 import { Head } from "../components/Head";
 import { Content, ContentFrontMatter } from "../types";

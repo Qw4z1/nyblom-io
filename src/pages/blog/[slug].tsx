@@ -32,7 +32,7 @@ const BlogPost: NextPage<BlogPostProps> = ({ post }) => {
   } = post;
 
   const readCount = useReads(slug, reads);
-  const BlogPost = useMemo(() => getMDXComponent(sourceCode), [sourceCode]);
+  const MDXPost = useMemo(() => getMDXComponent(sourceCode), [sourceCode]);
 
   return (
     <>
@@ -56,7 +56,7 @@ const BlogPost: NextPage<BlogPostProps> = ({ post }) => {
           readingTime={readingTime}
           readCount={readCount}
         />
-        <BlogPost components={{ Link: Link }} />
+        <MDXPost components={{ Link: Link }} />
       </article>
     </>
   );
