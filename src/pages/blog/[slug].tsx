@@ -5,7 +5,7 @@ import { getMDXComponent } from "mdx-bundler/client";
 import { join } from "path";
 import getReadingTime from "reading-time";
 import { PostFrontMatter, Post } from "../../types";
-import { use, useMemo } from "react";
+import { useMemo } from "react";
 import { Head } from "../../components/Head";
 import { HeaderImage } from "../../components/HeaderImage";
 import remarkGfm from "remark-gfm";
@@ -13,6 +13,7 @@ import Link from "next/link";
 import { useReads } from "../../hooks/useReads";
 import PostMetaDataRow from "../../components/PostMetaDataRow";
 import { getReads } from "../../helpers/reads/getReads";
+import MdxTable from "../../components/MdxTable";
 
 interface BlogPostProps {
   post: Post;
@@ -56,7 +57,7 @@ const BlogPost: NextPage<BlogPostProps> = ({ post }) => {
           readingTime={readingTime}
           readCount={readCount}
         />
-        <MDXPost components={{ Link: Link }} />
+        <MDXPost components={{ Link: Link, MdxTable: MdxTable }} />
       </article>
     </>
   );
