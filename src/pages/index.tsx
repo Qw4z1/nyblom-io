@@ -4,9 +4,12 @@ import BookingButton from "../components/BookingButton";
 import Card from "../components/Card";
 import { Head } from "../components/Head";
 import SocialRow from "../components/SocialRow";
+import { move } from "../helpers/array";
 import { daysBetween } from "../helpers/date";
 import { getPostFrontMatter } from "../helpers/getFrontMatter";
 import { PostFrontMatter } from "../types/posts";
+
+type HomeCard = PostFrontMatter & { isNew: boolean };
 
 type HomeProps = {
   posts: PostFrontMatter[];
@@ -14,21 +17,28 @@ type HomeProps = {
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   const posts = await getPostFrontMatter();
-  let publishedPosts = posts
+  const cards = posts.map((it) => {
+    return {
+      isNew: false,
+      ...it,
+    } as HomeCard;
+  });
+  
+  let publishedPosts = cards
     .filter((it) => it.published == true)
     .sort((a, b) => b.reads - a.reads)
     .slice(0, 5);
-  const latest = posts.reduce((previous, current) =>
+  
+    const latest = cards.reduce((previous, current) =>
     previous.firstPublished < current.firstPublished ? current : previous
   );
 
-  if (
-    !publishedPosts.find(
-      (it) =>
-        it.slug === latest.slug &&
-        daysBetween(latest.firstPublished, new Date()) < 7
-    )
-  ) {
+  latest.isNew = daysBetween(latest.firstPublished, new Date()) < 7;
+  const latestIndex = publishedPosts.findIndex((it) => it.slug === latest.slug);
+  
+  if (latestIndex > -1) {
+    publishedPosts = move(publishedPosts, latestIndex, 0);
+  } else {
     publishedPosts = [latest, ...publishedPosts];
   }
 
