@@ -10,7 +10,7 @@ function generateHead(titles: string[]) {
     <thead>
       <tr className="font-bold text-left">
         {titles.map((it) => (
-          <th>{it}</th>
+          <th key={it}>{it}</th>
         ))}
       </tr>
     </thead>
@@ -22,10 +22,10 @@ function generateRows(rows: string[][]) {
     <thead>
       {rows.map((it) => {
         return (
-          <tr>
+          <tr key={it.join('')}>
             {it.map((cell, index) => {
               const style = index === 0 ? "font-bold" : "font-medium";
-              return <td className={style}>{cell}</td>;
+              return <td key={cell} className={style}>{cell}</td>;
             })}
           </tr>
         );
