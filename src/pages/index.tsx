@@ -50,7 +50,7 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
     <>
       <Head
         title="NyblomIO"
-        description="Entrepreneur. Angel Investor. Tech Advisor."
+        description="A decade of building apps, teams and companies."
       />
       <div className="max-w-2xl flex flex-col justify-start items-start m-auto pb-10">
         <h1>Hi!</h1>
@@ -59,25 +59,17 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
             Welcome to the personal blog of{" "}
             <Link href="/about">Viktor Nyblom</Link>.
             <br />
-            Stockholm based entrepreneur, investor and startup advisor.
+            A decade of building apps, teams and companies.
           </p>
           <p className="text-lg md:text-2xl">
-            I do many different things during the course of a year. But if you
-            want to know what I&apos;m doing right now, checkout my{" "}
+            If you want to know what I&apos;m up to right now, checkout my{" "}
             <Link href="/now/">Now Page</Link>.
           </p>
           <p className="text-lg md:text-2xl">
-            This website is hosted on Vercel and the source code is available on{" "}
+            The source code for this website is available on{" "}
             <a href="https://github.com/Qw4z1/nyblom-io">GitHub</a>. PRs are
             welcome!
           </p>
-          <div className="text-lg md:text-2xl mb-8">
-            Sometimes people come to me looking for specific advice on specific
-            topic that doens&apos;t fit into an email or a tweet. If this is
-            you, you can use the button below to schedule a meeting with me
-            directly.
-          </div>
-          <BookingButton />
         </div>
         <SocialRow />
         <h2 className="mt-14">Popular posts</h2>
