@@ -57,9 +57,7 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
         <div className="my-8">
           <p className="text-lg md:text-2xl">
             Welcome to the personal blog of{" "}
-            <Link href="/about">Viktor Nyblom</Link>.
-            <br />
-            A decade of building apps, teams and companies.
+            <Link href="/about">Viktor Nyblom</Link>, where I share my thoughs from decade of building apps, teams and companies.
           </p>
           <p className="text-lg md:text-2xl">
             If you want to know what I&apos;m up to right now, checkout my{" "}
