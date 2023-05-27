@@ -5,7 +5,6 @@ const daysBetween = (start: string | Date, end: string | Date) => {
   const difference = endDate.getTime() - startDate.getTime();
   const daysBetween = Math.floor(difference / (1000 * 3600 * 24));
 
-  console.log("Days between", daysBetween);
   return daysBetween;
 };
 

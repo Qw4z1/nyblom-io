@@ -47,16 +47,20 @@ const BlogPost: NextPage<BlogPostProps> = ({ post }) => {
         subTitle={subtitle}
       />
       <article className="pb-16 pt-4 md:pb-32">
-        {featuredImage ? (
-          <HeaderImage src={featuredImage} alt={"featured alt"} />
-        ) : null}
-        <h1>{title}</h1>
-        {subtitle && <h2 className="py-4">{subtitle}</h2>}
-        <PostMetaDataRow
-          publishedDate={firstPublished}
-          readingTime={readingTime}
-          readCount={readCount}
-        />
+        <header>
+          {featuredImage ? (
+            <HeaderImage src={featuredImage} alt={"featured alt"} />
+          ) : null}
+          <h1>{title}</h1>
+          {subtitle && (
+            <p className="text-xl font-bold pt-4 pb-2 m-0 text-gray-800">{subtitle}</p>
+          )}
+          <PostMetaDataRow
+            publishedDate={firstPublished}
+            readingTime={readingTime}
+            readCount={readCount}
+          />
+        </header>
         <MDXPost components={{ Link: Link, MdxTable: MdxTable }} />
       </article>
     </>
