@@ -8,6 +8,7 @@ import { DetailedHTMLProps, HTMLAttributes, useMemo } from "react";
 import remarkGfm from "remark-gfm";
 import { Head } from "../components/Head";
 import { Content, ContentFrontMatter } from "../types";
+import SocialRow from "../components/SocialRow";
 interface NowPageProps {
   content: Content;
 }
@@ -41,6 +42,11 @@ const Now: NextPage<NowPageProps> = ({ content }) => {
         <h1>Now</h1>
         <p className="text-base lg:text-lg">Last updated: {lastUpdated}</p>
         <ContentItem components={{ Link: Link, ul: UL }} />
+        <p>
+          If you want to get in touch with me, feel free to use any of the
+          channels below. 👇
+        </p>
+        <SocialRow />
       </div>
     </>
   );

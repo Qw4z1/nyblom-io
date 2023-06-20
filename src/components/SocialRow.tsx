@@ -5,6 +5,7 @@ import LinkedIn from "./icons/LinkedInSvg";
 import Instagram from "./icons/InstagramSvg";
 import Github from "./icons/GithubSvg";
 import Mastodon from "./icons/MastodonSvg";
+import Cal from "./icons/CalSvg";
 
 const SocialRow = () => {
   return (
@@ -56,6 +57,16 @@ const SocialRow = () => {
           aria-label="My Github page"
         >
           <Github />
+        </a>
+      </li>
+      <li className="w-14 h-14 hover:bg-yellow rounded-full">
+        <a
+          target="_blank"
+          href="https://cal.com/nyblomio"
+          rel="noopener noreferrer"
+          aria-label="My Cal.com booking page"
+        >
+          <Cal />
         </a>
       </li>
     </ul>
