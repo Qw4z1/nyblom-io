@@ -1,6 +1,5 @@
 import type { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
-import BookingButton from "../components/BookingButton";
 import Card from "../components/Card";
 import { Head } from "../components/Head";
 import SocialRow from "../components/SocialRow";
