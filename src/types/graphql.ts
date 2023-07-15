@@ -6,9 +6,12 @@ export interface MutationResult {
 }
 
 export interface ReadsQueryResult {
-  reads_by_pk: {
-    read_count: number;
-  };
+  [x: string]: any;
+  data: {
+    reads_by_pk: {
+      read_count: number;
+    };
+  }
 }
 
 export interface ShortLinkQueryResult {
@@ -26,5 +29,6 @@ export interface InsertResult {
   insert_reads_one: {
     slug: string;
     read_count: number;
+    title: string;
   };
 }
