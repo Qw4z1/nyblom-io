@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { updateReads } from "../helpers/reads/updateReads";
+import { incrementReads } from "../helpers/reads/incrementReads";
 
 export const useReads = (slug: string, originalReads: number): number => {
   const isInDev = process.env.NODE_ENV === "development";
@@ -9,7 +9,7 @@ export const useReads = (slug: string, originalReads: number): number => {
   useEffect(() => {
     const reads = async () => {
       if (!isInDev) {
-        const reads = await updateReads(slug);
+        const reads = await incrementReads(slug);
         setReadsState(reads);
       }
     };

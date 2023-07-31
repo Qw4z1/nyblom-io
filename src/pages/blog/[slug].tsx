@@ -14,6 +14,7 @@ import { useReads } from "../../hooks/useReads";
 import PostMetaDataRow from "../../components/PostMetaDataRow";
 import { getReads } from "../../helpers/reads/getReads";
 import MdxTable from "../../components/MdxTable";
+import { createReads } from "../../helpers/reads/createReads";
 
 interface BlogPostProps {
   post: Post;
@@ -89,7 +90,7 @@ export const getStaticProps: GetStaticProps<BlogPostProps> = async ({
   const mdxSource = readFileSync(filePath, "utf8");
   const bundleResult = await bundleMDX({
     source: mdxSource,
-    xdmOptions(options) {
+    mdxOptions(options) {
       options.remarkPlugins = [...(options?.remarkPlugins ?? []), remarkGfm];
       return options;
     },
@@ -97,7 +98,6 @@ export const getStaticProps: GetStaticProps<BlogPostProps> = async ({
 
   const sourceCode = bundleResult.code;
   const frontMatter = bundleResult.frontmatter as PostFrontMatter;
-
   const reads: number = await getReads(slug);
   const readingTimeResult = getReadingTime(mdxSource);
   const wordCount = readingTimeResult.words;

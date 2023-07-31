@@ -57,7 +57,7 @@ export const getStaticProps: GetStaticProps<NowPageProps> = async () => {
   const mdxSource = readFileSync(filePath, "utf8");
   const bundleResult = await bundleMDX({
     source: mdxSource,
-    xdmOptions(options) {
+    mdxOptions(options) {
       options.remarkPlugins = [...(options?.remarkPlugins ?? []), remarkGfm];
       return options;
     },
