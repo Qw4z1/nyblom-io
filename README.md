@@ -33,17 +33,24 @@ Step 2: Install dependencies
 yarn
 ```
 
-Step 3: Add Nhost url
+Step 3: Add API_URL and token.
 
-  1. Go to Nhost and [signup](https://app.nhost.io/signup)
-  2. Get your Nhost subdomain
-  3. Create an `.env.local` file with your Nhost Url:
+This project uses a custom API that I've built. You'll find the source code for that at [this url](https://github.com/Qw4z1/read-tracker).
 
-```bash
-echo "https://[your subdomain here].nhost.run/v1/graphql" > .env.local
-```
+The API is dockerised, but note that you'll also need a MySQL database to connect to. If you need a suggestion, check out [Planetscale](https://planetscale.com/).
 
-Step 4: Start development server
+Step 4: Add .env file
+
+At the root of the project add a file called .env with the following keys.
+
+NOTION_TOKEN=
+NOTION_DB_ID=
+NEXT_PUBLIC_ROOT_URL=<http://localhost:3000>
+CONVERTKIT_API_KEY=
+NEXT_PUBLIC_API_URL=<url to the read-tracker API>
+NEXT_PUBLIC_API_TOKEN=<token that you set for read-tracker API>
+
+Step 5: Run local build
 
 ```bash
 yarn dev
