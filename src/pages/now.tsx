@@ -7,10 +7,13 @@ import { join } from "path";
 import { DetailedHTMLProps, HTMLAttributes, useMemo } from "react";
 import remarkGfm from "remark-gfm";
 import { Head } from "../components/Head";
-import { Content, ContentFrontMatter } from "../types";
+import { Content, ContentFrontMatter, PostFrontMatter } from "../types";
 import SocialRow from "../components/SocialRow";
+import { getPostFrontMatter } from "../helpers/getFrontMatter";
+import MdxPostList from "../components/MdxPostList";
+
 interface NowPageProps {
-  content: Content;
+  content: Content & { posts: PostFrontMatter[] };
 }
 
 const UL: React.FC<
@@ -35,13 +38,15 @@ const Now: NextPage<NowPageProps> = ({ content }) => {
     [content.sourceCode]
   );
 
+  const postList = <MdxPostList posts={content.posts}/>
+
   return (
     <>
       <Head title={"Now"} description={"What is Viktor up to Now?"} />
       <div className="py-4 max-w-2xl flex flex-col justify-start items-start m-auto list-disc ">
         <h1>Now</h1>
         <p className="text-base lg:text-lg">Last updated: {lastUpdated}</p>
-        <ContentItem components={{ Link: Link, ul: UL }} />
+        <ContentItem components={{ Link: Link, ul: UL, PostList: () => postList }} />
         <p>
           If you want to get in touch with me, feel free to use any of the
           channels below. 👇
@@ -66,11 +71,17 @@ export const getStaticProps: GetStaticProps<NowPageProps> = async () => {
   const sourceCode = bundleResult.code;
   const frontMatter = bundleResult.frontmatter as ContentFrontMatter;
 
+  const posts = await getPostFrontMatter();
+  const postsThisYear = posts.filter(
+    (it) => it.published == true && it.firstPublished > "2023-01-01"
+  );
+
   return {
     props: {
       content: {
         ...frontMatter,
         sourceCode,
+        posts: postsThisYear,
       },
     },
   };
