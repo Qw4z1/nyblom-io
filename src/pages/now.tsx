@@ -4,23 +4,18 @@ import { getMDXComponent } from "mdx-bundler/client";
 import type { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
 import { join } from "path";
-import { DetailedHTMLProps, HTMLAttributes, useMemo } from "react";
+import { useMemo } from "react";
 import remarkGfm from "remark-gfm";
 import { Head } from "../components/Head";
 import { Content, ContentFrontMatter, PostFrontMatter } from "../types";
 import SocialRow from "../components/SocialRow";
 import { getPostFrontMatter } from "../helpers/getFrontMatter";
 import MdxPostList from "../components/MdxPostList";
+import UL from "../components/UL";
 
 interface NowPageProps {
   content: Content & { posts: PostFrontMatter[] };
 }
-
-const UL: React.FC<
-  DetailedHTMLProps<HTMLAttributes<HTMLUListElement>, HTMLUListElement>
-> = (props) => {
-  return <ul className="space-y-2 list-disc list-inside">{props.children}</ul>;
-};
 
 const Now: NextPage<NowPageProps> = ({ content }) => {
   const lastUpdated = useMemo(
@@ -38,7 +33,7 @@ const Now: NextPage<NowPageProps> = ({ content }) => {
     [content.sourceCode]
   );
 
-  const postList = <MdxPostList posts={content.posts}/>
+  const postList = <MdxPostList posts={content.posts} />;
 
   return (
     <>
@@ -46,7 +41,9 @@ const Now: NextPage<NowPageProps> = ({ content }) => {
       <div className="py-4 max-w-2xl flex flex-col justify-start items-start m-auto list-disc ">
         <h1>Now</h1>
         <p className="text-base lg:text-lg">Last updated: {lastUpdated}</p>
-        <ContentItem components={{ Link: Link, ul: UL, PostList: () => postList }} />
+        <ContentItem
+          components={{ Link: Link, ul: UL, PostList: () => postList }}
+        />
         <p>
           If you want to get in touch with me, feel free to use any of the
           channels below. 👇
