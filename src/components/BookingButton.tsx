@@ -2,9 +2,13 @@
 
 import "@calcom/embed-react";
 import { getCalApi } from "@calcom/embed-react";
-import { useEffect } from "react";
+import { FC, useEffect } from "react";
 
-const BookingButton = () => {
+export interface BookingButtonProps {
+  dataCalLink: string;
+}
+
+const BookingButton: FC<BookingButtonProps> = ({ dataCalLink }) => {
   useEffect(() => {
     (async function () {
       const cal = await getCalApi();
@@ -20,10 +24,10 @@ const BookingButton = () => {
   }, []);
   return (
     <button
-      data-cal-link="nyblomio/advisory"
-      className="border-black p-2 rounded border-4 font-bold hover:bg-yellow "
+      data-cal-link={dataCalLink}
+      className="border-black p-2 rounded border-2 font-semibold my-4 hover:bg-yellow "
     >
-      Book Me
+      Schedule discovery call
     </button>
   );
 };

@@ -1,0 +1,1 @@
+const calAdvisoryLink = "nyblomio/advisory";
