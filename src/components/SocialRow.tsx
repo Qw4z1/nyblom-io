@@ -32,16 +32,6 @@ const SocialRow = () => {
       <li className="w-14 h-14 hover:bg-yellow rounded-full">
         <a
           target="_blank"
-          href="https://www.instagram.com/qw4z1/"
-          rel="noopener noreferrer"
-          aria-label="My Instagram page"
-        >
-          <Instagram />
-        </a>
-      </li>
-      <li className="w-14 h-14 hover:bg-yellow rounded-full">
-        <a
-          target="_blank"
           href="https://www.linkedin.com/in/viktornyblom/"
           rel="noopener noreferrer"
           aria-label="My LinkedIn profile"

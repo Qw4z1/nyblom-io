@@ -44,7 +44,7 @@ const Now: NextPage<NowPageProps> = ({ content }) => {
         <ContentItem
           components={{ Link: Link, ul: UL, PostList: () => postList }}
         />
-        <p>
+        <p className="pt-2 pb-4">
           If you want to get in touch with me, feel free to use any of the
           channels below. 👇
         </p>
