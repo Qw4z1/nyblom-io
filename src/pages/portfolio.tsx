@@ -77,8 +77,8 @@ const Portfolio: NextPage = () => {
             - Helps you do more of what matters most.
           </li>
           <li>
-            <a href="https://www.lectrium.io/" className="font-bold">
-              Lechtrium
+            <a href="https://lectrium.com" className="font-bold">
+              Lectrium
             </a>{" "}
             - Smooth home charging installation for EV-owners.
           </li>
