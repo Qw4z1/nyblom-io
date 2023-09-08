@@ -92,12 +92,6 @@ const Post = async (searchParams: URLSearchParams) => {
       fonts: [
         {
           name: "Montserrat",
-          data: regularData,
-          style: "normal",
-          weight: 400,
-        },
-        {
-          name: "Montserrat",
           weight: 600,
           data: semiBoldData,
           style: "normal",
