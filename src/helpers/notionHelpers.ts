@@ -1,4 +1,5 @@
 import {
+  DatabaseObjectResponse,
   PageObjectResponse,
   RichTextItemResponse,
 } from "@notionhq/client/build/src/api-endpoints";
@@ -45,7 +46,7 @@ type Url = {
 };
 
 const mapProperty = <K>(
-  obj: PageObjectResponse,
+  obj: PageObjectResponse | DatabaseObjectResponse,
   key: string,
   type: string
 ): K => {
@@ -55,16 +56,24 @@ const mapProperty = <K>(
   throw new Error("Incompatible types.");
 };
 
-const mapTitle = (obj: PageObjectResponse, key: string): Title =>
-  mapProperty<Title>(obj, key, "title");
+const mapTitle = (
+  obj: PageObjectResponse | DatabaseObjectResponse,
+  key: string
+): Title => mapProperty<Title>(obj, key, "title");
 
-const mapSelect = (obj: PageObjectResponse, key: string): Select =>
-  mapProperty(obj, key, "select");
+const mapSelect = (
+  obj: PageObjectResponse | DatabaseObjectResponse,
+  key: string
+): Select => mapProperty(obj, key, "select");
 
-const mapRichText = (obj: PageObjectResponse, key: string): RichText =>
-  mapProperty<RichText>(obj, key, "rich_text");
+const mapRichText = (
+  obj: PageObjectResponse | DatabaseObjectResponse,
+  key: string
+): RichText => mapProperty<RichText>(obj, key, "rich_text");
 
-const mapUrl = (obj: PageObjectResponse, key: string): Url =>
-  mapProperty<Url>(obj, key, "url");
+const mapUrl = (
+  obj: PageObjectResponse | DatabaseObjectResponse,
+  key: string
+): Url => mapProperty<Url>(obj, key, "url");
 
 export { mapTitle, mapSelect, mapRichText, mapUrl };

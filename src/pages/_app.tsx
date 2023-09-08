@@ -1,5 +1,5 @@
 import "../styles/globals.css";
-import { Montserrat } from "@next/font/google";
+import { Montserrat } from "next/font/google";
 import type { AppProps } from "next/app";
 import Link from "next/link";
 import { useState } from "react";

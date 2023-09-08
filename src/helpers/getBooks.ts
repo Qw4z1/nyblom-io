@@ -1,5 +1,8 @@
-import { Client, isFullPage } from "@notionhq/client";
-import { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
+import { Client, isFullPage, isFullPageOrDatabase } from "@notionhq/client";
+import {
+  DatabaseObjectResponse,
+  PageObjectResponse,
+} from "@notionhq/client/build/src/api-endpoints";
 import { Book } from "../types/books";
 import { mapTitle, mapSelect, mapRichText, mapUrl } from "./notionHelpers";
 
@@ -41,7 +44,9 @@ const getBooks = async (): Promise<Book[]> => {
       },
     });
     return response.results
-      .filter((it): it is PageObjectResponse => isFullPage(it))
+      .filter((it): it is PageObjectResponse | DatabaseObjectResponse =>
+        isFullPageOrDatabase(it)
+      )
       .map((it) => {
         return {
           id: it.id,
