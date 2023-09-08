@@ -4,4 +4,13 @@ module.exports = {
     locales: ["en"],
     defaultLocale: "en",
   },
+  async redirects() {
+    return [
+      {
+        source: '/naas',
+        destination: '/nyblom-as-a-service',
+        permanent: true,
+      },
+    ]
+  },
 };

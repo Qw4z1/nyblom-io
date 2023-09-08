@@ -1,3 +1,5 @@
+"use client";
+
 import { FC } from "react";
 
 export interface CalLinkProps {
@@ -7,12 +9,12 @@ export interface CalLinkProps {
 
 const CalLink: FC<CalLinkProps> = ({ dataCalLink, children }) => {
   return (
-    <p
-      className="underline decoration-yellow decoration-2 underline-offset-2 hover:no-underline hover:bg-yellow hover:cursor-pointer"
+    <div
+      className="underline decoration-yellow decoration-2 underline-offset-2 hover:no-underline hover:bg-yellow hover:cursor-pointer my-0 py-0 h-auto"
       data-cal-link={dataCalLink}
     >
       {children}
-    </p>
+    </div>
   );
 };
 

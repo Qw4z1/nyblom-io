@@ -12,6 +12,7 @@ import UL from "../components/UL";
 import BookingButton from "../components/BookingButton";
 import Image from "next/image";
 import CalLink from "../components/CalLink";
+import Testimonials from "../components/testimonials/Testimonials";
 
 interface NaaSPageProps {
   content: Content;
@@ -43,7 +44,13 @@ const NaaS: NextPage<NaaSPageProps> = ({ content }) => {
         </div>
 
         <ContentItem
-          components={{ Link: Link, ul: UL, BookingButton: BookingButton, CalLink: CalLink }}
+          components={{
+            Link: Link,
+            ul: UL,
+            BookingButton: BookingButton,
+            CalLink: CalLink,
+            Testimonials: Testimonials,
+          }}
         />
       </article>
     </>
