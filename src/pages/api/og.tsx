@@ -2,14 +2,10 @@ import { ImageResponse } from "@vercel/og";
 import { NextRequest } from "next/server";
 
 export const config = {
-  runtime: "experimental-edge",
+  runtime: "edge",
 };
 
 // Make sure the font exists in the specified path:
-const regular = fetch(
-  new URL("../../../fonts/Montserrat-Regular.ttf", import.meta.url)
-).then((res) => res.arrayBuffer());
-
 const extraBold = fetch(
   new URL("../../../fonts/Montserrat-ExtraBold.ttf", import.meta.url)
 ).then((res) => res.arrayBuffer());
@@ -49,7 +45,6 @@ const Post = async (searchParams: URLSearchParams) => {
   const subTitle = searchParams.get("subTitle");
 
   const extraBoldData = await extraBold;
-  const regularData = await regular;
   const semiBoldData = await semiBold;
   const boldData = await bold;
 
@@ -117,7 +112,6 @@ const Generic = async (searchParams: URLSearchParams) => {
   const title = searchParams.get("title");
   const description = searchParams.get("description");
 
-  const regularData = await regular;
   const extraBoldData = await extraBold;
   const semiBoldData = await semiBold;
   const boldData = await bold;
@@ -148,12 +142,6 @@ const Generic = async (searchParams: URLSearchParams) => {
     ),
     {
       fonts: [
-        {
-          name: "Montserrat",
-          data: regularData,
-          style: "normal",
-          weight: 400,
-        },
         {
           name: "Montserrat",
           weight: 600,
