@@ -25,7 +25,7 @@ const BookingButton: FC<BookingButtonProps> = ({ dataCalLink }) => {
   return (
     <button
       data-cal-link={dataCalLink}
-      className="border-black p-2 rounded border-2 font-semibold my-4 hover:bg-yellow "
+      className="border-black p-2 rounded border-2 font-semibold mt-2 mb-4 hover:bg-yellow "
     >
       Schedule discovery call
     </button>

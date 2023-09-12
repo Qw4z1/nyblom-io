@@ -3,7 +3,8 @@ import { testimonials } from "./util";
 
 const Testimonials = () => {
   return (
-    <div className=" grid grid-cols-2 py-4 gap-4">
+    <div className="grid gap-4 mt-4">
+      <h2>Don&apos;t take my word for it</h2>
       {testimonials.map((testimonial) => (
         <Testimonial key={testimonial.name} testimonial={testimonial} />
       ))}

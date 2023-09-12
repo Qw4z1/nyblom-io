@@ -3,11 +3,13 @@ export type Testimonial = {
   title: string;
   short: string;
   quote: string;
+  link: string;
 };
 
 export const testimonials: Testimonial[] = [
   {
     name: "Neo Moreton",
+    link: "https://www.linkedin.com/in/neomoreton/",
     title: "(AI) Founder | Executive Coach | Author",
     short:
       "Viktor's approach expands thinking and encourages exploring different avenues, leading to greater opportunities and risk mitigation. As a team player, he effectively engages stakeholders to propel ideas forward.",
@@ -16,6 +18,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     name: "Charana Amarasekara",
+    link: "https://www.linkedin.com/in/charanaamarasekara/",
     title: "Lead Developer at Aristotle | AI Innovator",
     short:
       "Viktor has a gift for bringing out the best in his team. Despite working remotely with developers overseas, he quickly grasped everyone's strengths and assigned tasks accordingly. Under his direction, we delivered features to market at record speed.",
@@ -24,7 +27,8 @@ export const testimonials: Testimonial[] = [
   },
   {
     name: "Timothy Forni",
-    title: "Co-founder Baby Journey",
+    link: "https://www.linkedin.com/in/timothy-forni-809a2293/",
+    title: "COO & Co-founder Baby Journey",
     short:
       "Viktor was brought in to lead the transition from agency to inhouse team and worked in the management team for 2.5 years. His ability to explain technical challenges in simple terms was a huge asset to us founders.",
     quote:
