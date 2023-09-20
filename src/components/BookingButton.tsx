@@ -23,12 +23,14 @@ const BookingButton: FC<BookingButtonProps> = ({ dataCalLink }) => {
     })();
   }, []);
   return (
+    <div className="py-6">
     <button
       data-cal-link={dataCalLink}
-      className="border-black p-2 rounded border-2 font-semibold mt-2 mb-4 hover:bg-yellow "
+      className="border-black p-2 rounded border-2 font-semiboldhover:bg-yellow "
     >
       Schedule discovery call
     </button>
+    </div>
   );
 };
 
