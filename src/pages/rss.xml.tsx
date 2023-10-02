@@ -10,7 +10,6 @@ const buildXml = (posts: PostFrontMatter[]) => {
     .filter((it) => !!it.published)
     .map((page) => {
       const url = `${process.env.NEXT_PUBLIC_ROOT_URL}/blog/${page.slug}`;
-
       return `<item>
       <title>${page.title}</title>
       <link>${url}</link>
