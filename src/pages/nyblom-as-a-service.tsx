@@ -58,7 +58,7 @@ const NaaS: NextPage<NaaSPageProps> = ({ content }) => {
 };
 
 export const getStaticProps: GetStaticProps<NaaSPageProps> = async () => {
-  const filePath = join(process.cwd(), "content/naas.mdx");
+  const filePath = join(process.cwd(), "content/nyblom-as-a-service.mdx");
   const mdxSource = readFileSync(filePath, "utf8");
   const bundleResult = await bundleMDX({
     source: mdxSource,

@@ -3,8 +3,8 @@ module.exports = {
   async redirects() {
     return [
       {
-        source: '/nyblom-as-a-service',
-        destination: '/naas',
+        source: '/naas',
+        destination: '/nyblom-as-a-service',
         permanent: true,
       },
       {
