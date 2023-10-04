@@ -7,6 +7,11 @@ module.exports = {
         destination: '/naas',
         permanent: true,
       },
+      {
+        source: '/coffee',
+        destination: 'https://cal.com/nyblomio/30min',
+        permanent: true,
+      },
     ]
   },
 };
