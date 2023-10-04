@@ -1,8 +1,21 @@
 import { GetServerSideProps } from "next/types";
-import { getPostFrontMatter } from "../helpers/getFrontMatter";
-import { PostFrontMatter } from "../types";
+import {
+  getContentFrontMatter,
+  getPostFrontMatter,
+} from "../helpers/getFrontMatter";
+import { PostFrontMatter, SluggedContent } from "../types";
 
-function buildXml(posts: PostFrontMatter[]) {
+function getLastPostDate(posts: PostFrontMatter[]): string {
+  return posts
+    .filter((it) => !!it.published)
+    .reduce((latestDate, post) => {
+      const postDate = post.firstPublished;
+      return postDate > latestDate ? postDate : latestDate;
+    }, "2020-01-01");
+}
+
+function buildXml(posts: PostFrontMatter[], content: SluggedContent[]) {
+  const lastPostDate = getLastPostDate(posts);
   return `<?xml version="1.0" encoding="UTF-8"?>
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
      <url>
@@ -11,28 +24,25 @@ function buildXml(posts: PostFrontMatter[]) {
      </url>
      <url>
        <loc>${`${process.env.NEXT_PUBLIC_ROOT_URL}/blog/`}</loc>
-       <lastmod>2023-05-29</lastmod>
-     </url>     
-     <url>
-       <loc>${`${process.env.NEXT_PUBLIC_ROOT_URL}/nyblom-as-a-service/`}</loc>
-       <lastmod>2023-09-22</lastmod>
+       <lastmod>${lastPostDate}</lastmod>
      </url>
      <url>
-       <loc>${`${process.env.NEXT_PUBLIC_ROOT_URL}/books/`}</loc>
-       <lastmod>2023-02-19</lastmod>
-     </url>
-     <url>
-       <loc>${`${process.env.NEXT_PUBLIC_ROOT_URL}/about/`}</loc>
-       <lastmod>2023-08-08</lastmod>
-     </url>
-     <url>
-       <loc>${`${process.env.NEXT_PUBLIC_ROOT_URL}/now/`}</loc>
-       <lastmod>2023-10-02</lastmod>
-     </url>
-     <url>
-       <loc>${`${process.env.NEXT_PUBLIC_ROOT_URL}/portfolio/`}</loc>
-       <lastmod>2023-02-06</lastmod>
-     </url>
+     <loc>${`${process.env.NEXT_PUBLIC_ROOT_URL}/books/`}</loc>
+     <lastmod>2023-02-19</lastmod>
+    </url>
+    <url>
+      <loc>${`${process.env.NEXT_PUBLIC_ROOT_URL}/portfolio/`}</loc>
+      <lastmod>2023-02-06</lastmod>
+    </url>
+    ${content
+      .map(({ slug, lastUpdated }) => {
+        return `
+      <url>
+        <loc>${`${process.env.NEXT_PUBLIC_ROOT_URL}/${slug}/`}</loc>
+        <lastmod>${lastUpdated}</lastmod>
+      </url>`;
+      })
+      .join("")}
      ${posts
        .filter((it) => !!it.published)
        .map(({ slug, lastUpdated }) => {
@@ -54,7 +64,8 @@ const SiteMap = () => {
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   const posts = await getPostFrontMatter();
-  const rss = buildXml(posts);
+  const content = await getContentFrontMatter();
+  const rss = buildXml(posts, content);
 
   // Set headers and send XML instead of page.
   res.setHeader("Content-Type", "text/xml");

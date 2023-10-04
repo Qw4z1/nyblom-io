@@ -1,7 +1,7 @@
 import { readFileSync, readdirSync } from "fs";
 import matter from "gray-matter";
 import { join } from "path";
-import { PostFrontMatter } from "../types";
+import { ContentFrontMatter, PostFrontMatter, SluggedContent } from "../types";
 import { createReads } from "./reads/createReads";
 import { getReads } from "./reads/getReads";
 
@@ -25,4 +25,19 @@ export async function getPostFrontMatter(): Promise<PostFrontMatter[]> {
   );
 
   return sortedPosts;
+}
+
+export async function getContentFrontMatter(): Promise<SluggedContent[]> {
+  const fileNames = readdirSync(join(process.cwd(), "content"));
+
+  const allPosts: SluggedContent[] = await Promise.all(
+    fileNames.map(async (fileName) => {
+      const filePath = join(process.cwd(), "content", fileName);
+      const fileData = readFileSync(filePath, "utf8");
+      const frontMatter = matter(fileData).data as ContentFrontMatter;
+      const slug = fileName.replace(".mdx", "");
+      return { ...frontMatter, slug };
+    })
+  );
+  return allPosts;
 }

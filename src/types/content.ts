@@ -5,3 +5,5 @@ export interface ContentFrontMatter {
 export interface Content extends ContentFrontMatter {
   sourceCode: string;
 }
+
+export type SluggedContent = ContentFrontMatter & { slug: string };
