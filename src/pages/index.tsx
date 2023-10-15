@@ -11,7 +11,7 @@ import { PostFrontMatter } from "../types/posts";
 type HomeCard = PostFrontMatter & { isNew: boolean };
 
 type HomeProps = {
-  posts: PostFrontMatter[];
+  posts: HomeCard[];
 };
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
@@ -35,9 +35,9 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   latest.isNew = daysBetween(latest.firstPublished, new Date()) < 7;
   const latestIndex = publishedPosts.findIndex((it) => it.slug === latest.slug);
 
-  if (latestIndex > -1) {
+  if (latestIndex > -1 && latest.isNew) {
     publishedPosts = move(publishedPosts, latestIndex, 0);
-  } else {
+  } else if (latest.isNew) {
     publishedPosts = [latest, ...publishedPosts];
   }
 
@@ -59,7 +59,7 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
             <Link href="/about">Viktor Nyblom</Link>.
           </p>
           <p className="text- md:text-2xl">
-            After a decade of building apps, teams and companies, I've now
+            After a decade of building apps, teams and companies, I&apos;ve now
             started coaching founders and CTOs through something that I call{" "}
             <strong>
               <Link href="/nyblom-as-a-service/">Nyblom-as-a-Service</Link>
@@ -80,7 +80,7 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
         <SocialRow />
         <h2 className="mt-14">Popular posts</h2>
         <div className="pb-8 pt-2">
-          {posts.map((it, index) => (
+          {posts.map((it) => (
             <Card
               title={it.title}
               key={it.slug}
@@ -88,7 +88,7 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
               publishedDate={it.firstPublished}
               slug={it.slug}
               reads={it.reads}
-              isNew={index === 0}
+              isNew={it.isNew}
             />
           ))}
         </div>

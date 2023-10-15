@@ -5,7 +5,7 @@ const Announcement = () => {
     <div className="pt-8">
       <h2 className="italic">Heads up!</h2>
       <p className="italic">
-        After over a decade of building apps, teams and companies, I've now started
+        After over a decade of building apps, teams and companies, I&apos;ve now started
         coaching founders and CTOs through something that I call{" "}
         <strong>
           <Link href="/nyblom-as-a-service/">Nyblom-as-a-Service</Link>

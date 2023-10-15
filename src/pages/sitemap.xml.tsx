@@ -20,7 +20,7 @@ function buildXml(posts: PostFrontMatter[], content: SluggedContent[]) {
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
      <url>
        <loc>${process.env.NEXT_PUBLIC_ROOT_URL}/</loc>
-       <lastmod>2023-06-20</lastmod>
+       <lastmod>2023-10-15</lastmod>
      </url>
      <url>
        <loc>${`${process.env.NEXT_PUBLIC_ROOT_URL}/blog/`}</loc>
@@ -28,7 +28,7 @@ function buildXml(posts: PostFrontMatter[], content: SluggedContent[]) {
      </url>
      <url>
      <loc>${`${process.env.NEXT_PUBLIC_ROOT_URL}/books/`}</loc>
-     <lastmod>2023-02-19</lastmod>
+     <lastmod>2023-10-15</lastmod>
     </url>
     <url>
       <loc>${`${process.env.NEXT_PUBLIC_ROOT_URL}/portfolio/`}</loc>
