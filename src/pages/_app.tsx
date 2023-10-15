@@ -4,8 +4,8 @@ import type { AppProps } from "next/app";
 import Link from "next/link";
 import { useState } from "react";
 import NavBarLink from "../components/navbar/NavBarLink";
-import { useIsScrolled } from "../hooks/useIsScrolled";
 import { Analytics } from "@vercel/analytics/react";
+import { RssIcon } from "../components/icons/RssSvg";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -81,6 +81,13 @@ function MyApp({ Component, pageProps }: AppProps) {
                 <NavBarLink
                   text="/About"
                   link="/about"
+                  onClick={navLinkClickHandler}
+                />
+              </li>
+              <li className="mt-3 md:mt-0">
+                <NavBarLink
+                  text="/RSS"
+                  link="/rss"
                   onClick={navLinkClickHandler}
                 />
               </li>
