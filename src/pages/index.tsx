@@ -22,19 +22,19 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
       ...it,
     } as HomeCard;
   });
-  
+
   let publishedPosts = cards
     .filter((it) => it.published == true)
     .sort((a, b) => b.reads - a.reads)
     .slice(0, 5);
-  
-    const latest = cards.reduce((previous, current) =>
+
+  const latest = cards.reduce((previous, current) =>
     previous.firstPublished < current.firstPublished ? current : previous
   );
 
   latest.isNew = daysBetween(latest.firstPublished, new Date()) < 7;
   const latestIndex = publishedPosts.findIndex((it) => it.slug === latest.slug);
-  
+
   if (latestIndex > -1) {
     publishedPosts = move(publishedPosts, latestIndex, 0);
   } else {
@@ -56,16 +56,25 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
         <div className="my-8">
           <p className="text-lg md:text-2xl">
             Welcome to the personal blog of{" "}
-            <Link href="/about">Viktor Nyblom</Link>, where I share my thoughs from decade of building apps, teams and companies.
+            <Link href="/about">Viktor Nyblom</Link>.
           </p>
-          <p className="text-lg md:text-2xl">
-            If you want to know what I&apos;m up to right now, checkout my{" "}
-            <Link href="/now/">Now Page</Link>.
+          <p className="text- md:text-2xl">
+            After a decade of building apps, teams and companies, I've now
+            started coaching founders and CTOs through something that I call{" "}
+            <strong>
+              <Link href="/nyblom-as-a-service/">Nyblom-as-a-Service</Link>
+            </strong>
+            .
           </p>
-          <p className="text-lg md:text-2xl">
-            The source code for this website is available on{" "}
-            <a href="https://github.com/Qw4z1/nyblom-io">GitHub</a>. PRs are
-            welcome!
+          <p className="text- md:text-2xl">
+            If this is something that would be interesting to you feel free to
+            schedule a{" "}
+            <strong>
+              <Link href={"https://cal.com/nyblomio/discovery-call"}>
+                free discovery call
+              </Link>{" "}
+            </strong>
+            to see if we are a good match for each other.
           </p>
         </div>
         <SocialRow />

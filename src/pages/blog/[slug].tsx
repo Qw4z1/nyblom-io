@@ -15,6 +15,7 @@ import PostMetaDataRow from "../../components/PostMetaDataRow";
 import { getReads } from "../../helpers/reads/getReads";
 import MdxTable from "../../components/MdxTable";
 import { createReads } from "../../helpers/reads/createReads";
+import { Announcement } from "../../components/announcement";
 
 interface BlogPostProps {
   post: Post;
@@ -54,7 +55,9 @@ const BlogPost: NextPage<BlogPostProps> = ({ post }) => {
           ) : null}
           <h1>{title}</h1>
           {subtitle && (
-            <p className="text-xl font-bold pt-4 pb-2 m-0 text-gray-800">{subtitle}</p>
+            <p className="text-xl font-bold pt-4 pb-2 m-0 text-gray-800">
+              {subtitle}
+            </p>
           )}
           <PostMetaDataRow
             publishedDate={firstPublished}
@@ -63,6 +66,7 @@ const BlogPost: NextPage<BlogPostProps> = ({ post }) => {
           />
         </header>
         <MDXPost components={{ Link: Link, MdxTable: MdxTable }} />
+        <Announcement />
       </article>
     </>
   );

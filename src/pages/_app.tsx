@@ -58,8 +58,8 @@ function MyApp({ Component, pageProps }: AppProps) {
             <ul className="flex flex-col p-4 mt-4 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:border-0 ">
               <li className="mt-3 md:mt-0">
                 <NavBarLink
-                  text="/About"
-                  link="/about"
+                  text="/NaaS"
+                  link="/nyblom-as-a-service"
                   onClick={navLinkClickHandler}
                 />
               </li>
@@ -72,13 +72,6 @@ function MyApp({ Component, pageProps }: AppProps) {
               </li>
               <li className="mt-3 md:mt-0">
                 <NavBarLink
-                  text="/Books"
-                  link="/books"
-                  onClick={navLinkClickHandler}
-                />
-              </li>
-              <li className="mt-3 md:mt-0">
-                <NavBarLink
                   text="/Portfolio"
                   link="/portfolio"
                   onClick={navLinkClickHandler}
@@ -86,8 +79,8 @@ function MyApp({ Component, pageProps }: AppProps) {
               </li>
               <li className="mt-3 md:mt-0">
                 <NavBarLink
-                  text="/Now"
-                  link="/now"
+                  text="/About"
+                  link="/about"
                   onClick={navLinkClickHandler}
                 />
               </li>
