@@ -49,12 +49,22 @@ article p {
   @apply leading-relaxed mb-4;
 }
 
-article li {
+article ul li {
   @apply leading-normal mb-4 p-0 list-outside list-disc;
 }
+
+article ol li {
+  @apply leading-normal mb-4 p-0 list-outside list-decimal;
+}
+
+article ol {
+  @apply m-0 px-6;
+}
+
 article ul {
   @apply m-0 px-6;
 }
+
 .footnotes li {
   @apply list-decimal list-outside;
 }
