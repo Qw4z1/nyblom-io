@@ -27,9 +27,9 @@ const NaaS: NextPage<NaaSPageProps> = ({ content }) => {
   return (
     <>
       <Head
-        title={"Nyblom as a Service"}
+        title={"Nyblom-as-a-Service"}
         description={
-          "Your strategic technology partner"
+          "Helping founders succeed"
         }
       />
       <article className="py-4 max-w-2xl flex flex-col justify-start items-start m-auto">
