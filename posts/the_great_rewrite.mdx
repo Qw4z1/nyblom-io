@@ -1,0 +1,140 @@
+---
+title: "The Great Rewrite"
+subtitle: ""
+lastUpdated: "2023-11-03"
+firstPublished: "2023-11-03"
+excerpt: "Focusing on the right thing is hard. In his book, The One Thing, Gary Keller argues that you can use a single question to find actionable insight about where to direct your energy and focus."
+tags:
+  - Rewrite
+  - CTO
+published: true
+---
+
+
+As a technical advisor[^1], there is one question that I get asked by clients every so often. *Is the state of the software so bad that it needs to be rewritten from scratch?*
+
+It’s easy to fool oneself into thinking it might be a simple task. Just build a new thing that does what the old one did, right? Wrong. If you Joel Spolsky’s legendary essay Things You Should Never Do[^2], you get the sense that you should never do a complete rewrite.
+
+However, if you’ve been working with mobile apps long enough, you will most likely have heard something completely different. “Always Rewrite the App Every 3-5 years”, was a common mantra in the mobile world.
+
+As you might have guessed by now, the answer is never straightforward.
+
+## The Good - Pros of a Complete Rewrite
+
+I still haven’t met a developer who hasn’t gotten something dreamy in her eyes when talking about a greenfield project. Imagine finally being able to throw away all the old sins and start fresh, with a clean new architecture and all the latest toys… Sorry, tools! 
+
+When Uber rebuilt their iOS app[^3] that seems to have been part of the argument. Albeit maybe not the best one.
+
+A better reason is to clear the technical debt of the balance sheet. Usually, this is done through regular maintenance, where the debt is amortised a bit at a time. But the startups that stay alive are the startups that move quickly. 
+
+This often translates into quick and dirty solutions. While seemingly reckless, is often the quickest way to investigate if something brings value to the user. With each shortcut, though, the Technical Debt increases. 
+
+Usually, until the point where the very thing that used to make you go faster makes you go nowhere at all, and the only way out is to start over.
+
+If you are lucky, you might be able to contain the rewrites to isolated services. But if that is not the case, it might even be worth pausing the development of all new features for a few months to start over.
+
+Keeping up with the times is also important when it comes to software. Swedish banks are famous for running old COBOL systems that are difficult to maintain and difficult to find developers to maintain. 
+
+As always when there is a decrease in supply, the price for a COBOL developer has increased. Newer technologies, on the other hand, will make you more attractive to more developers, which means more supply and lower prices[^4].
+
+There are several successful cases where a stack has been rewritten in a more modern language, ranging from mobile (Objc to Swift) to the airline industry (C++ to Java). Modernising the stack, if done correctly, could also bring significant performance gains.
+
+## The Bad - Cons of a Complete Rewrite
+
+If you work as a software developer long enough (i.e. about a week), you’ll learn that projects tend to take longer than expected to finish. Rewrites are no different. No, scratch that. Rewrites are even more prone to delays than completely new projects. 
+
+This is because there is a clear, usually very long, list of features that need to be included (the ones in the old system). Cutting features is usually not an option and any feature that is missed will lead to rework and delays.
+
+Adding new features is usually a different story. Maybe you want to add an auth provider or perhaps you want to redesign the onboarding flow. All these things add up and before you know it 2 months have turned into 2 years.
+
+But even if you don’t add new features, there is a curious thing that appears when you write code. Bugs. A rewrite will make sure you get rid of all the old bugs. But you are also guaranteed to produce new ones. 
+
+These new bugs will lead to new fixes and new workarounds which inevitably lead to new technical debt, which means you run the risk of ending up exactly where you started.
+
+The last thing that seasoned developers know is that once you’ve worked with a codebase long enough, you build up a certain type of domain knowledge. The type that comes from testing a system on actual users. Some of the rowdiest hundreds of lines-long functions I’ve seen have been that way because of the sheer amount of bug fixes that have gone into it.
+
+Edge cases, such as having the same user use an app on multiple devices, or simply using the system in a way that hadn’t been anticipated. All of those fixes are now unfixed and have become traps that unassuming developers undoubtedly will get caught in.
+
+All the reasons I’ve listed here are bad, but not that different from normal development. But don't worry. It gets worse. Much, much worse.
+
+## The Ugly - Potential Pitfalls and Death Traps
+
+When it comes to rewrites going horribly wrong, Netscape is perhaps the most famous example. During a crucial point in time, the codebase for Netscape 4 was deemed so bad that they decided to do a complete rewrite. A decision that turned out to be fatal.
+
+The rewrite took three whole years, and when Netscape 6.0 finally was released (there never was a Netscape 5) it was too late. The world had moved on. Three years later, the Netscape division was disbanded.
+
+Another example is the Royal Bank of Scotland (RBS). After many years of ignoring their technical debt[^5], they went for a complete rewrite of their payment processing software. 
+
+But when they rolled out the new system over the weekend of June 19, 2012, things didn’t go as planned. Just hours after the upgrade had been rolled out, customers lost the ability to transfer money.
+
+Payments were delayed and 6.5 million people were unable to access their accounts for several days, leading to large fines and customers taking their business elsewhere.
+
+One of the greatest risks, when a project drags on for too long, is that core people lose faith and quit. Every person leaving takes more and more domain knowledge with them.
+
+This brain-drain not only the speed at which features can be developed, but also team morale, leading to even lower productivity and more people abandoning ship. 
+
+Once this downward spiral has started it is extremely difficult to pull out of. In fact, in most cases, it’s better to cut your losses and kill the project, rather than to continue the death march.
+
+One famous example of admitting defeat is the Windows Longhorn [^6] project. Announced as a successor to Windows XP (but based on Windows Server 2003) this new version of Windows was supposed to have come with a new file system and a revamped user interface.
+
+However, in late 2004, after numerous delays and issues, the project was deemed to be too “messy” and the project was restarted by branching off of Windows Server 2003 SP1. This time with a much smaller scope. The name Longhorn stuck around until 2005 when it was rebranded Windows Vista.
+
+A decision like that is never easy[^7]. The more resources that go into a project, the harder it becomes to let it go. But just as in poker, sometimes it’s correct to fold and lose some of your money to avoid losing all your money.
+
+## Bonus: Real-life example
+
+I joined DoktorSe[^8] in late 2018, as the first in-house team was formed. 
+
+The existing codebase had been rush-built by an offshore agency and looked the part. The backend codebase had a lot of dead code from abandoned features and it was built in PHP. A language that none of the newly recruited developers mastered.[^9]
+
+On top of this, we (mostly our brilliant product designer, Gu Jian[^10]) had a product vision that was very far from where the existing product was.
+
+The way we dealt with rewriting the backend was by pausing development for a while so that we could create an API layer. This API layer simply proxied requests to the old backend, but it allowed us to rewrite one endpoint at a time. Slowly but surely we could migrate individual features to the new, service-based, backend.[^11]
+
+Being slow and methodical greatly reduced the risk compared to a complete rewrite, since it allowed for tactical re-implementation of the most critical parts first while leaving the less critical parts intact until we had time to work on them.
+
+## Wrap up
+
+The decision to rewrite a system should not be taken lightly. There are benefits to it, but also great risks. And the energy which you invest into a rewrite is energy that could be invested into building new features.
+
+But if you do decide to do a rewrite (full or partial), remember that fortune favours the prepared. All successful examples I’ve seen talk of doing a lot of pre-work to get clear about exactly what problem they were solving.
+
+This Snap blog from 2020[^12] gives a set of ground rules that resonate very well with how I think and how we approached it at Doktor:
+
+- **Have some ground rules:** You need to be extremely clear about which problem you are solving, and create a plan for how to solve that problem.
+- **Focus:** Scope the work and pause development of the old app until you’re done.
+- **Adopt an MVP strategy:** You’re building a new product. Act like it. Ship early to beta testers and get feedback.
+
+If you made it this far, I’m curious to hear your thoughts. Do you have any war stories that you want to share? Do you think I got anything wrong? 
+
+Shoot me an email at viktor [at] nyblom.io.
+
+Until next time!
+
+//Viktor
+
+---
+
+[^1]: I recently launched my new concept called Nyblom-as-a-Service, where I provide guidance to non-technical founders and CTOs. Read more about NaaS [HERE](https://www.nyblom.io/nyblom-as-a-service).
+
+[^2]: [Things You Should Never Do](http://www.joelonsoftware.com/articles/fog0000000069.html)
+
+[^3]: [Refactor or rebuild? Insights from the Building Mobile Apps At Scale webinar - Bitrise](https://bitrise.io/blog/post/refactor-or-rebuild-insights-from-the-building-mobile-apps-at-scale-webinar)
+
+[^4]: This is not always true though. Sometimes a technology gets so in demand that every available developer gets a dousen dozen and the salaries skyrocket as a consequence.
+
+[^5]: [2012 RBS Group computer system problems](https://en.wikipedia.org/wiki/2012_RBS_Group_computer_system_problems)
+
+[^6]: See [Longhorn](https://longhorn.ms/) for a deepdive.
+
+[^7]: A phenomenon known as the [Sunc-Cost Fallacy](https://en.wikipedia.org/wiki/Sunk_cost).
+
+[^8]: Swedish unicorn and telemedicine company, where I played a small part as Android lead in the original in-house team, and later as a [tiny investor](https://www.nyblom.io/portfolio).
+
+[^9]: One could argue that the correct solution would have been to recruit developers with PHP experience, but I think it's fair to say that it all worked out in the end.
+
+[^10]: You can find her LinkedIn [HERE](https://www.linkedin.com/in/gujian/)
+
+[^11]: I didn't know it back then, but this is called the Strangler Fig pattern after a 2004 article by Martin Fowler titled [StranglerFigApplication](https://martinfowler.com/bliki/StranglerFigApplication.html)
+
+[^12]: [Don't Rewrite Your App, Unless You Have To - Snap Engineering](https://eng.snap.com/dont-rewrite-your-app-unless-you-have-to)
