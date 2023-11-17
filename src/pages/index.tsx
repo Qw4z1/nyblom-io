@@ -77,7 +77,9 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
             to see if we are a good match for each other.
           </p>
         </div>
-        <SocialRow />
+        <div className="flex justify-center w-full">
+          <SocialRow />
+        </div>
         <h2 className="mt-14">Popular posts</h2>
         <div className="pb-8 pt-2">
           {posts.map((it) => (

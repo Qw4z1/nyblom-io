@@ -8,7 +8,6 @@ import { useMemo } from "react";
 import remarkGfm from "remark-gfm";
 import { Head } from "../components/Head";
 import { Content, ContentFrontMatter, PostFrontMatter } from "../types";
-import SocialRow from "../components/SocialRow";
 import { getPostFrontMatter } from "../helpers/getFrontMatter";
 import MdxPostList from "../components/MdxPostList";
 import UL from "../components/UL";
@@ -48,7 +47,6 @@ const Now: NextPage<NowPageProps> = ({ content }) => {
           If you want to get in touch with me, feel free to use any of the
           channels below. 👇
         </p>
-        <SocialRow />
       </div>
     </>
   );

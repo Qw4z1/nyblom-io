@@ -2,10 +2,10 @@ import React from "react";
 
 const Cal = () => {
   return (
-    <svg width="56" height="56" fill="#000" xmlns="http://www.w3.org/2000/svg">
+    <svg fill="#000" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <mask id="calClip">
-          <circle cx={28} cy={28} r={28} fill="#fff" />
+          <circle cx={20} cy={20} r={20} fill="#fff" />
           <g>
             <path
               className="icon"
@@ -14,7 +14,7 @@ const Cal = () => {
           </g>
         </mask>
       </defs>
-      <rect mask="url(#calClip)" height="56" width="56" fill="#000" />
+      <rect mask="url(#calClip)" fill="#000" />
     </svg>
   );
 };
