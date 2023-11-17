@@ -52,23 +52,14 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
         description="A decade of building apps, teams and companies."
       />
       <div className="max-w-2xl flex flex-col justify-start items-start m-auto pb-10">
-        <h1>Hi!</h1>
+        <h1>Hi! 👋</h1>
         <div className="my-8">
-          <p className="text-lg md:text-xl font-medium">
-            Welcome to the personal blog of{" "}
+          <p className="text-2xl font-medium">
+            I&apos;m{" "}
             <strong><Link href="/about">Viktor Nyblom</Link></strong>.
           </p>
-          <p className="text-md md:text-xl font-medium">
-            After a decade of building apps, teams and companies, <br/>I now focus my efforts towards <strong><Link href="/nyblom-as-a-service/">helping others</Link></strong>.
-          </p>
-          <p className="text-md md:text-xl font-medium">
-            If you are a founder or a CTO wanting more clairity around people, product, and tech use this link{" "}
-            <strong>
-              <Link href={"https://cal.com/nyblomio/discovery-call"}>
-                this link
-              </Link>{" "}
-            </strong>
-            to schedule a free discovery call.
+          <p className="text-2xl font-medium">
+            Having spent a decade of building apps, teams and companies, I now focus on <strong><Link href="/nyblom-as-a-service/">helping others do the same</Link></strong>.
           </p>
         </div>
         <div className="flex justify-center w-full">
