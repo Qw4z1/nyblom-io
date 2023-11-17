@@ -59,7 +59,7 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
             <strong><Link href="/about">Viktor Nyblom</Link></strong>.
           </p>
           <p className="text-2xl font-medium">
-            Having spent a decade of building apps, teams and companies, I now focus on <strong><Link href="/nyblom-as-a-service/">helping others do the same</Link></strong>.
+            Having spent a decade of building apps, teams and companies, I now focus on <strong><Link href="/nyblom-as-a-service/">helping others</Link></strong> do the same.
           </p>
         </div>
         <div className="flex justify-center w-full">
