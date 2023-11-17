@@ -54,33 +54,27 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
       <div className="max-w-2xl flex flex-col justify-start items-start m-auto pb-10">
         <h1>Hi!</h1>
         <div className="my-8">
-          <p className="text-lg md:text-2xl">
+          <p className="text-lg md:text-xl font-medium">
             Welcome to the personal blog of{" "}
-            <Link href="/about">Viktor Nyblom</Link>.
+            <strong><Link href="/about">Viktor Nyblom</Link></strong>.
           </p>
-          <p className="text- md:text-2xl">
-            After a decade of building apps, teams and companies, I&apos;ve now
-            started coaching founders and CTOs through something that I call{" "}
-            <strong>
-              <Link href="/nyblom-as-a-service/">Nyblom-as-a-Service</Link>
-            </strong>
-            .
+          <p className="text-md md:text-xl font-medium">
+            After a decade of building apps, teams and companies, <br/>I now focus my efforts towards <strong><Link href="/nyblom-as-a-service/">helping others</Link></strong>.
           </p>
-          <p className="text- md:text-2xl">
-            If this is something that would be interesting to you feel free to
-            schedule a{" "}
+          <p className="text-md md:text-xl font-medium">
+            If you are a founder or a CTO wanting more clairity around people, product, and tech use this link{" "}
             <strong>
               <Link href={"https://cal.com/nyblomio/discovery-call"}>
-                free discovery call
+                this link
               </Link>{" "}
             </strong>
-            to see if we are a good match for each other.
+            to schedule a free discovery call.
           </p>
         </div>
         <div className="flex justify-center w-full">
           <SocialRow />
         </div>
-        <h2 className="mt-14">Popular posts</h2>
+        <h2 className="mt-14">Popular from the blog:</h2>
         <div className="pb-8 pt-2">
           {posts.map((it) => (
             <Card
