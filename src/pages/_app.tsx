@@ -99,13 +99,6 @@ function MyApp({ Component, pageProps }: AppProps) {
                   onClick={navLinkClickHandler}
                 />
               </li>
-              <li className="mt-3 md:mt-0">
-                <NavBarLink
-                  text="/RSS"
-                  link="/rss"
-                  onClick={navLinkClickHandler}
-                />
-              </li>
             </ul>
           </div>
         </div>

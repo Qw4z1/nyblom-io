@@ -68,7 +68,7 @@ export const getStaticProps: GetStaticProps<NowPageProps> = async () => {
 
   const posts = await getPostFrontMatter();
   const postsThisYear = posts.filter(
-    (it) => it.published == true && it.firstPublished > "2023-01-01"
+    (it) => it.published == true && it.firstPublished > "2024-01-01"
   );
 
   return {
