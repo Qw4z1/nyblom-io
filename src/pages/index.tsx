@@ -7,6 +7,7 @@ import { move } from "../helpers/array";
 import { daysBetween } from "../helpers/date";
 import { getPostFrontMatter } from "../helpers/getFrontMatter";
 import { PostFrontMatter } from "../types/posts";
+import InlineNewsletterForm from "../components/InlineNewsletterForm";
 
 type HomeCard = PostFrontMatter & { isNew: boolean };
 
@@ -56,13 +57,27 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
         <div className="my-8">
           <p className="text-2xl font-medium">
             I&apos;m{" "}
-            <strong><Link href="/about">Viktor Nyblom</Link></strong>.
+            <strong>
+              <Link href="/about">Viktor Nyblom</Link>
+            </strong>
+            .
           </p>
           <p className="text-2xl font-medium">
-            Having spent a decade of building apps, teams and companies, I now focus on <strong><Link href="/nyblom-as-a-service/">helping others</Link></strong> do the same.
+            Having spent a decade of building apps, teams and companies, I now
+            focus on{" "}
+            <strong>
+              <Link href="/nyblom-as-a-service/">helping others</Link>
+            </strong>{" "}
+            do the same.
           </p>
         </div>
-        <div className="flex justify-center w-full">
+        <div className="flex flex-col justify-center w-full">
+          <p className="max-w-[70%] mx-auto text-center italic">
+            Subscribe to my newsletter to get the latest of my thinking in the intersection of strategy, product and tech.
+          </p>
+          <InlineNewsletterForm />
+        </div>
+        <div className="flex mt-14 justify-center w-full">
           <SocialRow />
         </div>
         <h2 className="mt-14">Popular from the blog:</h2>

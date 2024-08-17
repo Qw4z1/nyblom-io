@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useState } from "react";
 import NavBarLink from "../components/navbar/NavBarLink";
 import { Analytics } from "@vercel/analytics/react";
-import { RssIcon } from "../components/icons/RssSvg";
 import Footer from "../components/footer";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
@@ -66,6 +65,13 @@ function MyApp({ Component, pageProps }: AppProps) {
               </li>
               <li className="mt-3 md:mt-0">
                 <NavBarLink
+                  text="/Newsletter"
+                  link="/newsletter"
+                  onClick={navLinkClickHandler}
+                />
+              </li>
+              <li className="mt-3 md:mt-0">
+                <NavBarLink
                   text="/Blog"
                   link="/blog"
                   onClick={navLinkClickHandler}
@@ -89,13 +95,6 @@ function MyApp({ Component, pageProps }: AppProps) {
                 <NavBarLink
                   text="/Now"
                   link="/now"
-                  onClick={navLinkClickHandler}
-                />
-              </li>
-              <li className="mt-3 md:mt-0">
-                <NavBarLink
-                  text="/Books"
-                  link="/books"
                   onClick={navLinkClickHandler}
                 />
               </li>
