@@ -36,8 +36,7 @@ const Newsletter: NextPage = () => {
         <InlineNewsletterForm />
 
         <p className="italic mt-12">
-          &quot;Viktor&apos;s is a master at explaining complex topics in simple
-          terms&quot; - A Satisfied Reader
+          &quot;I have subscribed to 1000s of newsletters and this is by far my favorite!&quot; - Viktor Nyblom
         </p>
       </div>
     </>
