@@ -6,6 +6,7 @@ import { useState } from "react";
 import NavBarLink from "../components/navbar/NavBarLink";
 import { Analytics } from "@vercel/analytics/react";
 import Footer from "../components/footer";
+import Script from "next/script";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -105,6 +106,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <main className="min-h-screen container pt-32 md:pt-32 lg:pt-32 ">
         <Component {...pageProps} />
         <Analytics />
+        <Script src="https://scripts.simpleanalyticscdn.com/latest.js" />
       </main>
       <Footer/>
     </div>
