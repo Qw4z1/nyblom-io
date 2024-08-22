@@ -22,12 +22,6 @@ const Portfolio: NextPage = () => {
             - Talk to a doktor from anywhere.{" "}
           </li>
           <li>
-            <a href="https://rgnt-motorcycles.com/" className="font-bold">
-              RGNT Motorcycles
-            </a>{" "}
-            - Electric motorcycles.
-          </li>
-          <li>
             <a href="https://ljusgarda.se/" className="font-bold">
               Ljusgårda
             </a>{" "}
