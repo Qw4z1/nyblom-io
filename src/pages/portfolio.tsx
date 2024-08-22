@@ -28,19 +28,6 @@ const Portfolio: NextPage = () => {
             - Modern farming.
           </li>
           <li>
-            <a href="https://www.bzzt.se/" className="font-bold">
-              Bzzt
-            </a>{" "}
-            - Electric pod taxi.
-          </li>
-          <li>
-            <a href="https://www.miltrain.se/" className="font-bold">
-              Miltrain
-            </a>{" "}
-            - Get better results on your training journey.
-          </li>
-
-          <li>
             <a href="https://detecht.se/" className="font-bold">
               Detecht
             </a>{" "}
@@ -65,10 +52,10 @@ const Portfolio: NextPage = () => {
             - Explore thousands of skateboard spots worldwide.
           </li>
           <li>
-            <a href="https://microshifts.app/" className="font-bold">
-              Microshifts
+            <a href="https://aiyana.ai/" className="font-bold">
+              AIYANA
             </a>{" "}
-            - Helps you do more of what matters most.
+            - Scaling company culture
           </li>
           <li>
             <a href="https://lectrium.com" className="font-bold">
