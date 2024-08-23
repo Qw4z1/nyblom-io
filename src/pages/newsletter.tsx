@@ -7,7 +7,7 @@ const Newsletter: NextPage = () => {
     <>
       <Head
         title="Viktor's Weekly Newsletter"
-        description="Join the intersection of strategy, product, and tech with Viktor's weekly insights."
+        description=""
       />
       <div className="max-w-2xl flex flex-col justify-start items-start m-auto pb-10">
         <h1 className="mb-12">
