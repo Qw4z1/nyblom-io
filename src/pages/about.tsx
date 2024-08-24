@@ -24,7 +24,9 @@ const About: NextPage<AboutPageProps> = ({ content }) => {
     <>
       <Head title={"About"} description={""} />
       <div className="py-4 max-w-2xl flex flex-col justify-start items-start m-auto">
-        <ContentItem components={{ Link: Link, ul: UL }} />
+        <article>
+          <ContentItem components={{ Link: Link, ul: UL }} />
+        </article>
       </div>
     </>
   );
