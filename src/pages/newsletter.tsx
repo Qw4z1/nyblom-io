@@ -6,8 +6,8 @@ const Newsletter: NextPage = () => {
   return (
     <>
       <Head
-        title="Viktor's Weekly Newsletter"
-        description=""
+        title="Viktor's Weekly"
+        description="Writing about the intersection of strategy, product and tech"
       />
       <div className="max-w-2xl flex flex-col justify-start items-start m-auto pb-10">
         <h1 className="mb-12">
