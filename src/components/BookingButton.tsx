@@ -6,9 +6,10 @@ import { FC, useEffect } from "react";
 
 export interface BookingButtonProps {
   dataCalLink: string;
+  buttonTitle: string;
 }
 
-const BookingButton: FC<BookingButtonProps> = ({ dataCalLink }) => {
+const BookingButton: FC<BookingButtonProps> = ({ dataCalLink , buttonTitle}) => {
   useEffect(() => {
     (async function () {
       const cal = await getCalApi();
@@ -28,7 +29,7 @@ const BookingButton: FC<BookingButtonProps> = ({ dataCalLink }) => {
       data-cal-link={dataCalLink}
       className="border-black p-2 rounded border-2 font-semiboldhover:bg-yellow "
     >
-      Schedule discovery call
+      {buttonTitle}
     </button>
     </div>
   );

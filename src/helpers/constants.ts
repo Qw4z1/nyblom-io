@@ -1,1 +1,1 @@
-const calAdvisoryLink = "nyblomio/advisory";
+const calAdvisoryLink = "nyblomio/claritycall";
