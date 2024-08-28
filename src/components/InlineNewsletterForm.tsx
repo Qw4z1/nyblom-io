@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { SignupResponse } from "../types/signup";
 
 const InlineNewsletterForm = () => {
   const [email, setEmail] = useState("");
@@ -7,23 +8,23 @@ const InlineNewsletterForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const formId = process.env.NEXT_PUBLIC_CONVERTKIT_FORM_ID;
-      const response = await fetch(
-        `https://api.convertkit.com/v3/forms/${formId}/subscribe`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email: email,
-            api_key: process.env.NEXT_PUBLIC_CONVERTKIT_API_KEY,
-          }),
-        }
-      );
+      const response = await fetch("/api/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email,
+        }),
+      });
 
       if (response.ok) {
-        setIsSubmitted(true);
+        const body = await response.json();
+        if (body.success) {
+          setIsSubmitted(true);
+        } else {
+          console.error("Subscription failed");
+        }
       } else {
         console.error("Subscription failed");
       }
