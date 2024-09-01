@@ -29,9 +29,9 @@ const Card: FC<CardProps> = ({
           <p className="text-black text-opacity-60 text-md italic mt-1 mb-1">
             First Published: {publishedDate}
           </p>
-          <div className="flex flex-row text-md text-black text-opacity-60">
+          {/* <div className="flex flex-row text-md text-black text-opacity-60">
             <Eye /> <div className="w-1" /> {reads}
-          </div>
+          </div> */}
         </div>
       </div>
     </Link>
