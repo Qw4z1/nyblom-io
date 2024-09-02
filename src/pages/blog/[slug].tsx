@@ -10,11 +10,8 @@ import { Head } from "../../components/Head";
 import { HeaderImage } from "../../components/HeaderImage";
 import remarkGfm from "remark-gfm";
 import Link from "next/link";
-import { useReads } from "../../hooks/useReads";
 import PostMetaDataRow from "../../components/PostMetaDataRow";
-import { getReads } from "../../helpers/reads/getReads";
 import MdxTable from "../../components/MdxTable";
-import { createReads } from "../../helpers/reads/createReads";
 import { Announcement } from "../../components/announcement";
 
 interface BlogPostProps {
@@ -30,11 +27,9 @@ const BlogPost: NextPage<BlogPostProps> = ({ post }) => {
     slug,
     readingTime,
     sourceCode,
-    reads,
     featuredImage,
   } = post;
 
-  const readCount = useReads(slug, reads);
   const MDXPost = useMemo(() => getMDXComponent(sourceCode), [sourceCode]);
 
   return (
@@ -45,7 +40,6 @@ const BlogPost: NextPage<BlogPostProps> = ({ post }) => {
         description={excerpt}
         readTime={readingTime}
         publishDate={firstPublished}
-        reads={reads}
         subTitle={subtitle}
       />
       <article className="pb-16 pt-4 md:pb-32">
@@ -62,7 +56,6 @@ const BlogPost: NextPage<BlogPostProps> = ({ post }) => {
           <PostMetaDataRow
             publishedDate={firstPublished}
             readingTime={readingTime}
-            readCount={readCount}
           />
         </header>
         <MDXPost components={{ Link: Link, MdxTable: MdxTable }} />
@@ -102,7 +95,6 @@ export const getStaticProps: GetStaticProps<BlogPostProps> = async ({
 
   const sourceCode = bundleResult.code;
   const frontMatter = bundleResult.frontmatter as PostFrontMatter;
-  const reads: number = await getReads(slug);
   const readingTimeResult = getReadingTime(mdxSource);
   const wordCount = readingTimeResult.words;
   const readingTime = readingTimeResult.text;
@@ -115,7 +107,6 @@ export const getStaticProps: GetStaticProps<BlogPostProps> = async ({
         wordCount,
         readingTime,
         sourceCode,
-        reads,
       },
     },
     revalidate: 60,

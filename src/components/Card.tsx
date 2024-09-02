@@ -1,13 +1,11 @@
 import Link from "next/link";
 import React, { FC } from "react";
-import Eye from "./icons/Eye";
 
 export interface CardProps {
   title: string;
   subtitle: string;
   publishedDate: string;
   slug: string;
-  reads: number;
   isNew?: boolean;
 }
 
@@ -16,7 +14,6 @@ const Card: FC<CardProps> = ({
   subtitle,
   publishedDate,
   slug,
-  reads,
   isNew
 }) => {
   return (
@@ -29,9 +26,6 @@ const Card: FC<CardProps> = ({
           <p className="text-black text-opacity-60 text-md italic mt-1 mb-1">
             First Published: {publishedDate}
           </p>
-          {/* <div className="flex flex-row text-md text-black text-opacity-60">
-            <Eye /> <div className="w-1" /> {reads}
-          </div> */}
         </div>
       </div>
     </Link>

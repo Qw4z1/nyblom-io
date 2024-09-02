@@ -24,9 +24,10 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
     } as HomeCard;
   });
 
+  // TODO add popular
   let publishedPosts = cards
     .filter((it) => it.published == true)
-    .sort((a, b) => b.reads - a.reads)
+    .sort((a, b) => (b.popular || 0) - (a.popular || 0))    
     .slice(0, 5);
 
   const latest = cards.reduce((previous, current) =>
@@ -89,7 +90,6 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
               subtitle={it.excerpt}
               publishedDate={it.firstPublished}
               slug={it.slug}
-              reads={it.reads}
               isNew={it.isNew}
             />
           ))}

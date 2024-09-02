@@ -32,7 +32,6 @@ const BlogList: NextPage<BlogListProps> = ({ posts }) => {
             subtitle={it.excerpt}
             publishedDate={it.firstPublished}
             slug={it.slug}
-            reads={it.reads}
           />
         ))}
       </div>

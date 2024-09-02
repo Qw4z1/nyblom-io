@@ -10,7 +10,6 @@ interface HeadProps {
   subTitle?: string;
   publishDate?: string;
   readTime?: string;
-  reads?: number;
 }
 
 export const Head: FC<HeadProps> = ({
