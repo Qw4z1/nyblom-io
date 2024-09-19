@@ -1,4 +1,4 @@
-export type Testimonial = {
+export type iTestimonial = {
   name: string;
   title: string;
   short: string;
@@ -6,7 +6,37 @@ export type Testimonial = {
   link: string;
 };
 
-export const testimonials: Testimonial[] = [
+export const clarityCallTestimonials: iTestimonial[] = [
+  {
+    name: "Hannes Widetag",
+    link: "https://x.com/_carlhannes/status/1830957145409442110",
+    title: "Founder @ AsekioAI",
+    short:
+      "Just had an amazing Clarity call with Viktor. In the beginning I wasn't sure what I was asking about, but the output was a clear path forward 🚀.Sometimes you don't actually need a fully formed question, just the idea that you need help, I'm glad I made something of it",
+    quote:
+      "Just had an amazing Clarity call with Viktor. In the beginning I wasn't sure what I was asking about, but the output was a clear path forward 🚀.Sometimes you don't actually need a fully formed question, just the idea that you need help, I'm glad I made something of it",
+  },
+  {
+    name: "Neo Moreton",
+    link: "https://www.linkedin.com/in/neomoreton/",
+    title: "(AI) Founder | Executive Coach | Author",
+    short:
+      "Viktor's approach expands thinking and encourages exploring different avenues, leading to greater opportunities and risk mitigation. As a team player, he effectively engages stakeholders to propel ideas forward.",
+    quote:
+      "Viktor's approach expands thinking and encourages exploring different avenues, leading to greater opportunities and risk mitigation. As a team player, he effectively engages stakeholders to propel ideas forward.",
+  },
+  {
+    name: "Johan Ekroth",
+    link: "https://www.linkedin.com/posts/johanekroth_ett-konstant-tillst%C3%A5nd-av-tvivel-och-os%C3%A4kerhet-activity-7238033272532811776-cLhC?utm_source=share&utm_medium=member_desktop",
+    title: "Founder at Berit.ai",
+    short:
+      "A constant state of doubt and uncertainty. Where the solution is to act, despite these feelings. Viktor Nyblom describes it so aptly. My everyday life. And sometimes even every night. My solution is to talk about any doubts. And the best conversations are when I get a new perspective, from experiences I don't have myself. So when I tested Viktor's service Clarity Call yesterday, I got exactly such a perspective!",
+    quote:
+      "A constant state of doubt and uncertainty. Where the solution is to act, despite these feelings. Viktor Nyblom describes it so aptly. My everyday life. And sometimes even every night. My solution is to talk about any doubts. And the best conversations are when I get a new perspective, from experiences I don't have myself. So when I tested Viktor's service Clarity Call yesterday, I got exactly such a perspective!",
+  },
+];
+
+export const naasTestimonials: iTestimonial[] = [
   {
     name: "Neo Moreton",
     link: "https://www.linkedin.com/in/neomoreton/",

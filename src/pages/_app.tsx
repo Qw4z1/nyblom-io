@@ -66,22 +66,15 @@ function MyApp({ Component, pageProps }: AppProps) {
               </li>
               <li className="mt-3 md:mt-0">
                 <NavBarLink
+                  text="/Clarity Call"
+                  link="/clarity-call"
+                  onClick={navLinkClickHandler}
+                />
+              </li>
+              <li className="mt-3 md:mt-0">
+                <NavBarLink
                   text="/Newsletter"
                   link="/newsletter"
-                  onClick={navLinkClickHandler}
-                />
-              </li>
-              <li className="mt-3 md:mt-0">
-                <NavBarLink
-                  text="/Blog"
-                  link="/blog"
-                  onClick={navLinkClickHandler}
-                />
-              </li>
-              <li className="mt-3 md:mt-0">
-                <NavBarLink
-                  text="/Portfolio"
-                  link="/portfolio"
                   onClick={navLinkClickHandler}
                 />
               </li>
@@ -108,7 +101,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Analytics />
         <Script src="https://scripts.simpleanalyticscdn.com/latest.js" />
       </main>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

@@ -1,13 +1,13 @@
 import type { FC } from "react";
-import { Testimonial } from "./util";
+import { iTestimonial } from "./util";
 import Link from "next/link";
 
 export type TestimonialProps = {
-  testimonial: Testimonial;
+  testimonial: iTestimonial;
 };
 
 const Testimonial: FC<TestimonialProps> = ({
-  testimonial: { name, title, quote, short, link },
+  testimonial: { name, title, short, link },
 }) => {
   return (
     <div className="h-auto max-w-full bg-gray-100 rounded-lg">
