@@ -4,7 +4,7 @@ This repository contains the source code for [nyblom.io](https://nyblom.io).
 
 ## Tech stack
 
-This site is built using [React](https://reactjs.org/), [Next](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com/) and [TypeScript](https://www.typescriptlang.org/). The site uses [Nhost](https://nhost.io/) to store and show the current read count for each blog post.
+This site is built using [React](https://reactjs.org/), [Next](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com/) and [TypeScript](https://www.typescriptlang.org/).
 
 The site is hosted on [Vercel](https://vercel.com/).
 
