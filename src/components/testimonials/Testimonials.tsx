@@ -12,7 +12,7 @@ export type TestimonialsProps = {
 
 const Testimonials: FC<TestimonialsProps> = ({ tKey }) => {
   let t: iTestimonial[];
-  if (tKey === "clarity-call") {
+  if (tKey === "claritycall") {
     t = clarityCallTestimonials;
   } else if (tKey === "naas") {
     t = naasTestimonials;
