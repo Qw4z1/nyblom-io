@@ -10,7 +10,7 @@ const SocialRow = () => {
       <li className="w-10 h-10 hover:bg-yellow rounded-full">
         <a
           target="_blank"
-          href="https://twitter.com/Qw4z1"
+          href="https://twitter.com/viktor_nyblom"
           rel="noopener noreferrer"
           aria-label="My Twitter profile"
         >
