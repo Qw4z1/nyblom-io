@@ -17,13 +17,13 @@ export const clarityCallTestimonials: iTestimonial[] = [
       "Just had an amazing Clarity call with Viktor. In the beginning I wasn't sure what I was asking about, but the output was a clear path forward 🚀.Sometimes you don't actually need a fully formed question, just the idea that you need help, I'm glad I made something of it",
   },
   {
-    name: "Neo Moreton",
-    link: "https://www.linkedin.com/in/neomoreton/",
-    title: "(AI) Founder | Executive Coach | Author",
+    name: "Aleksa Simic",
+    link: "https://x.com/AleksaSimic17/status/1838908713769304360",
+    title: "CEO at Aetherius Solutions",
     short:
-      "Viktor's approach expands thinking and encourages exploring different avenues, leading to greater opportunities and risk mitigation. As a team player, he effectively engages stakeholders to propel ideas forward.",
+      "I didn’t realize how much I needed the clarity call until we finished with the call 🙏🏻",
     quote:
-      "Viktor's approach expands thinking and encourages exploring different avenues, leading to greater opportunities and risk mitigation. As a team player, he effectively engages stakeholders to propel ideas forward.",
+      "I didn’t realize how much I needed the clarity call until we finished with the call 🙏🏻",
   },
   {
     name: "Johan Ekroth",
