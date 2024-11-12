@@ -11,7 +11,7 @@ const Newsletter: NextPage = () => {
       />
       <div className="max-w-2xl flex flex-col justify-start items-start m-auto pb-10">
         <h1 className="mb-12">
-          Viktor&apos;s Weekly: Where Strategy Meets Product and Technology
+          Viktor&apos;s Weekly Newsletter
         </h1>
 
         <h2 className="mb-8">
