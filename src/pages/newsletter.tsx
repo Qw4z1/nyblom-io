@@ -15,8 +15,7 @@ const Newsletter: NextPage = () => {
         </h1>
 
         <h2 className="mb-8">
-          Every Friday, I deliver straight to your inbox lessons learned from
-          over a decade of building apps, teams and companies.
+        Each Friday, I share frameworks, stories, and actionable lessons from my 20 years of building teams and companies. Get better at navigating hiring, delegation, and startup chaos to learn how dbecome more effective leaders.
         </h2>
 
         <p>This includes: </p>
