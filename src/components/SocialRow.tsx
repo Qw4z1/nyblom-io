@@ -1,6 +1,6 @@
 import React from "react";
 
-import Twitter from "./icons/TwitterSvg";
+import BlSky from "./icons/Bluesky";
 import LinkedIn from "./icons/LinkedInSvg";
 import Github from "./icons/GithubSvg";
 
@@ -10,11 +10,11 @@ const SocialRow = () => {
       <li className="w-10 h-10 hover:bg-yellow rounded-full">
         <a
           target="_blank"
-          href="https://twitter.com/viktor_nyblom"
+          href="https://bsky.app/profile/nyblom.io"
           rel="noopener noreferrer"
-          aria-label="My Twitter profile"
+          aria-label="My Bluesky profile"
         >
-          <Twitter />
+          <BlSky />
         </a>
       </li>
       <li className="w-10 h-10 hover:bg-yellow rounded-full">
