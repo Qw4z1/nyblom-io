@@ -64,12 +64,11 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
             .
           </p>
           <p className="text-2xl font-medium">
-            Having spent a decade of building apps, teams and companies, I now
-            focus on{" "}
+            Having spent over a decade of building apps, teams and companies, I now focus on{" "}
             <strong>
-              <Link href="/nyblom-as-a-service/">helping others</Link>
+              <Link href="/nyblom-as-a-service/">coaching CTOs</Link>
             </strong>{" "}
-            do the same.
+            who want to go from Good to Great.
           </p>
         </div>
         <div className="flex flex-col justify-center w-full">
