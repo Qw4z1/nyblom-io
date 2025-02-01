@@ -52,12 +52,6 @@ const Portfolio: NextPage = () => {
             - Explore thousands of skateboard spots worldwide.
           </li>
           <li>
-            <a href="https://aiyana.ai/" className="font-bold">
-              AIYANA
-            </a>{" "}
-            - Scaling company culture
-          </li>
-          <li>
             <a href="https://lectrium.com" className="font-bold">
               Lectrium
             </a>{" "}

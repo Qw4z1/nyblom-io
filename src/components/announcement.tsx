@@ -5,22 +5,18 @@ const Announcement = () => {
     <div className="pt-8">
       <h2 className="italic">Heads up!</h2>
       <p className="italic">
-        After over a decade of building apps, teams and companies, I&apos;ve now started
-        coaching founders and CTOs through something that I call{" "}
-        <strong>
-          <Link href="/nyblom-as-a-service/">Nyblom-as-a-Service</Link>
-        </strong>
-        .
-      </p>
-      <p className="italic">
-        If this is something that would be interesting to you feel free to
-        schedule a{" "}
-        <strong>
-          <Link href={"https://cal.com/nyblomio/discovery-call"}>
-            free discovery call
-          </Link>{" "}
-        </strong>
-        to see if we are a good match for each other.
+        Are you a CTO who is ready to take your leadership from Good to Great? Clarity is your superpower. Let me help you unlock it. 
+        <br/><br/>
+        👉 Book a{" "}
+        <Link href={"https://cal.com/nyblomio/discovery-call"}>
+          free discovery call
+        </Link>{" "}
+        and start transforming your vision into action today. 
+        <br/><br/>
+        Not a CTO? No
+        problem! Book a{" "}
+        <Link href={"https://cal.com/nyblomio/claritycall"}>Clarity Call</Link>{" "}
+        to tackle your toughest challenges and accelerate your business.
       </p>
     </div>
   );

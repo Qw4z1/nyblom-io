@@ -1,24 +1,28 @@
 import type { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
-import { Head } from "../components/Head";
+import { Head } from "../../components/Head";
 import { join } from "path";
 import { readFileSync } from "fs";
 import { bundleMDX } from "mdx-bundler";
 import remarkGfm from "remark-gfm";
-import { Content, ContentFrontMatter } from "../types";
 import { useMemo } from "react";
 import { getMDXComponent } from "mdx-bundler/client";
-import UL from "../components/UL";
-import BookingButton from "../components/BookingButton";
 import Image from "next/image";
-import CalLink from "../components/CalLink";
-import Testimonials from "../components/testimonials/Testimonials";
+import BookingButton from "../../components/BookingButton";
+import CalLink from "../../components/CalLink";
+import Testimonials from "../../components/testimonials/Testimonials";
+import UL from "../../components/UL";
+import { ContentFrontMatter } from "../../types";
 
-interface NaaSPageProps {
+interface Content {
+  sourceCode: string;
+}
+
+interface WorkshopPageProps {
   content: Content;
 }
 
-const NaaS: NextPage<NaaSPageProps> = ({ content }) => {
+const Workshop: NextPage<WorkshopPageProps> = ({ content }) => {
   const ContentItem = useMemo(
     () => getMDXComponent(content.sourceCode),
     [content.sourceCode]
@@ -27,21 +31,12 @@ const NaaS: NextPage<NaaSPageProps> = ({ content }) => {
   return (
     <>
       <Head
-        title={"Clarity Call"}
+        title={"Workshops"}
         description={
-          "Get clear on your thoughts to get clear on your actions"
+          "Hands-on strategy workshops to accelerate your team"
         }
       />
       <article className="py-4 max-w-2xl flex flex-col justify-start items-start m-auto">
-        <div className="content-center w-full">
-          <Image
-            src={"/images/twitterhead-large.png"}
-            alt={"Picture of Viktor Nyblom"}
-            width={200}
-            height={200}
-            className="rounded-full"
-          />
-        </div>
 
         <ContentItem
           components={{
@@ -57,8 +52,8 @@ const NaaS: NextPage<NaaSPageProps> = ({ content }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps<NaaSPageProps> = async () => {
-  const filePath = join(process.cwd(), "content/clarity-call.mdx");
+export const getStaticProps: GetStaticProps<WorkshopPageProps> = async () => {
+  const filePath = join(process.cwd(), "content/workshop.mdx");
   const mdxSource = readFileSync(filePath, "utf8");
   const bundleResult = await bundleMDX({
     source: mdxSource,
@@ -81,4 +76,4 @@ export const getStaticProps: GetStaticProps<NaaSPageProps> = async () => {
   };
 };
 
-export default NaaS;
+export default Workshop;

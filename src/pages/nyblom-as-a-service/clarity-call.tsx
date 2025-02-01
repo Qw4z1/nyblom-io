@@ -1,18 +1,22 @@
 import type { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
-import { Head } from "../components/Head";
+import { Head } from "../../components/Head";
 import { join } from "path";
 import { readFileSync } from "fs";
 import { bundleMDX } from "mdx-bundler";
 import remarkGfm from "remark-gfm";
-import { Content, ContentFrontMatter } from "../types";
 import { useMemo } from "react";
 import { getMDXComponent } from "mdx-bundler/client";
-import UL from "../components/UL";
-import BookingButton from "../components/BookingButton";
 import Image from "next/image";
-import CalLink from "../components/CalLink";
-import Testimonials from "../components/testimonials/Testimonials";
+import BookingButton from "../../components/BookingButton";
+import CalLink from "../../components/CalLink";
+import Testimonials from "../../components/testimonials/Testimonials";
+import UL from "../../components/UL";
+import { ContentFrontMatter } from "../../types";
+
+interface Content {
+  sourceCode: string;
+}
 
 interface NaaSPageProps {
   content: Content;
@@ -27,9 +31,9 @@ const NaaS: NextPage<NaaSPageProps> = ({ content }) => {
   return (
     <>
       <Head
-        title={"Nyblom-as-a-Service"}
+        title={"Clarity Call"}
         description={
-          "I turn founder vision into awesome product"
+          "Get clear on your thoughts to get clear on your actions"
         }
       />
       <article className="py-4 max-w-2xl flex flex-col justify-start items-start m-auto">
@@ -58,7 +62,7 @@ const NaaS: NextPage<NaaSPageProps> = ({ content }) => {
 };
 
 export const getStaticProps: GetStaticProps<NaaSPageProps> = async () => {
-  const filePath = join(process.cwd(), "content/nyblom-as-a-service.mdx");
+  const filePath = join(process.cwd(), "content/clarity-call.mdx");
   const mdxSource = readFileSync(filePath, "utf8");
   const bundleResult = await bundleMDX({
     source: mdxSource,

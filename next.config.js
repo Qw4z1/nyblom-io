@@ -8,8 +8,18 @@ module.exports = {
         permanent: true,
       },
       {
+        source: '/clarity-call',
+        destination: '/nyblom-as-a-service/clarity-call',
+        permanent: true,
+      },
+      {
         source: '/coffee',
         destination: 'https://cal.com/nyblomio/30min',
+        permanent: true,
+      },
+      {
+        source: '/45',
+        destination: 'https://cal.com/nyblomio/45',
         permanent: true,
       },
       {

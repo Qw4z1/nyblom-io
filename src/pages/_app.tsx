@@ -66,8 +66,8 @@ function MyApp({ Component, pageProps }: AppProps) {
               </li>
               <li className="mt-3 md:mt-0">
                 <NavBarLink
-                  text="/Clarity Call"
-                  link="/clarity-call"
+                  text="/Blog"
+                  link="/blog"
                   onClick={navLinkClickHandler}
                 />
               </li>
