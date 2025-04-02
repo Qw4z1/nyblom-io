@@ -1,6 +1,7 @@
 import { NextPage } from "next";
 import { Head } from "../components/Head";
 import InlineNewsletterForm from "../components/InlineNewsletterForm";
+import Script from "next/script";
 
 const Newsletter: NextPage = () => {
   return (
@@ -10,9 +11,7 @@ const Newsletter: NextPage = () => {
         description="Lessons learned from a decade of building apps, teams and companies"
       />
       <div className="max-w-2xl flex flex-col justify-start items-start m-auto pb-10">
-        <h1 className="mb-12">
-          Viktor&apos;s Weekly Newsletter
-        </h1>
+        <h1 className="mb-12">Viktor&apos;s Weekly Newsletter</h1>
 
         <h2 className="mb-8">
         Each Friday, I share frameworks, stories, and actionable lessons from my 20 years of building teams and companies. Get better at navigating hiring, delegation, and startup chaos to learn how dbecome more effective leaders.

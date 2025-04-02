@@ -100,6 +100,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
         <Analytics />
         <Script src="https://scripts.simpleanalyticscdn.com/latest.js" />
+        <Script
+          src="https://js.sparkloop.app/team_de5b5fb5c5a9.js"
+          strategy="afterInteractive"
+          data-sparkloop
+        />
       </main>
       <Footer />
     </div>
