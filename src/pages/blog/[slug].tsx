@@ -13,12 +13,15 @@ import Link from "next/link";
 import PostMetaDataRow from "../../components/PostMetaDataRow";
 import MdxTable from "../../components/MdxTable";
 import { Announcement } from "../../components/announcement";
+import PostNavigation from "../../components/PostNavigation";
 
 interface BlogPostProps {
   post: Post;
+  prevPost: { title: string; slug: string } | null;
+  nextPost: { title: string; slug: string } | null;
 }
 
-const BlogPost: NextPage<BlogPostProps> = ({ post }) => {
+const BlogPost: NextPage<BlogPostProps> = ({ post, prevPost, nextPost }) => {
   const {
     title,
     subtitle,
@@ -59,6 +62,7 @@ const BlogPost: NextPage<BlogPostProps> = ({ post }) => {
           />
         </header>
         <MDXPost components={{ Link: Link, MdxTable: MdxTable }} />
+        <PostNavigation prevPost={prevPost} nextPost={nextPost} />
         <Announcement />
       </article>
     </>
@@ -82,8 +86,54 @@ export const getStaticProps: GetStaticProps<BlogPostProps> = async ({
   params,
 }) => {
   const slug = params!.slug as string;
+  
+  // Get all post files and sort them by date (assuming they have dates in frontmatter)
+  const postsDirectory = join(process.cwd(), "posts");
+  const allPostFiles = readdirSync(postsDirectory);
+  
+  // Read all posts to get their metadata for sorting
+  const allPosts = await Promise.all(
+    allPostFiles.map(async (fileName) => {
+      const postSlug = fileName.replace(/\.mdx$/, "");
+      const filePath = join(postsDirectory, fileName);
+      const source = readFileSync(filePath, "utf8");
+      
+      // Minimal parsing to get the frontmatter
+      const { frontmatter } = await bundleMDX({
+        source,
+        mdxOptions(options) {
+          options.remarkPlugins = [...(options?.remarkPlugins ?? []), remarkGfm];
+          return options;
+        },
+      });
+      
+      return {
+        slug: postSlug,
+        title: (frontmatter as PostFrontMatter).title,
+        firstPublished: (frontmatter as PostFrontMatter).firstPublished,
+      };
+    })
+  );
+  
+  // Sort posts by date (newest first)
+  const sortedPosts = allPosts.sort((a, b) => {
+    return new Date(b.firstPublished).getTime() - new Date(a.firstPublished).getTime();
+  });
+  
+  // Find current post index
+  const currentPostIndex = sortedPosts.findIndex((post) => post.slug === slug);
+  
+  // Get previous and next posts
+  const prevPost = currentPostIndex < sortedPosts.length - 1 
+    ? { title: sortedPosts[currentPostIndex + 1].title, slug: sortedPosts[currentPostIndex + 1].slug }
+    : null;
+    
+  const nextPost = currentPostIndex > 0
+    ? { title: sortedPosts[currentPostIndex - 1].title, slug: sortedPosts[currentPostIndex - 1].slug }
+    : null;
 
-  const filePath = join(process.cwd(), "posts", `${slug}.mdx`);
+  // Get the current post content
+  const filePath = join(postsDirectory, `${slug}.mdx`);
   const mdxSource = readFileSync(filePath, "utf8");
   const bundleResult = await bundleMDX({
     source: mdxSource,
@@ -108,6 +158,8 @@ export const getStaticProps: GetStaticProps<BlogPostProps> = async ({
         readingTime,
         sourceCode,
       },
+      prevPost,
+      nextPost,
     },
     revalidate: 60,
   };
