@@ -3,6 +3,7 @@ import { Head } from "../../components/Head";
 import Card from "../../components/Card";
 import { getPostFrontMatter } from "../../helpers/getFrontMatter";
 import { PostFrontMatter } from "../../types/posts";
+import InlineNewsletterForm from "../../components/InlineNewsletterForm";
 
 interface BlogListProps {
   posts: PostFrontMatter[];
@@ -11,20 +12,24 @@ interface BlogListProps {
 const BlogList: NextPage<BlogListProps> = ({ posts }) => {
   return (
     <>
-      <Head title={"Blog"} description={"Thoughts on people, tech and process."} />
+      <Head
+        title={"Blog"}
+        description={"Thoughts on people, tech and process"}
+      />
       <div className="w-full pb-11">
         <h1 className="text-black text-opacity-80 px-4">
-          A collection of my thoughts
+          Thoughts on people, leadership and tech
         </h1>
-        <blockquote>
-          <p>
-            &quot;I don&apos;t think to write. I write to think.&quot; -{" "}
-            <a href="https://en.wikipedia.org/wiki/Kevin_Kelly_(editor)">
-              Kevin Kelly
-            </a>
-          </p>
-        </blockquote>
-
+        <br />
+        <p className="p-4">
+          Every Friday, I share frameworks, stories, and actionable lessons from
+          my 20 years of building apps, teams and companies.
+        </p>
+        <p className="p-4">Subscribe now to not miss the next one!</p>
+        <br />
+        <InlineNewsletterForm />
+        <br />
+        <h2 className="p-4">From the Archive</h2>
         {posts.map((it) => (
           <Card
             title={it.title}
