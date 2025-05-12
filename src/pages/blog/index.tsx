@@ -4,12 +4,21 @@ import Card from "../../components/Card";
 import { getPostFrontMatter } from "../../helpers/getFrontMatter";
 import { PostFrontMatter } from "../../types/posts";
 import InlineNewsletterForm from "../../components/InlineNewsletterForm";
+import { useState } from "react";
 
 interface BlogListProps {
   posts: PostFrontMatter[];
 }
 
 const BlogList: NextPage<BlogListProps> = ({ posts }) => {
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const filteredPosts = posts.filter((post) =>
+    post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    post.tags?.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
+  );
+
   return (
     <>
       <Head
@@ -21,16 +30,22 @@ const BlogList: NextPage<BlogListProps> = ({ posts }) => {
           Thoughts on people, leadership and tech
         </h1>
         <br />
+        <InlineNewsletterForm />
         <p className="p-4">
           Every Friday, I share frameworks, stories, and actionable lessons from
           my 20 years of building apps, teams and companies.
         </p>
-        <p className="p-4">Subscribe now to not miss the next one!</p>
-        <br />
-        <InlineNewsletterForm />
-        <br />
-        <h2 className="p-4">From the Archive</h2>
-        {posts.map((it) => (
+        <h2 className="p-4">All Posts</h2>
+        <div className="px-4 mb-4">
+          <input
+            type="text"
+            placeholder="Search posts..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+        {filteredPosts.map((it) => (
           <Card
             title={it.title}
             key={it.slug}
