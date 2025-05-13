@@ -13,27 +13,28 @@ interface BlogListProps {
 const BlogList: NextPage<BlogListProps> = ({ posts }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
-  const filteredPosts = posts.filter((post) =>
-    post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    post.tags?.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
+  const filteredPosts = posts.filter(
+    (post) =>
+      post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      post.tags?.some((tag) =>
+        tag.toLowerCase().includes(searchTerm.toLowerCase())
+      )
   );
 
   return (
     <>
       <Head
         title={"Blog"}
-        description={"Thoughts on people, tech and process"}
+        description={"Thoughts on people, leadership and tech"}
       />
       <div className="w-full pb-11">
         <h1 className="text-black text-opacity-80 px-4">
           Thoughts on people, leadership and tech
         </h1>
         <br />
-        <InlineNewsletterForm />
-        <p className="p-4">
-          Every Friday, I share frameworks, stories, and actionable lessons from
-          my 20 years of building apps, teams and companies.
+        <p className="text-xl font-medium p-4">
+          Each Friday, I share frameworks, stories, and actionable lessons from my 20 years of building teams and companies. Get better at navigating hiring, delegation, and startup chaos to learn how dbecome more effective leaders.
         </p>
         <h2 className="p-4">All Posts</h2>
         <div className="px-4 mb-4">
