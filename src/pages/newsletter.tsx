@@ -36,20 +36,20 @@ const Newsletter: NextPage<NewsletterProps> = ({posts}) => {
         <h1 className="mb-12">Viktor&apos;s Weekly Newsletter</h1>
 
         <h2 className="mb-8">
-        Each Friday, I share frameworks, stories, and actionable lessons from my 20 years of building teams and companies. Get better at navigating hiring, delegation, and startup chaos to learn how dbecome more effective leaders.
+        Each Friday, I share frameworks, stories, and actionable lessons from my 20 years of leading teams and companies. Get better at navigating hiring, delegation, and startup chaos to learn how to become effective leaders.
         </h2>
 
         <p>This includes: </p>
-        <ul className="list-disc pl-6 mb-12 space-y-4">
-          <li>Actionable advice about how to build a company</li>
-          <li>My fravorite frameworks for building product</li>
-          <li>
-            Links to the most interesting things I&apos;ve found this week
-          </li>
+        <ul className="list-disc pl-6 space-y-4">
+          <li>Actionable advice about how to become a better delegator</li>
+          <li>My fravorite frameworks for giving feedback</li>
+          <li>How to focus on the right thing</li>
           <li>Stories from companies I&apos;ve worked on, in and with</li>
           <li>The odd philosophical take</li>
         </ul>
-
+        <p>...and much more!</p>
+        <br/>
+        <br/>
         <InlineNewsletterForm />
 
         <p className="italic mt-12">

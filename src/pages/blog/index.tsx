@@ -34,7 +34,7 @@ const BlogList: NextPage<BlogListProps> = ({ posts }) => {
         </h1>
         <br />
         <p className="text-xl font-medium p-4">
-          Each Friday, I share frameworks, stories, and actionable lessons from my 20 years of building teams and companies. Get better at navigating hiring, delegation, and startup chaos to learn how dbecome more effective leaders.
+          Each Friday, I share frameworks, stories, and actionable lessons from my 20 years of leading teams and companies. Get better at navigating hiring, delegation, and startup chaos to learn how to become effective leaders.
         </p>
         <h2 className="p-4">All Posts</h2>
         <div className="px-4 mb-4">
