@@ -5,6 +5,7 @@ import { getPostFrontMatter } from "../../helpers/getFrontMatter";
 import { PostFrontMatter } from "../../types/posts";
 import InlineNewsletterForm from "../../components/InlineNewsletterForm";
 import { useState } from "react";
+import { RssIcon } from "../../components/icons/RssSvg";
 
 interface BlogListProps {
   posts: PostFrontMatter[];
@@ -33,10 +34,29 @@ const BlogList: NextPage<BlogListProps> = ({ posts }) => {
           Thoughts on people, leadership and tech
         </h1>
         <br />
-        <p className="text-xl font-medium p-4">
-          Each Friday, I share frameworks, stories, and actionable lessons from my 20 years of leading teams and companies. Get better at navigating hiring, delegation, and startup chaos to learn how to become effective leaders.
+        <p className="text-center">
+          Subscribe to get notified when I publish new posts!
         </p>
-        <h2 className="p-4">All Posts</h2>
+        <InlineNewsletterForm />
+        <br />
+        <p className="text-xl font-medium p-4">
+          Each Friday, I share frameworks, stories, and actionable lessons from
+          my 20 years of leading teams and companies. Get better at navigating
+          hiring, delegation, and startup chaos to learn how to become effective
+          leaders.
+        </p>
+        <div className="flex flex-row justify-between">
+          <h2 className="p-4">All Posts</h2>
+          <a
+            className="w-10 h-10 hover:bg-yellow rounded-full no-underline hover:no-underline p-0 m-0 hover:p-0 hover:m-0"
+            target="_blank"
+            href="https://www.nyblom.io/rss.xml"
+            rel="noopener noreferrer"
+            aria-label="RSS feed"
+          >
+            <RssIcon />
+          </a>
+        </div>
         <div className="px-4 mb-4">
           <input
             type="text"

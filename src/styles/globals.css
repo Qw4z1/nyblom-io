@@ -20,6 +20,7 @@
   h4 {
     @apply text-base italic;
   }
+  
   a {
     @apply underline decoration-yellow decoration-2 underline-offset-2;
   }
@@ -31,6 +32,7 @@
   a:visited {
     @apply underline decoration-yellow underline-offset-2;
   }
+
   blockquote {
     @apply pl-4 lg:text-lg italic my-8;
   }
