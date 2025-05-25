@@ -75,8 +75,7 @@ const SiteMap = () => {
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   const posts = await getPostFrontMatter();
-  const content = await getContentFrontMatter();
-  const rss = buildXml(posts, content);
+  const rss = buildXml(posts);
 
   // Set headers and send XML instead of page.
   res.setHeader("Content-Type", "text/xml");
