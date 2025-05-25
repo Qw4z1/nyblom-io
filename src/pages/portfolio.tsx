@@ -28,7 +28,7 @@ const Portfolio: NextPage = () => {
             - Modern farming.
           </li>
           <li>
-            <a href="https://detecht.se/" className="font-bold">
+            <a href="https://www.detechtapp.com/" className="font-bold">
               Detecht
             </a>{" "}
             - The lifesaving motorcycle app.

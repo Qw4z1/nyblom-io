@@ -13,6 +13,16 @@ module.exports = {
         permanent: true,
       },
       {
+        source: '/workshops',
+        destination: '/nyblom-as-a-service/workshops',
+        permanent: true,
+      },
+      {
+        source: '/nyblom-as-a-service/workshop',
+        destination: '/nyblom-as-a-service/workshops',
+        permanent: true,
+      },
+      {
         source: '/coffee',
         destination: 'https://cal.com/nyblomio/30min',
         permanent: true,

@@ -3,7 +3,7 @@ import {
   getContentFrontMatter,
   getPostFrontMatter,
 } from "../helpers/getFrontMatter";
-import { PostFrontMatter, SluggedContent } from "../types";
+import { PostFrontMatter} from "../types";
 
 function getLastPostDate(posts: PostFrontMatter[]): string {
   return posts
@@ -14,39 +14,46 @@ function getLastPostDate(posts: PostFrontMatter[]): string {
     }, "2020-01-01");
 }
 
-function buildXml(posts: PostFrontMatter[], content: SluggedContent[]) {
+function buildXml(posts: PostFrontMatter[]) {
   const lastPostDate = getLastPostDate(posts);
   return `<?xml version="1.0" encoding="UTF-8"?>
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
      <url>
-       <loc>${process.env.NEXT_PUBLIC_ROOT_URL}/</loc>
-       <lastmod>2025-01-20</lastmod>
+       <loc>${process.env.NEXT_PUBLIC_ROOT_URL}</loc>
+       <lastmod>2025-05-25</lastmod>
      </url>
      <url>
-       <loc>${`${process.env.NEXT_PUBLIC_ROOT_URL}/blog/`}</loc>
+       <loc>${`${process.env.NEXT_PUBLIC_ROOT_URL}/blog`}</loc>
        <lastmod>${lastPostDate}</lastmod>
      </url>
      <url>
-     <loc>${`${process.env.NEXT_PUBLIC_ROOT_URL}/books/`}</loc>
-     <lastmod>2023-10-15</lastmod>
+     <loc>${`${process.env.NEXT_PUBLIC_ROOT_URL}/books`}</loc>
+     <lastmod>2025-05-25</lastmod>
     </url>
     <url>
-      <loc>${`${process.env.NEXT_PUBLIC_ROOT_URL}/portfolio/`}</loc>
-      <lastmod>2024-08-21</lastmod>
+    <loc>${`${process.env.NEXT_PUBLIC_ROOT_URL}/portfolio`}</loc>
+    <lastmod>2025-05-25</lastmod>
     </url>
     <url>
-      <loc>${`${process.env.NEXT_PUBLIC_ROOT_URL}/newsletter/`}</loc>
-      <lastmod>2024-08-23</lastmod>
+    <url>
+      <loc>${`${process.env.NEXT_PUBLIC_ROOT_URL}/now`}</loc>
+      <lastmod>2025-05-25</lastmod>
     </url>
-    ${content
-      .map(({ slug, lastUpdated }) => {
-        return `
-      <url>
-        <loc>${`${process.env.NEXT_PUBLIC_ROOT_URL}/${slug}/`}</loc>
-        <lastmod>${lastUpdated}</lastmod>
-      </url>`;
-      })
-      .join("")}
+    <url>
+      <loc>${`${process.env.NEXT_PUBLIC_ROOT_URL}/about`}</loc>
+      <lastmod>2025-05-25</lastmod>
+    </url>
+      <loc>${`${process.env.NEXT_PUBLIC_ROOT_URL}/newsletter`}</loc>
+      <lastmod>2025-05-25</lastmod>
+    </url>
+    <url>
+      <loc>${`${process.env.NEXT_PUBLIC_ROOT_URL}/nyblom-as-a-service/workshops`}</loc>
+      <lastmod>2025-05-25</lastmod>
+    </url>
+    <url>
+      <loc>${`${process.env.NEXT_PUBLIC_ROOT_URL}/nyblom-as-a-service/clarity-call`}</loc>
+      <lastmod>2025-05-25</lastmod>
+    </url>
      ${posts
        .filter((it) => !!it.published)
        .map(({ slug, lastUpdated }) => {
