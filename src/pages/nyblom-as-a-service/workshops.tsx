@@ -53,7 +53,7 @@ const Workshop: NextPage<WorkshopPageProps> = ({ content }) => {
 };
 
 export const getStaticProps: GetStaticProps<WorkshopPageProps> = async () => {
-  const filePath = join(process.cwd(), "content/workshop.mdx");
+  const filePath = join(process.cwd(), "content/workshops.mdx");
   const mdxSource = readFileSync(filePath, "utf8");
   const bundleResult = await bundleMDX({
     source: mdxSource,
