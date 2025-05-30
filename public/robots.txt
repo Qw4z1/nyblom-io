@@ -1,8 +1,4 @@
-User-agent: ChatGPT-User
-Disallow: /
-
 User-agent: *
 Allow: /
 
-Sitemap: https://nyblom.io/sitemap.xml
 Sitemap: https://www.nyblom.io/sitemap.xml
