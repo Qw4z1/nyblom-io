@@ -1,24 +1,11 @@
 import type { NextPage } from "next";
 import { Head } from "../../components/Head";
-import UL from "../../components/UL";
 import BookingButton from "../../components/BookingButton";
 import Testimonials from "../../components/testimonials/Testimonials";
 import Image from "next/image";
+import { useState } from "react";
 
-const benefits = [
-  "Unlock your leadership potential and accelerate your professional growth.",
-  "Gain confidence in decision-making through tailored goal-setting and accountability.",
-  "Learn proven mental models and tools to open new opportunities for you and your team.",
-  "Build actionable skills in team building, technology, and product strategy, guided by real CTO experience.",
-  "Experience measurable improvements in teamwork, satisfaction, and business outcomes.",
-];
 
-const steps = [
-  "Book a free discovery call to discuss your unique challenges and aspirations.",
-  "Get matched with a coach who brings hands-on CTO experience and understands your context.",
-  "Work together through guided reflection, goal-setting, and practical action plans.",
-  "Build new skills, overcome obstacles, and see lasting change in your leadership and organization.",
-];
 
 const faqs = [
   {
@@ -37,6 +24,18 @@ const faqs = [
     q: "What outcomes can I expect?",
     a: "Clients often report increased confidence, improved team performance, better decision-making, and greater job satisfaction. The process is tailored to your needs, so you get measurable, lasting results.",
   },
+  {
+    q: "Can I include my team?",
+    a: "Yes! Just coaching the CTO is the equivalent of building a silo. I regularly include team leads, directors and VP of Engineering in the coaching package. That way we get powerful team coaching in conjunction with the 1:1 coaching.",
+  },
+  {
+    q: "Will I get any new tools?",
+    a: "Absolutely! During our work I will help you implement the tools and frameworks that we agree are the best fit for your specific situation. Just remmeber that tools alone won't make you a great CTO, so the bulk of the work will be about creating shifts within you!",
+  },
+  {
+    q: "How much does it cost?",
+    a: "",
+  }
 ];
 
 const CtoCoaching: NextPage = () => {
@@ -46,7 +45,7 @@ const CtoCoaching: NextPage = () => {
         title={"CTO Coaching by Viktor Nyblom"}
         description={"Transform your leadership and unlock your potential with bespoke CTO coaching from an experienced technology leader."}
       />
-      <main className="max-w-2xl flex flex-col justify-start items-start m-auto pb-10 px-2">
+      <main className="max-w-4xl flex flex-col justify-start items-start m-auto pb-10 px-2">
         <div className="content-center w-full flex justify-center mb-6">
           <Image
             src="/images/twitterhead-large.png"
@@ -89,15 +88,47 @@ const CtoCoaching: NextPage = () => {
           </div>
         </section>
 
+        {/* Three Core Pillars */}
+        <section className="mb-8 w-full">
+          <h2 className="text-2xl font-semibold mb-2">The Three Core Pillars of CTO Transformation</h2>
+          <p className="mb-4">I help startup CTOs transform from hands-on managers into strategic leaders by focusing on three essential areas:</p>
+          <div className="space-y-3 text-base text-gray-800">
+            <div>
+              <strong>Energy Management:</strong> Master your time and focus on what truly matters, without burning out.
+            </div>
+            <div>
+              <strong>Technical Excellence:</strong> Transform your tech organization into the engine that drives company growth.
+            </div>
+            <div>
+              <strong>Executive Mindset:</strong> Evolve from code delivery to vision delivery, deepening C-suite relationships.
+            </div>
+          </div>
+        </section>
+
         {/* How it works */}
         <section className="mb-8 w-full">
           <h2 className="text-2xl font-semibold mb-2">How It Works</h2>
-          <div className="space-y-2 text-base text-gray-800">
-            <div><span role="img" aria-label="Step 1">1️⃣</span> Book a free discovery call to discuss your unique challenges and aspirations.</div>
-            <div><span role="img" aria-label="Step 2">2️⃣</span> If it's a match, we'll set up our first coaching call where we decide on a scope and a goal.</div>
-            <div><span role="img" aria-label="Step 3">3️⃣</span> Biweekly 1:1 coaching sessions, where we work together on your goal.</div>
-            <div><span role="img" aria-label="Step 4">4️⃣</span> Wrap up and recap your transformation.</div>
-            <div><span role="img" aria-label="Step 5">5️⃣</span> Recommit towards a new goal or move on by yourself.</div>
+          <div className="space-y-4 text-base text-gray-800">
+            <div className="flex items-baseline">
+              <span className="flex-shrink-0 bg-yellow text-black font-extrabold rounded px-3 py-1 text-lg mr-4">1</span>
+              <span>Book a free discovery call to discuss your unique challenges and aspirations.</span>
+            </div>
+            <div className="flex items-baseline">
+              <span className="flex-shrink-0 bg-yellow text-black font-extrabold rounded px-3 py-1 text-lg mr-4">2</span>
+              <span>If it's a match, we'll set up our first coaching call where we decide on a scope and a goal.</span>
+            </div>
+            <div className="flex items-baseline">
+              <span className="flex-shrink-0 bg-yellow text-black font-extrabold rounded px-3 py-1 text-lg mr-4">3</span>
+              <span>Biweekly 1:1 coaching sessions, where we work together on your goal.</span>
+            </div>
+            <div className="flex items-baseline">
+              <span className="flex-shrink-0 bg-yellow text-black font-extrabold rounded px-3 py-1 text-lg mr-4">4</span>
+              <span>Wrap up and recap your transformation.</span>
+            </div>
+            <div className="flex items-baseline">
+              <span className="flex-shrink-0 bg-yellow text-black font-extrabold rounded px-3 py-1 text-lg mr-4">5</span>
+              <span>Recommit towards a new goal or move on by yourself.</span>
+            </div>
           </div>
         </section>
 
@@ -109,13 +140,32 @@ const CtoCoaching: NextPage = () => {
         {/* FAQ */}
         <section className="mb-8 w-full">
           <h2 className="text-2xl font-semibold mb-2">FAQ</h2>
-          <div className="space-y-4">
-            {faqs.map((faq) => (
-              <div key={faq.q}>
-                <p className="font-semibold">{faq.q}</p>
-                <p className="text-gray-700">{faq.a}</p>
-              </div>
-            ))}
+          <div className="space-y-2">
+            {faqs.map((faq, idx) => {
+              const [open, setOpen] = useState(false);
+              return (
+                <div key={faq.q} className="border rounded-md">
+                  <button
+                    type="button"
+                    className="w-full text-left px-4 py-3 font-semibold focus:outline-none flex justify-between items-center"
+                    onClick={() => setOpen((prev) => !prev)}
+                    aria-expanded={open}
+                    aria-controls={`faq-answer-${idx}`}
+                  >
+                    <span>{faq.q}</span>
+                    <span className="ml-2">{open ? "−" : "+"}</span>
+                  </button>
+                  {open && (
+                    <div
+                      id={`faq-answer-${idx}`}
+                      className="px-4 pb-4 text-gray-700 animate-fade-in"
+                    >
+                      {faq.a}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </section>
 
