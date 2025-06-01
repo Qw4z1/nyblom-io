@@ -75,16 +75,16 @@ const CtoCoaching: NextPage = () => {
           <h2 className="text-2xl font-semibold mb-2">Why CTO Coaching?</h2>
           <div className="space-y-4 text-base text-gray-800">
             <div>
-              <strong>Leadership Confidence:</strong> One CTO I worked with was stepping into their first executive role and felt overwhelmed by the weight of decision-making. Through coaching, they developed a structured approach to setting priorities and communicating vision, which not only boosted their confidence but also inspired trust across their leadership team.
+              <span role="img" aria-label="Leadership Confidence">🦸‍♂️</span> <strong>Leadership Confidence:</strong> One CTO I worked with was stepping into their first executive role and felt overwhelmed by the weight of decision-making. Through coaching, they developed a structured approach to setting priorities and communicating vision, which not only boosted their confidence but also inspired trust across their leadership team.
             </div>
             <div>
-              <strong>Team Performance:</strong> Another client faced persistent delivery bottlenecks and low morale within their engineering team. By focusing on team dynamics and introducing new feedback rituals, they saw a measurable improvement in collaboration and output—turning a struggling team into a high-performing unit.
+              <span role="img" aria-label="Team Performance">🤝</span> <strong>Team Performance:</strong> Another client faced persistent delivery bottlenecks and low morale within their engineering team. By focusing on team dynamics and introducing new feedback rituals, they saw a measurable improvement in collaboration and output—turning a struggling team into a high-performing unit.
             </div>
             <div>
-              <strong>Navigating Change:</strong> When a founder-CTO was leading their company through a major pivot, coaching provided a sounding board for tough decisions and helped them manage resistance. With support, they were able to bring their team on board, adapt their strategy, and successfully relaunch their product.
+              <span role="img" aria-label="Navigating Change">🧭</span> <strong>Navigating Change:</strong> When a founder-CTO was leading their company through a major pivot, coaching provided a sounding board for tough decisions and helped them manage resistance. With support, they were able to bring their team on board, adapt their strategy, and successfully relaunch their product.
             </div>
             <div>
-              <strong>Personal Growth & Well-being:</strong> Many technical leaders struggle with burnout and self-doubt. One engineering leader used coaching to set boundaries, delegate more effectively, and rediscover their passion for technology—leading to renewed energy and a healthier work-life balance.
+              <span role="img" aria-label="Personal Growth & Well-being">🌱</span> <strong>Personal Growth & Well-being:</strong> Many technical leaders struggle with burnout and self-doubt. One engineering leader used coaching to set boundaries, delegate more effectively, and rediscover their passion for technology—leading to renewed energy and a healthier work-life balance.
             </div>
           </div>
         </section>
@@ -92,11 +92,13 @@ const CtoCoaching: NextPage = () => {
         {/* How it works */}
         <section className="mb-8 w-full">
           <h2 className="text-2xl font-semibold mb-2">How It Works</h2>
-          <UL>
-            {steps.map((s) => (
-              <li key={s}>{s}</li>
-            ))}
-          </UL>
+          <div className="space-y-2 text-base text-gray-800">
+            <div><span role="img" aria-label="Step 1">1️⃣</span> Book a free discovery call to discuss your unique challenges and aspirations.</div>
+            <div><span role="img" aria-label="Step 2">2️⃣</span> If it's a match, we'll set up our first coaching call where we decide on a scope and a goal.</div>
+            <div><span role="img" aria-label="Step 3">3️⃣</span> Biweekly 1:1 coaching sessions, where we work together on your goal.</div>
+            <div><span role="img" aria-label="Step 4">4️⃣</span> Wrap up and recap your transformation.</div>
+            <div><span role="img" aria-label="Step 5">5️⃣</span> Recommit towards a new goal or move on by yourself.</div>
+          </div>
         </section>
 
         {/* Testimonials */}
