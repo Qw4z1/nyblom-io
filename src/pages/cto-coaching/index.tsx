@@ -73,11 +73,20 @@ const CtoCoaching: NextPage = () => {
         {/* Benefits */}
         <section className="mb-8 w-full">
           <h2 className="text-2xl font-semibold mb-2">Why CTO Coaching?</h2>
-          <UL>
-            {benefits.map((b) => (
-              <li key={b}>{b}</li>
-            ))}
-          </UL>
+          <div className="space-y-4 text-base text-gray-800">
+            <div>
+              <strong>Leadership Confidence:</strong> One CTO I worked with was stepping into their first executive role and felt overwhelmed by the weight of decision-making. Through coaching, they developed a structured approach to setting priorities and communicating vision, which not only boosted their confidence but also inspired trust across their leadership team.
+            </div>
+            <div>
+              <strong>Team Performance:</strong> Another client faced persistent delivery bottlenecks and low morale within their engineering team. By focusing on team dynamics and introducing new feedback rituals, they saw a measurable improvement in collaboration and output—turning a struggling team into a high-performing unit.
+            </div>
+            <div>
+              <strong>Navigating Change:</strong> When a founder-CTO was leading their company through a major pivot, coaching provided a sounding board for tough decisions and helped them manage resistance. With support, they were able to bring their team on board, adapt their strategy, and successfully relaunch their product.
+            </div>
+            <div>
+              <strong>Personal Growth & Well-being:</strong> Many technical leaders struggle with burnout and self-doubt. One engineering leader used coaching to set boundaries, delegate more effectively, and rediscover their passion for technology—leading to renewed energy and a healthier work-life balance.
+            </div>
+          </div>
         </section>
 
         {/* How it works */}
