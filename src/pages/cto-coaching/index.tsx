@@ -61,46 +61,55 @@ const CtoCoaching: NextPage = () => {
           <p className="text-lg mb-4 text-gray-700">
             Set yourself up for success and unlock your full leadership potential with bespoke coaching from an experienced CTO. Whether you're looking to accelerate your growth, build on your strengths, or navigate complex challenges, you'll get a tailored program that combines executive coaching with real-world technical insight.
           </p>
+                  {/* Final CTA */}
+          <div className="w-full flex flex-col items-center">
           <BookingButton dataCalLink="nyblomio/discovery-call" buttonTitle="Book a Free Discovery Call" />
+          </div>
         </section>
 
         {/* Social Proof */}
-        <section className="mb-8 w-full">
+        {/* <section className="w-full">
           <p className="text-md text-gray-600">Trusted by CTOs and founders at fast-growing startups and scaleups.</p>
-        </section>
+        </section> */}
 
         {/* Benefits */}
         <section className="mb-8 w-full">
           <h2 className="text-2xl font-semibold mb-2">Why CTO Coaching?</h2>
           <div className="space-y-4 text-base text-gray-800">
             <div>
-              <span role="img" aria-label="Leadership Confidence">🦸‍♂️</span> <strong>Leadership Confidence:</strong> One CTO I worked with was stepping into their first executive role and felt overwhelmed by the weight of decision-making. Through coaching, they developed a structured approach to setting priorities and communicating vision, which not only boosted their confidence but also inspired trust across their leadership team.
+              <span role="img" aria-label="Leadership Confidence">🦸‍♂️</span> <strong>Leadership Confidence:</strong> CTOs stepping into their first executive role can feel overwhelmed by the weight of decision-making. Coaching can help developing a structured approach to setting priorities and communicating vision, which not only boosted their confidence but also inspired trust across their leadership team.
             </div>
             <div>
-              <span role="img" aria-label="Team Performance">🤝</span> <strong>Team Performance:</strong> Another client faced persistent delivery bottlenecks and low morale within their engineering team. By focusing on team dynamics and introducing new feedback rituals, they saw a measurable improvement in collaboration and output—turning a struggling team into a high-performing unit.
+              <span role="img" aria-label="Team Performance">🤝</span> <strong>Team Performance:</strong> By addressing team dynamics and implementing new feedback practices, CTOs can overcome persistent delivery bottlenecks and low morale within their engineering teams. This leads to a measurable improvement in collaboration and output, transforming struggling teams into high-performing units.
             </div>
             <div>
-              <span role="img" aria-label="Navigating Change">🧭</span> <strong>Navigating Change:</strong> When a founder-CTO was leading their company through a major pivot, coaching provided a sounding board for tough decisions and helped them manage resistance. With support, they were able to bring their team on board, adapt their strategy, and successfully relaunch their product.
+              <span role="img" aria-label="Navigating Change">🧭</span> <strong>Navigating Change:</strong> Coaching provides a trusted sounding board for navigating complex changes, helping CTOs make informed decisions and manage potential resistance. This support enables them to effectively communicate with their team, adapt strategies, and drive successful transformations.
             </div>
             <div>
-              <span role="img" aria-label="Personal Growth & Well-being">🌱</span> <strong>Personal Growth & Well-being:</strong> Many technical leaders struggle with burnout and self-doubt. One engineering leader used coaching to set boundaries, delegate more effectively, and rediscover their passion for technology—leading to renewed energy and a healthier work-life balance.
+              <span role="img" aria-label="Personal Growth & Well-being">🌱</span> <strong>Personal Growth & Well-being:</strong> Coaching helps technical leaders address common challenges like burnout and self-doubt by setting healthy boundaries, delegating tasks effectively, and reigniting their passion for technology. This leads to increased energy levels and a more sustainable work-life balance.
             </div>
           </div>
         </section>
-
+        {/* Middle CTA */}
+        <section className="mb-8 w-full flex flex-col items-center">
+          <BookingButton dataCalLink="nyblomio/discovery-call" buttonTitle="Start Your Journey" />
+        </section>
         {/* Three Core Pillars */}
         <section className="mb-8 w-full">
           <h2 className="text-2xl font-semibold mb-2">The Three Core Pillars of CTO Transformation</h2>
-          <p className="mb-4">I help startup CTOs transform from hands-on managers into strategic leaders by focusing on three essential areas:</p>
-          <div className="space-y-3 text-base text-gray-800">
+          <p className="mb-4">While each coaching engagement is tailored to your unique context, lasting change for CTOs consistently comes from strengthening three core areas. Here's how we'll work together to unlock your full leadership potential:</p>
+          <div className="space-y-6 text-base text-gray-800">
             <div>
-              <strong>Energy Management:</strong> Master your time and focus on what truly matters, without burning out.
+              <strong>Energy Management</strong> 
+              <span className="block mt-1">Energy is your most valuable resource as a leader. Through coaching, you'll learn how to set boundaries, prioritize high-impact work, and create sustainable routines. This means less firefighting and more time for strategic thinking, so you can lead with clarity and avoid burnout—even in high-growth, high-pressure environments.</span>
             </div>
             <div>
-              <strong>Technical Excellence:</strong> Transform your tech organization into the engine that drives company growth.
+              <strong>Technical Excellence</strong>
+              <span className="block mt-1">Technical excellence is about more than just code quality—it's about building a culture of continuous improvement, clear processes, and shared ownership. Together, we'll identify bottlenecks, level up your team, and align technology with business goals. The result: a tech org that delivers reliably, scales with your ambitions, and becomes a true growth driver for your company.</span>
             </div>
             <div>
-              <strong>Executive Mindset:</strong> Evolve from code delivery to vision delivery, deepening C-suite relationships.
+              <strong>Executive Mindset</strong> 
+              <span className="block mt-1">As CTO, your impact extends far beyond the engineering team. Coaching helps you develop the executive presence and strategic mindset needed to influence at the highest level. You'll learn to communicate your vision, build trust with the C-suite, and shift from being a technical problem-solver to a business leader who shapes the company's future.</span>
             </div>
           </div>
         </section>
@@ -130,6 +139,7 @@ const CtoCoaching: NextPage = () => {
               <span>Recommit towards a new goal or move on by yourself.</span>
             </div>
           </div>
+
         </section>
 
         {/* Testimonials */}
