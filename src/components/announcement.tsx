@@ -5,7 +5,7 @@ const Announcement = () => {
     <div className="pt-8">
       <h2 className="italic">Heads up!</h2>
       <p className="italic">
-        Are you a CTO who is ready to take your leadership to the next level? Let me help you find your <Link href="/nyblom-as-a-service">Great CTO Within</Link>! 
+        Are you a CTO who is ready to take your leadership to the next level? Let me help you find your <Link href="/cto-coaching">Great CTO Within</Link>! 
         <br/><br/>
         👉 Book a{" "}
         <Link href={"https://cal.com/nyblomio/discovery-call"}>

@@ -47,11 +47,15 @@ function buildXml(posts: PostFrontMatter[]) {
       <lastmod>2025-05-25</lastmod>
     </url>
     <url>
-      <loc>${`${process.env.NEXT_PUBLIC_ROOT_URL}/nyblom-as-a-service/workshops`}</loc>
+      <loc>${`${process.env.NEXT_PUBLIC_ROOT_URL}/cto-coaching`}</loc>
       <lastmod>2025-05-25</lastmod>
     </url>
     <url>
-      <loc>${`${process.env.NEXT_PUBLIC_ROOT_URL}/nyblom-as-a-service/clarity-call`}</loc>
+      <loc>${`${process.env.NEXT_PUBLIC_ROOT_URL}/cto-coaching/workshops`}</loc>
+      <lastmod>2025-05-25</lastmod>
+    </url>
+    <url>
+      <loc>${`${process.env.NEXT_PUBLIC_ROOT_URL}/cto-coaching/clarity-call`}</loc>
       <lastmod>2025-05-25</lastmod>
     </url>
      ${posts

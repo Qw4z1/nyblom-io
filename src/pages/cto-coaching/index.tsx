@@ -10,15 +10,15 @@ import { useState } from "react";
 const faqs = [
   {
     q: "What makes CTO coaching different from general executive coaching?",
-    a: "CTO coaching combines traditional leadership development with hands-on technical and strategic mentoring from experienced CTOs. You'll benefit from both proven coaching methods and real-world insights from leaders who have faced similar challenges.",
+    a: "CTO coaching combines traditional leadership development with hands-on technical and strategic mentoring from experienced CTOs. You&apos;ll benefit from both proven coaching methods and real-world insights from leaders who have faced similar challenges.",
   },
   {
     q: "Who is this coaching for?",
-    a: "It's designed for CTOs, VPs of Engineering, and technical founders who want to grow as leaders, build stronger teams, and drive business results.",
+    a: "It&apos;s designed for CTOs, VPs of Engineering, and technical founders who want to grow as leaders, build stronger teams, and drive business results.",
   },
   {
     q: "How does the coaching process work?",
-    a: "You'll start with a discovery call to clarify your goals. Then, you'll work with your coach in regular sessions to set objectives, identify obstacles, and develop actionable strategies for growth.",
+    a: "You&apos;ll start with a discovery call to clarify your goals. Then, you&apos;ll work with your coach in regular sessions to set objectives, identify obstacles, and develop actionable strategies for growth.",
   },
   {
     q: "What outcomes can I expect?",
@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     q: "Will I get any new tools?",
-    a: "Absolutely! During our work I will help you implement the tools and frameworks that we agree are the best fit for your specific situation. Just remmeber that tools alone won't make you a great CTO, so the bulk of the work will be about creating shifts within you!",
+    a: "Absolutely! During our work I will help you implement the tools and frameworks that we agree are the best fit for your specific situation. Just remember that tools alone won&apos;t make you a great CTO, so the bulk of the work will be about creating shifts within you!",
   },
   {
     q: "How much does it cost?",
@@ -39,6 +39,16 @@ const faqs = [
 ];
 
 const CtoCoaching: NextPage = () => {
+  const [openFaqs, setOpenFaqs] = useState<number[]>([]);
+
+  const toggleFaq = (index: number) => {
+    setOpenFaqs(prev => 
+      prev.includes(index) 
+        ? prev.filter(i => i !== index)
+        : [...prev, index]
+    );
+  };
+
   return (
     <>
       <Head
@@ -59,7 +69,7 @@ const CtoCoaching: NextPage = () => {
         <section className="mt-2 mb-8 w-full">
           <h1 className="text-4xl font-bold mb-2">Transformative CTO Coaching for Modern Tech Leaders</h1>
           <p className="text-lg mb-4 text-gray-700">
-            Set yourself up for success and unlock your full leadership potential with bespoke coaching from an experienced CTO. Whether you're looking to accelerate your growth, build on your strengths, or navigate complex challenges, you'll get a tailored program that combines executive coaching with real-world technical insight.
+            Set yourself up for success and unlock your full leadership potential with bespoke coaching from an experienced CTO. Whether you&apos;re looking to accelerate your growth, build on your strengths, or navigate complex challenges, you&apos;ll get a tailored program that combines executive coaching with real-world technical insight.
           </p>
                   {/* Final CTA */}
           <div className="w-full flex flex-col items-center">
@@ -97,19 +107,19 @@ const CtoCoaching: NextPage = () => {
         {/* Three Core Pillars */}
         <section className="mb-8 w-full">
           <h2 className="text-2xl font-semibold mb-2">The Three Core Pillars of CTO Transformation</h2>
-          <p className="mb-4">While each coaching engagement is tailored to your unique context, lasting change for CTOs consistently comes from strengthening three core areas. Here's how we'll work together to unlock your full leadership potential:</p>
+          <p className="mb-4">While each coaching engagement is tailored to your unique context, lasting change for CTOs consistently comes from strengthening three core areas. Here&apos;s how we&apos;ll work together to unlock your full leadership potential:</p>
           <div className="space-y-6 text-base text-gray-800">
             <div>
               <strong>Energy Management</strong> 
-              <span className="block mt-1">Energy is your most valuable resource as a leader. Through coaching, you'll learn how to set boundaries, prioritize high-impact work, and create sustainable routines. This means less firefighting and more time for strategic thinking, so you can lead with clarity and avoid burnout—even in high-growth, high-pressure environments.</span>
+              <span className="block mt-1">Energy is your most valuable resource as a leader. Through coaching, you&apos;ll learn how to set boundaries, prioritize high-impact work, and create sustainable routines. This means less firefighting and more time for strategic thinking, so you can lead with clarity and avoid burnout—even in high-growth, high-pressure environments.</span>
             </div>
             <div>
               <strong>Technical Excellence</strong>
-              <span className="block mt-1">Technical excellence is about more than just code quality—it's about building a culture of continuous improvement, clear processes, and shared ownership. Together, we'll identify bottlenecks, level up your team, and align technology with business goals. The result: a tech org that delivers reliably, scales with your ambitions, and becomes a true growth driver for your company.</span>
+              <span className="block mt-1">Technical excellence is about more than just code quality—it&apos;s about building a culture of continuous improvement, clear processes, and shared ownership. Together, we&apos;ll identify bottlenecks, level up your team, and align technology with business goals. The result: a tech org that delivers reliably, scales with your ambitions, and becomes a true growth driver for your company.</span>
             </div>
             <div>
               <strong>Executive Mindset</strong> 
-              <span className="block mt-1">As CTO, your impact extends far beyond the engineering team. Coaching helps you develop the executive presence and strategic mindset needed to influence at the highest level. You'll learn to communicate your vision, build trust with the C-suite, and shift from being a technical problem-solver to a business leader who shapes the company's future.</span>
+              <span className="block mt-1">As CTO, your impact extends far beyond the engineering team. Coaching helps you develop the executive presence and strategic mindset needed to influence at the highest level. You&apos;ll learn to communicate your vision, build trust with the C-suite, and shift from being a technical problem-solver to a business leader who shapes the company&apos;s future.</span>
             </div>
           </div>
         </section>
@@ -124,7 +134,7 @@ const CtoCoaching: NextPage = () => {
             </div>
             <div className="flex items-baseline">
               <span className="flex-shrink-0 bg-yellow text-black font-extrabold rounded px-3 py-1 text-lg mr-4">2</span>
-              <span>If it's a match, we'll set up our first coaching call where we decide on a scope and a goal.</span>
+              <span>If it&apos;s a match, we&apos;ll set up our first coaching call where we decide on a scope and a goal.</span>
             </div>
             <div className="flex items-baseline">
               <span className="flex-shrink-0 bg-yellow text-black font-extrabold rounded px-3 py-1 text-lg mr-4">3</span>
@@ -151,31 +161,28 @@ const CtoCoaching: NextPage = () => {
         <section className="mb-8 w-full">
           <h2 className="text-2xl font-semibold mb-2">FAQ</h2>
           <div className="space-y-2">
-            {faqs.map((faq, idx) => {
-              const [open, setOpen] = useState(false);
-              return (
-                <div key={faq.q} className="border rounded-md">
-                  <button
-                    type="button"
-                    className="w-full text-left px-4 py-3 font-semibold focus:outline-none flex justify-between items-center"
-                    onClick={() => setOpen((prev) => !prev)}
-                    aria-expanded={open}
-                    aria-controls={`faq-answer-${idx}`}
+            {faqs.map((faq, idx) => (
+              <div key={faq.q} className="border rounded-md">
+                <button
+                  type="button"
+                  className="w-full text-left px-4 py-3 font-semibold focus:outline-none flex justify-between items-center"
+                  onClick={() => toggleFaq(idx)}
+                  aria-expanded={openFaqs.includes(idx)}
+                  aria-controls={`faq-answer-${idx}`}
+                >
+                  <span>{faq.q}</span>
+                  <span className="ml-2">{openFaqs.includes(idx) ? "−" : "+"}</span>
+                </button>
+                {openFaqs.includes(idx) && (
+                  <div
+                    id={`faq-answer-${idx}`}
+                    className="px-4 pb-4 text-gray-700 animate-fade-in"
                   >
-                    <span>{faq.q}</span>
-                    <span className="ml-2">{open ? "−" : "+"}</span>
-                  </button>
-                  {open && (
-                    <div
-                      id={`faq-answer-${idx}`}
-                      className="px-4 pb-4 text-gray-700 animate-fade-in"
-                    >
-                      {faq.a}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
+                    {faq.a}
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </section>
 

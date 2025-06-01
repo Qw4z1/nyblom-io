@@ -59,8 +59,8 @@ function MyApp({ Component, pageProps }: AppProps) {
             <ul className="flex flex-col p-4 mt-4 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:border-0 ">
               <li className="mt-3 md:mt-0">
                 <NavBarLink
-                  text="/NaaS"
-                  link="/nyblom-as-a-service"
+                  text="/CTO Coaching"
+                  link="/cto-coaching"
                   onClick={navLinkClickHandler}
                 />
               </li>

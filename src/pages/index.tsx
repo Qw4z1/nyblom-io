@@ -66,7 +66,7 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
           <p className="text-2xl font-medium">
             Having spent over a decade of building apps, teams and companies, I now focus on{" "}
             <strong>
-              <Link href="/nyblom-as-a-service/">coaching CTOs</Link>
+              <Link href="/cto-coaching">coaching CTOs</Link>
             </strong>{" "}
             who want to go from Good to Great.
           </p>

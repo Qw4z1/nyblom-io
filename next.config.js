@@ -4,22 +4,27 @@ module.exports = {
     return [
       {
         source: '/naas',
-        destination: '/nyblom-as-a-service',
+        destination: '/cto-coaching',
+        permanent: true,
+      },
+      {
+        source: '/nyblom-as-a-service',
+        destination: '/cto-coaching',
         permanent: true,
       },
       {
         source: '/clarity-call',
-        destination: '/nyblom-as-a-service/clarity-call',
+        destination: '/cto-coaching/clarity-call',
         permanent: true,
       },
       {
         source: '/workshops',
-        destination: '/nyblom-as-a-service/workshops',
+        destination: '/cto-coaching/workshops',
         permanent: true,
       },
       {
         source: '/nyblom-as-a-service/workshop',
-        destination: '/nyblom-as-a-service/workshops',
+        destination: '/cto-coaching/workshops',
         permanent: true,
       },
       {
