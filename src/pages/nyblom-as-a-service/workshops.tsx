@@ -7,7 +7,6 @@ import { bundleMDX } from "mdx-bundler";
 import remarkGfm from "remark-gfm";
 import { useMemo } from "react";
 import { getMDXComponent } from "mdx-bundler/client";
-import Image from "next/image";
 import BookingButton from "../../components/BookingButton";
 import CalLink from "../../components/CalLink";
 import Testimonials from "../../components/testimonials/Testimonials";

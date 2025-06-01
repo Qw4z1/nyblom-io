@@ -23,7 +23,7 @@ const BookingButton: FC<BookingButtonProps> = ({ dataCalLink , buttonTitle}) => 
       }
     })();
   }, []);
-  return (
+  return (  
     <div className="py-6">
     <button
       data-cal-link={dataCalLink}
