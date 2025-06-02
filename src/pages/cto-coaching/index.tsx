@@ -52,8 +52,8 @@ const CtoCoaching: NextPage = () => {
   return (
     <>
       <Head
-        title={"CTO Coaching by Viktor Nyblom"}
-        description={"Transform your leadership and unlock your potential with bespoke CTO coaching from an experienced technology leader."}
+        title={"CTO Coaching"}
+        description={"Find your Great CTO Within"}
       />
       <main className="max-w-4xl flex flex-col justify-start items-start m-auto pb-10 px-2">
         <div className="content-center w-full flex justify-center mb-6">
