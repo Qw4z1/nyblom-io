@@ -10,15 +10,15 @@ import { useState } from "react";
 const faqs = [
   {
     q: "What makes CTO coaching different from general executive coaching?",
-    a: "CTO coaching combines traditional leadership development with hands-on technical and strategic mentoring from experienced CTOs. You&apos;ll benefit from both proven coaching methods and real-world insights from leaders who have faced similar challenges.",
+    a: "CTO coaching combines traditional leadership development with hands-on technical and strategic mentoring from experienced CTOs. You'll benefit from both proven coaching methods and real-world insights from leaders who have faced similar challenges.",
   },
   {
     q: "Who is this coaching for?",
-    a: "It&apos;s designed for CTOs, VPs of Engineering, and technical founders who want to grow as leaders, build stronger teams, and drive business results.",
+    a: "This coaching designed for CTOs, VPs of Engineering, and technical founders who want to grow as leaders, build stronger teams, and drive business results.",
   },
   {
     q: "How does the coaching process work?",
-    a: "You&apos;ll start with a discovery call to clarify your goals. Then, you&apos;ll work with your coach in regular sessions to set objectives, identify obstacles, and develop actionable strategies for growth.",
+    a: "We start with a discovery call to clarify your goals. Once that is clear, we'll work with your coach in regular sessions to set objectives, identify obstacles, and develop actionable strategies for growth.",
   },
   {
     q: "What outcomes can I expect?",
@@ -30,11 +30,7 @@ const faqs = [
   },
   {
     q: "Will I get any new tools?",
-    a: "Absolutely! During our work I will help you implement the tools and frameworks that we agree are the best fit for your specific situation. Just remember that tools alone won&apos;t make you a great CTO, so the bulk of the work will be about creating shifts within you!",
-  },
-  {
-    q: "How much does it cost?",
-    a: "",
+    a: "Absolutely! During our work I will help you implement the tools and frameworks that we agree are the best fit for your specific situation. Just remember that tools alone won't make you a great CTO, so the bulk of the work will be about creating shifts within you!",
   }
 ];
 
