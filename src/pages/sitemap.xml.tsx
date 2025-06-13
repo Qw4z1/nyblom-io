@@ -3,7 +3,7 @@ import {
   getContentFrontMatter,
   getPostFrontMatter,
 } from "../helpers/getFrontMatter";
-import { PostFrontMatter} from "../types";
+import { PostFrontMatter } from "../types";
 
 function getLastPostDate(posts: PostFrontMatter[]): string {
   return posts
