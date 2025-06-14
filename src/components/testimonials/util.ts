@@ -67,7 +67,7 @@ export const naasTestimonials: iTestimonial[] = [
   {
     name: "Charana Amarasekara",
     link: "https://www.linkedin.com/in/charanaamarasekara/",
-    title: "Lead Developer at Aristotle | AI Innovator",
+    title: "Lead Developer at Baby Journey | AI Innovator",
     short:
       "Viktor has a gift for bringing out the best in his team. Despite working remotely with developers overseas, he quickly grasped everyone's strengths and assigned tasks accordingly. Under his direction, we delivered features to market at record speed.",
     quote:
