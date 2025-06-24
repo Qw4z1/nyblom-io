@@ -111,6 +111,7 @@ export const getStaticProps: GetStaticProps<BlogPostProps> = async ({
         slug: postSlug,
         title: (frontmatter as PostFrontMatter).title,
         firstPublished: (frontmatter as PostFrontMatter).firstPublished,
+        published: (frontMatter as PostFrontMatter).published
       };
     })
   );
@@ -118,7 +119,7 @@ export const getStaticProps: GetStaticProps<BlogPostProps> = async ({
   // Sort posts by date (newest first)
   const sortedPosts = allPosts.sort((a, b) => {
     return new Date(b.firstPublished).getTime() - new Date(a.firstPublished).getTime();
-  });
+  }).filter(it => it.published);
   
   // Find current post index
   const currentPostIndex = sortedPosts.findIndex((post) => post.slug === slug);
