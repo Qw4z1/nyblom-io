@@ -57,6 +57,13 @@ function MyApp({ Component, pageProps }: AppProps) {
             id="navbar-default"
           >
             <ul className="flex flex-col p-4 mt-4 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:border-0 ">
+            <li className="mt-3 md:mt-0">
+                <NavBarLink
+                  text="/Blog"
+                  link="/blog"
+                  onClick={navLinkClickHandler}
+                />
+              </li>
               <li className="mt-3 md:mt-0">
                 <NavBarLink
                   text="/CTO Coaching"
@@ -66,15 +73,8 @@ function MyApp({ Component, pageProps }: AppProps) {
               </li>
               <li className="mt-3 md:mt-0">
                 <NavBarLink
-                  text="/Blog"
-                  link="/blog"
-                  onClick={navLinkClickHandler}
-                />
-              </li>
-              <li className="mt-3 md:mt-0">
-                <NavBarLink
-                  text="/Newsletter"
-                  link="/newsletter"
+                  text="/Clarity Call"
+                  link="/clarity-call"
                   onClick={navLinkClickHandler}
                 />
               </li>

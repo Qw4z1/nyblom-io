@@ -1,6 +1,6 @@
 import type { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
-import { Head } from "../../components/Head";
+import { Head } from "../components/Head";
 import { join } from "path";
 import { readFileSync } from "fs";
 import { bundleMDX } from "mdx-bundler";
@@ -8,11 +8,11 @@ import remarkGfm from "remark-gfm";
 import { useMemo } from "react";
 import { getMDXComponent } from "mdx-bundler/client";
 import Image from "next/image";
-import BookingButton from "../../components/BookingButton";
-import CalLink from "../../components/CalLink";
-import Testimonials from "../../components/testimonials/Testimonials";
-import UL from "../../components/UL";
-import { ContentFrontMatter } from "../../types";
+import BookingButton from "../components/BookingButton";
+import CalLink from "../components/CalLink";
+import Testimonials from "../components/testimonials/Testimonials";
+import UL from "../components/UL";
+import { ContentFrontMatter } from "../types";
 
 interface Content {
   sourceCode: string;
@@ -33,7 +33,7 @@ const NaaS: NextPage<NaaSPageProps> = ({ content }) => {
       <Head
         title={"Clarity Call"}
         description={
-          "Get clear on your thoughts to get clear on your actions"
+          "Get clear on your most important thing and take massive action"
         }
       />
       <article className="py-4 max-w-2xl flex flex-col justify-start items-start m-auto">

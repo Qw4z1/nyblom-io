@@ -68,16 +68,10 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
             <strong>
               <Link href="/cto-coaching">coaching CTOs</Link>
             </strong>{" "}
-            who want to go from Good to Great.
+            who want to become great technology leaders who drive real business impact.
           </p>
         </div>
-        <div className="flex flex-col justify-center w-full">
-          <p className="max-w-[70%] mx-auto text-center italic">
-            Subscribe to my newsletter to get the latest of my thinking in the intersection of strategy, product and tech.
-          </p>
-          <InlineNewsletterForm />
-        </div>
-        <div className="flex mt-14 justify-center w-full">
+        <div className="flex justify-center w-full">
           <SocialRow />
         </div>
         <h2 className="mt-14">Popular from the blog:</h2>

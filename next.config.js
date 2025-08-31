@@ -13,8 +13,8 @@ module.exports = {
         permanent: true,
       },
       {
-        source: '/clarity-call',
-        destination: '/cto-coaching/clarity-call',
+        source: '/cto-coaching/clarity-call',
+        destination: '/clarity-call',
         permanent: true,
       },
       {
