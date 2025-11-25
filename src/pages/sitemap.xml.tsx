@@ -1,6 +1,5 @@
 import { GetServerSideProps } from "next/types";
 import {
-  getContentFrontMatter,
   getPostFrontMatter,
 } from "../helpers/getFrontMatter";
 import { PostFrontMatter } from "../types";
@@ -20,7 +19,7 @@ function buildXml(posts: PostFrontMatter[]) {
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
      <url>
        <loc>${process.env.NEXT_PUBLIC_ROOT_URL}</loc>
-       <lastmod>2025-08-31</lastmod>
+       <lastmod>2025-11-25</lastmod>
      </url>
      <url>
        <loc>${`${process.env.NEXT_PUBLIC_ROOT_URL}/blog`}</loc>

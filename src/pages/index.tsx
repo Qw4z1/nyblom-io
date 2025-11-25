@@ -51,7 +51,7 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
     <>
       <Head
         title="NyblomIO"
-        description="A decade of building apps, teams and companies."
+        description="Over a decade of building apps, teams and companies."
       />
       <div className="max-w-2xl flex flex-col justify-start items-start m-auto pb-10">
         <h1>Hi! 👋</h1>
@@ -64,12 +64,9 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
             .
           </p>
           <p className="text-2xl font-medium">
-            Having spent over a decade of building apps, teams and companies, I now focus on{" "}
-            <strong>
-              <Link href="/cto-coaching">coaching CTOs</Link>
-            </strong>{" "}
-            who want to become great technology leaders who drive real business impact.
+            Having spent over a decade of building apps, teams and companies, I now focus on helping founders and senior leaders find their authentic leadership voice. To learn more about this, go to <Link  href="https://galantledarskap.se">galantledarskap.se</Link>.
           </p>
+          <p className="text-2xl font-medium">If you want to learn more about me, feel free to browse this website! Start with my <Link href="/now">/nownownow</Link> page to get the latest news! 😇</p>
         </div>
         <div className="flex justify-center w-full">
           <SocialRow />

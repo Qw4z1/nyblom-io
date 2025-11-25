@@ -33,12 +33,6 @@ const BlogList: NextPage<BlogListProps> = ({ posts }) => {
         <h1 className="text-black text-opacity-80 px-4">
           Thoughts on people, leadership and tech
         </h1>
-        <br />
-        <p className="text-center">
-          Subscribe to get notified when I publish new posts!
-        </p>
-        <InlineNewsletterForm />
-        <br />
         <p className="text-xl font-medium p-4">
           Each Friday, I share frameworks, stories, and actionable lessons from
           my 20 years of leading teams and companies. Get better at navigating
