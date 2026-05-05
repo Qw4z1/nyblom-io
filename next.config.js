@@ -4,12 +4,12 @@ module.exports = {
     return [
       {
         source: '/naas',
-        destination: '/cto-coaching',
+        destination: '/',
         permanent: true,
       },
       {
         source: '/nyblom-as-a-service',
-        destination: '/cto-coaching',
+        destination: '/',
         permanent: true,
       },
       {
