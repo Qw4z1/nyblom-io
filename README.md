@@ -43,8 +43,6 @@ Step 4: Add .env file
 
 At the root of the project add a file called .env with the following keys.
 
-NOTION_TOKEN=
-NOTION_DB_ID=
 NEXT_PUBLIC_ROOT_URL=<http://localhost:3000>
 CONVERTKIT_API_KEY=
 NEXT_PUBLIC_API_URL=<url to the read-tracker API>

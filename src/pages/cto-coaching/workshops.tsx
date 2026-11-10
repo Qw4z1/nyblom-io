@@ -4,9 +4,8 @@ import { Head } from "../../components/Head";
 import { join } from "path";
 import { readFileSync } from "fs";
 import { bundleMDX } from "mdx-bundler";
+import MdxContent from "../../components/MdxContent";
 import remarkGfm from "remark-gfm";
-import { useMemo } from "react";
-import { getMDXComponent } from "mdx-bundler/client";
 import BookingButton from "../../components/BookingButton";
 import CalLink from "../../components/CalLink";
 import Testimonials from "../../components/testimonials/Testimonials";
@@ -22,10 +21,6 @@ interface WorkshopPageProps {
 }
 
 const Workshop: NextPage<WorkshopPageProps> = ({ content }) => {
-  const ContentItem = useMemo(
-    () => getMDXComponent(content.sourceCode),
-    [content.sourceCode]
-  );
 
   return (
     <>
@@ -37,7 +32,8 @@ const Workshop: NextPage<WorkshopPageProps> = ({ content }) => {
       />
       <article className="py-4 max-w-2xl flex flex-col justify-start items-start m-auto">
 
-        <ContentItem
+        <MdxContent
+          code={content.sourceCode}
           components={{
             Link: Link,
             ul: UL,

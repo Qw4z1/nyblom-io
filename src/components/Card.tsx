@@ -23,7 +23,7 @@ const Card: FC<CardProps> = ({
         <div className="font-bold text-xl mt-1 mb-1">{title}</div>
         <p className=" text-base mt-1 mb-1">{subtitle}</p>
         <div className="flex flex-row items-center justify-between">
-          <p className="text-black text-opacity-60 text-md italic mt-1 mb-1">
+          <p className="text-black/60 text-md italic mt-1 mb-1">
             First Published: {publishedDate}
           </p>
         </div>

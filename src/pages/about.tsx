@@ -4,10 +4,9 @@ import { Head } from "../components/Head";
 import { join } from "path";
 import { readFileSync } from "fs";
 import { bundleMDX } from "mdx-bundler";
+import MdxContent from "../components/MdxContent";
 import remarkGfm from "remark-gfm";
 import { Content, ContentFrontMatter } from "../types";
-import { useMemo } from "react";
-import { getMDXComponent } from "mdx-bundler/client";
 import UL from "../components/UL";
 
 interface AboutPageProps {
@@ -15,10 +14,6 @@ interface AboutPageProps {
 }
 
 const About: NextPage<AboutPageProps> = ({ content }) => {
-  const ContentItem = useMemo(
-    () => getMDXComponent(content.sourceCode),
-    [content.sourceCode]
-  );
 
   return (
     <>
@@ -28,7 +23,7 @@ const About: NextPage<AboutPageProps> = ({ content }) => {
       />
       <div className="py-4 max-w-2xl flex flex-col justify-start items-start m-auto">
         <article>
-          <ContentItem components={{ Link: Link, ul: UL }} />
+          <MdxContent code={content.sourceCode} components={{ Link: Link, ul: UL }} />
         </article>
       </div>
     </>

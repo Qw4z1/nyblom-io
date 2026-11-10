@@ -2,7 +2,7 @@ import type { GetStaticProps, NextPage } from "next";
 import Link from "next/link";
 import Card from "../components/Card";
 import { Head } from "../components/Head";
-import SocialRow from "../components/SocialRow";
+import { LINKEDIN_URL } from "../helpers/constants";
 import { move } from "../helpers/array";
 import { daysBetween } from "../helpers/date";
 import { getPostFrontMatter } from "../helpers/getFrontMatter";
@@ -67,9 +67,13 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
             Having spent over a decade of building apps, teams and companies, I now focus on helping founders and senior leaders find their authentic leadership voice. To learn more about this, go to <Link  href="https://galantledarskap.se">galantledarskap.se</Link>.
           </p>
           <p className="text-2xl font-medium">If you want to learn more about me, feel free to browse this website! Start with my <Link href="/now">/nownownow</Link> page to get the latest news! 😇</p>
-        </div>
-        <div className="flex justify-center w-full">
-          <SocialRow />
+          <p className="text-2xl font-medium">
+            Want to keep in touch?{" "}
+            <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
+              Connect with me on LinkedIn
+            </a>
+            .
+          </p>
         </div>
         <h2 className="mt-14">Popular from the blog:</h2>
         <div className="pb-8 pt-2">

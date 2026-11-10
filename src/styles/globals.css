@@ -1,8 +1,43 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  --color-yellow-*: initial;
+  --color-yellow: #ffde03;
+
+  --font-sans: Montserrat;
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility container {
+  @apply py-4 px-2 md:px-2 lg:px-0 max-w-2xl flex flex-col justify-center items-center m-auto;
+}
 
 @layer base {
+  /* The site is light-only; don't inherit a dark canvas from the browser. */
+  html {
+    color-scheme: light;
+  }
+  body {
+    @apply bg-white text-black;
+  }
+
   h1 {
     @apply text-5xl font-extrabold;
   }
@@ -35,12 +70,6 @@
 
   blockquote {
     @apply pl-4 lg:text-lg italic my-8;
-  }
-}
-
-@layer components {
-  .container {
-    @apply py-4 px-2 md:px-2 lg:px-0 max-w-2xl flex flex-col justify-center items-center m-auto;
   }
 }
 

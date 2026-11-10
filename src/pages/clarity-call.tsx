@@ -4,9 +4,8 @@ import { Head } from "../components/Head";
 import { join } from "path";
 import { readFileSync } from "fs";
 import { bundleMDX } from "mdx-bundler";
+import MdxContent from "../components/MdxContent";
 import remarkGfm from "remark-gfm";
-import { useMemo } from "react";
-import { getMDXComponent } from "mdx-bundler/client";
 import Image from "next/image";
 import BookingButton from "../components/BookingButton";
 import CalLink from "../components/CalLink";
@@ -23,10 +22,6 @@ interface NaaSPageProps {
 }
 
 const NaaS: NextPage<NaaSPageProps> = ({ content }) => {
-  const ContentItem = useMemo(
-    () => getMDXComponent(content.sourceCode),
-    [content.sourceCode]
-  );
 
   return (
     <>
@@ -47,7 +42,8 @@ const NaaS: NextPage<NaaSPageProps> = ({ content }) => {
           />
         </div>
 
-        <ContentItem
+        <MdxContent
+          code={content.sourceCode}
           components={{
             Link: Link,
             ul: UL,

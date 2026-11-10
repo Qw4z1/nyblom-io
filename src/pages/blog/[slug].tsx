@@ -1,11 +1,10 @@
 import { readFileSync, readdirSync } from "fs";
 import { GetStaticProps, NextPage } from "next";
 import { bundleMDX } from "mdx-bundler";
-import { getMDXComponent } from "mdx-bundler/client";
+import MdxContent from "../../components/MdxContent";
 import { join } from "path";
 import getReadingTime from "reading-time";
 import { PostFrontMatter, Post } from "../../types";
-import { useMemo } from "react";
 import { Head } from "../../components/Head";
 import { HeaderImage } from "../../components/HeaderImage";
 import remarkGfm from "remark-gfm";
@@ -33,8 +32,6 @@ const BlogPost: NextPage<BlogPostProps> = ({ post, prevPost, nextPost }) => {
     featuredImage,
   } = post;
 
-  const MDXPost = useMemo(() => getMDXComponent(sourceCode), [sourceCode]);
-
   return (
     <>
       <Head
@@ -61,7 +58,7 @@ const BlogPost: NextPage<BlogPostProps> = ({ post, prevPost, nextPost }) => {
             readingTime={readingTime}
           />
         </header>
-        <MDXPost components={{ Link: Link, MdxTable: MdxTable }} />
+        <MdxContent code={sourceCode} components={{ Link: Link, MdxTable: MdxTable }} />
         <PostNavigation prevPost={prevPost} nextPost={nextPost} />
         <Announcement />
       </article>

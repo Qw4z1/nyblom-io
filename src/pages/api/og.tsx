@@ -1,31 +1,33 @@
-import { ImageResponse } from "@vercel/og";
-import { NextRequest } from "next/server";
+import { ImageResponse } from "next/og";
+import type { NextApiRequest, NextApiResponse } from "next";
 
-export const config = {
-  runtime: "edge",
-};
+import { readFile } from "fs/promises";
+import { join } from "path";
 
-// Make sure the font exists in the specified path:
-const extraBold = fetch(
-  new URL("../../../fonts/Montserrat-ExtraBold.ttf", import.meta.url)
-).then((res) => res.arrayBuffer());
+const loadFont = (file: string) =>
+  readFile(join(process.cwd(), "fonts", file));
 
-const semiBold = fetch(
-  new URL("../../../fonts/Montserrat-SemiBold.ttf", import.meta.url)
-).then((res) => res.arrayBuffer());
+const extraBold = loadFont("Montserrat-ExtraBold.ttf");
+const semiBold = loadFont("Montserrat-SemiBold.ttf");
+const bold = loadFont("Montserrat-Bold.ttf");
 
-const bold = fetch(
-  new URL("../../../fonts/Montserrat-Bold.ttf", import.meta.url)
-).then((res) => res.arrayBuffer());
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  const { searchParams } = new URL(req.url ?? "/", "http://localhost");
 
-export default async function handler(req: NextRequest) {
-  const { searchParams } = new URL(req.url);
+  const image =
+    searchParams.get("type") === "post"
+      ? await Post(searchParams)
+      : await Generic(searchParams);
 
-  if (searchParams.get("type") === "post") {
-    return Post(searchParams);
-  } else {
-    return Generic(searchParams);
-  }
+  res.setHeader("Content-Type", "image/png");
+  res.setHeader(
+    "Cache-Control",
+    image.headers.get("Cache-Control") ?? "public, max-age=31536000, immutable"
+  );
+  res.status(200).send(Buffer.from(await image.arrayBuffer()));
 }
 
 type WrapperProps = {

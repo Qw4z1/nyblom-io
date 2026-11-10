@@ -51,7 +51,7 @@ const BlogList: NextPage<BlogListProps> = ({ posts }) => {
         description={"Thoughts on people, leadership and tech"}
       />
       <div className="w-full pb-11">
-        <h1 className="text-black text-opacity-80 px-4">
+        <h1 className="text-black/80 px-4">
           Thoughts on people, leadership and tech
         </h1>
         <p className="text-xl font-medium p-4">
@@ -78,7 +78,7 @@ const BlogList: NextPage<BlogListProps> = ({ posts }) => {
             placeholder="Search posts..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 sm:flex-1"
+            className="w-full p-2 border border-gray-300 rounded-md focus:outline-hidden focus:ring-2 focus:ring-blue-500 sm:flex-1"
           />
           {uniqueTags.length > 0 && (
             <button
@@ -86,7 +86,7 @@ const BlogList: NextPage<BlogListProps> = ({ posts }) => {
               onClick={toggleFilters}
               aria-expanded={filtersOpen}
               aria-controls="blog-tag-filter-panel"
-              className="w-full sm:w-auto rounded-md border border-gray-300 px-4 py-2 text-sm font-medium text-black text-opacity-80 hover:border-black hover:text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full sm:w-auto rounded-md border border-gray-300 px-4 py-2 text-sm font-medium text-black/80 hover:border-black hover:text-black focus:outline-hidden focus:ring-2 focus:ring-blue-500"
             >
               {filtersOpen ? "Hide filters" : "Show filters"}
               {selectedTags.length > 0 && ` (${selectedTags.length})`}
@@ -95,7 +95,7 @@ const BlogList: NextPage<BlogListProps> = ({ posts }) => {
         </div>
         {selectedTags.length > 0 && (
           <div className="px-4 mb-4 flex flex-wrap items-center gap-2 text-sm">
-            <span className="text-black text-opacity-60">Active filters:</span>
+            <span className="text-black/60">Active filters:</span>
             {selectedTags.map((tag) => (
               <button
                 key={`active-${tag}`}
@@ -110,7 +110,7 @@ const BlogList: NextPage<BlogListProps> = ({ posts }) => {
             <button
               type="button"
               onClick={clearTags}
-              className="rounded-full border border-gray-300 px-3 py-1 text-black text-opacity-80 hover:border-black hover:text-black transition"
+              className="rounded-full border border-gray-300 px-3 py-1 text-black/80 hover:border-black hover:text-black transition"
             >
               Clear all
             </button>
@@ -132,7 +132,7 @@ const BlogList: NextPage<BlogListProps> = ({ posts }) => {
                   className={`rounded-full border px-3 py-1 text-sm transition ${
                     isSelected
                       ? "bg-black text-white border-black"
-                      : "text-black text-opacity-80 border-gray-300 hover:border-black hover:text-black"
+                      : "text-black/80 border-gray-300 hover:border-black hover:text-black"
                   }`}
                 >
                   {tag}
@@ -143,7 +143,7 @@ const BlogList: NextPage<BlogListProps> = ({ posts }) => {
               <button
                 type="button"
                 onClick={clearTags}
-                className="rounded-full border px-3 py-1 text-sm text-black text-opacity-80 border-gray-300 hover:border-black hover:text-black"
+                className="rounded-full border px-3 py-1 text-sm text-black/80 border-gray-300 hover:border-black hover:text-black"
               >
                 Clear
               </button>

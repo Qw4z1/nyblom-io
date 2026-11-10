@@ -125,23 +125,23 @@ const CtoCoaching: NextPage = () => {
           <h2 className="text-2xl font-semibold mb-2">How It Works</h2>
           <div className="space-y-4 text-base text-gray-800">
             <div className="flex items-baseline">
-              <span className="flex-shrink-0 bg-yellow text-black font-extrabold rounded px-3 py-1 text-lg mr-4">1</span>
+              <span className="shrink-0 bg-yellow text-black font-extrabold rounded-sm px-3 py-1 text-lg mr-4">1</span>
               <span>Book a free discovery call to discuss your unique challenges and aspirations.</span>
             </div>
             <div className="flex items-baseline">
-              <span className="flex-shrink-0 bg-yellow text-black font-extrabold rounded px-3 py-1 text-lg mr-4">2</span>
+              <span className="shrink-0 bg-yellow text-black font-extrabold rounded-sm px-3 py-1 text-lg mr-4">2</span>
               <span>If it&apos;s a match, we&apos;ll set up our first coaching call where we decide on a scope and a goal.</span>
             </div>
             <div className="flex items-baseline">
-              <span className="flex-shrink-0 bg-yellow text-black font-extrabold rounded px-3 py-1 text-lg mr-4">3</span>
+              <span className="shrink-0 bg-yellow text-black font-extrabold rounded-sm px-3 py-1 text-lg mr-4">3</span>
               <span>Biweekly 1:1 coaching sessions, where we work together on your goal.</span>
             </div>
             <div className="flex items-baseline">
-              <span className="flex-shrink-0 bg-yellow text-black font-extrabold rounded px-3 py-1 text-lg mr-4">4</span>
+              <span className="shrink-0 bg-yellow text-black font-extrabold rounded-sm px-3 py-1 text-lg mr-4">4</span>
               <span>Wrap up and recap your transformation.</span>
             </div>
             <div className="flex items-baseline">
-              <span className="flex-shrink-0 bg-yellow text-black font-extrabold rounded px-3 py-1 text-lg mr-4">5</span>
+              <span className="shrink-0 bg-yellow text-black font-extrabold rounded-sm px-3 py-1 text-lg mr-4">5</span>
               <span>Recommit towards a new goal or move on by yourself.</span>
             </div>
           </div>
@@ -161,7 +161,7 @@ const CtoCoaching: NextPage = () => {
               <div key={faq.q} className="border rounded-md">
                 <button
                   type="button"
-                  className="w-full text-left px-4 py-3 font-semibold focus:outline-none flex justify-between items-center"
+                  className="w-full text-left px-4 py-3 font-semibold focus:outline-hidden flex justify-between items-center"
                   onClick={() => toggleFaq(idx)}
                   aria-expanded={openFaqs.includes(idx)}
                   aria-controls={`faq-answer-${idx}`}

@@ -36,7 +36,7 @@ const InlineNewsletterForm = () => {
   if (isSubmitted) {
     return (
       <div className="w-full">
-        <div className="text-center p-4 bg-green-100 rounded">
+        <div className="text-center p-4 bg-green-100 rounded-sm">
           <h3 className="text-xl font-bold mb-2">Thank you for subscribing!</h3>
           <p>Check your email to confirm your subscription.</p>
         </div>
@@ -55,11 +55,11 @@ const InlineNewsletterForm = () => {
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Enter your email"
         required
-        className="p-2 border rounded flex-grow w-full sm:w-auto"
+        className="p-2 border rounded-sm grow w-full sm:w-auto"
       />
       <button
         type="submit"
-        className="bg-yellow text-black font-bold py-2 px-4 rounded hover:bg-yellow-600 w-full sm:w-auto"
+        className="bg-yellow text-black font-bold py-2 px-4 rounded-sm hover:bg-yellow-600 w-full sm:w-auto"
       >
         Subscribe
       </button>

@@ -8,6 +8,11 @@ module.exports = {
         permanent: true,
       },
       {
+        source: '/books',
+        destination: '/',
+        permanent: true,
+      },
+      {
         source: '/nyblom-as-a-service',
         destination: '/',
         permanent: true,
@@ -35,11 +40,6 @@ module.exports = {
       {
         source: '/45',
         destination: 'https://cal.com/nyblomio/45',
-        permanent: true,
-      },
-      {
-        source: '/bsky',
-        destination: 'https://bsky.app/profile/nyblom.io',
         permanent: true,
       },
     ]

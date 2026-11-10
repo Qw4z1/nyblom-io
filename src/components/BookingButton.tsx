@@ -27,7 +27,7 @@ const BookingButton: FC<BookingButtonProps> = ({ dataCalLink , buttonTitle}) => 
     <div className="py-6">
     <button
       data-cal-link={dataCalLink}
-      className="border-black p-2 rounded border-2 font-semiboldhover:bg-yellow "
+      className="border-black p-2 rounded-sm border-2 font-semiboldhover:bg-yellow "
     >
       {buttonTitle}
     </button>

@@ -26,10 +26,6 @@ function buildXml(posts: PostFrontMatter[]) {
        <lastmod>${lastPostDate}</lastmod>
      </url>
      <url>
-     <loc>${`${process.env.NEXT_PUBLIC_ROOT_URL}/books`}</loc>
-     <lastmod>2025-05-25</lastmod>
-    </url>
-    <url>
     <loc>${`${process.env.NEXT_PUBLIC_ROOT_URL}/portfolio`}</loc>
     <lastmod>2025-05-25</lastmod>
     </url>

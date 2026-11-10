@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <div className={montserrat.className}>
-      <nav className="w-full fixed px-2 sm:px-4 py-2.5 rounded bg-white z-20">
+      <nav className="w-full fixed px-2 sm:px-4 py-2.5 rounded-sm bg-white z-20">
         <div className="flex flex-wrap justify-between items-center mx-auto">
           <Link
             href="/"
@@ -29,7 +29,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           </Link>
           <button
             data-collapse-toggle="navbar-default"
-            className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none"
+            className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-hidden"
             aria-controls="navbar-default"
             onClick={() => {
               setIsNavExpanded(!isNavExpanded);
